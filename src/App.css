@@ -1,48 +1,41 @@
-
-
 /* theme colors */
 
-
-*{
-
+* {
 }
-
-
-
 
 /* navbar */
 
-#navbar{
-  width:100%;
-  height:80px;
+#navbar {
+  width: 100%;
+  height: 80px;
   /* background-color: antiquewhite; */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-#navbar #logo{
+#navbar #logo {
   margin-left: 50px;
 }
-#navbar #links{
+#navbar #links {
   margin-right: 50px;
 }
-#navbar #links li{
- list-style: none;
- float: left;
- padding:20px;
- height:50px;
- display: flex;
- align-items: center;
+#navbar #links li {
+  list-style: none;
+  float: left;
+  padding: 20px;
+  height: 50px;
+  display: flex;
+  align-items: center;
 }
 
 /* buttons */
 
-.button{
-border:2px solid #1A2572;
-background: none;
-padding:10px;
-width:100px;
-border-radius: 40px;
-outline: none;
+.button {
+  border: 2px solid #1a2572;
+  background: none;
+  padding: 10px;
+  width: 100px;
+  border-radius: 40px;
+  outline: none;
 }
