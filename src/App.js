@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
+import Footer from "./components/Footer"
 import Home from "./pages/home/Home";
 import Faq from "./pages/footer/faq/Faq";
 import TermsAndConditions from "./pages/footer/termsAndConditions/TermsAndConditions";
@@ -29,6 +30,7 @@ function App() {
           <Route path={"/categories-grocery"} component={Grocery} />
           <Route path={"/*"} exact component={Home} />
         </Switch>
+        <Footer/>
       </Router>
     </div>
   );
