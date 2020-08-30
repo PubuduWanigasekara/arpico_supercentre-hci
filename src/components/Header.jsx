@@ -20,11 +20,16 @@ export default function Header() {
         }
     });
 
+    const logo = {
+            width:'120px'
+        
+    }
+
     return (
         <div>
             <div id="navbar">
                 <div id="logo">
-                    logo
+                    <img src="https://arpicosupercentre.com/pub/media/logo/default/logo.png" alt="" style={logo}/>
                </div>
                 <div id="links">
 
@@ -32,7 +37,7 @@ export default function Header() {
                         <li>Home</li>
                         <li>Contact us</li>
                         <li>Faq</li>
-                        <li><button className="button primary outline">login</button></li>
+                        <li><button className="button primary outline login">login</button></li>
                     </ul>
                     <li style={{display: mobmenu ? 'flex' : 'none'}} id="mobmenu">M</li>
                 </div>
