@@ -1,19 +1,36 @@
-import React, { useEffect } from 'react'
+import React, { useEffect , useState } from 'react'
 
 
 export default function Header() {
 
-    let mobmenu = false
+    
+
+    let [mobmenu, setmobmenu] = useState(false);
 
     useEffect(() => {
+
+     
+            const width = window.innerWidth;
+
+            if (width < 780) {
+              
+                setmobmenu( mobmenu = true);
+                console.log(mobmenu);
+            } else {
+                setmobmenu( mobmenu = false);
+                console.log(mobmenu);
+            }
+        
+
         window.onresize = () => {
             const width = window.innerWidth;
 
             if (width < 780) {
-                mobmenu = true;
+              
+                setmobmenu( mobmenu = true);
                 console.log(mobmenu);
             } else {
-                mobmenu = false;
+                setmobmenu( mobmenu = false);
                 console.log(mobmenu);
             }
 
@@ -39,7 +56,7 @@ export default function Header() {
                         <li>Faq</li>
                         <li><button className="button primary outline login">login</button></li>
                     </ul>
-                    <li style={{display: mobmenu ? 'flex' : 'none'}} id="mobmenu">M</li>
+                   
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ export default function Home() {
                 <div id="left">
                 <div id="herotext">
                     <span className="intro">Shop with confidence</span>
-                    <span className="intro_sub">Search our entire store in  <span id="location">Hidepark corner</span><span id="drop">▼</span></span>
+                    <span className="intro_sub">Search our entire store in  <span id="location">Hydepark corner</span><span id="drop">▼</span></span>
                 </div>
 
                 <div id="search_container">
