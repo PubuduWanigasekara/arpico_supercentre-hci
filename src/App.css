@@ -79,8 +79,11 @@
 }
 
 #drop {
-  font-size: 20px;
+  width:25px;
+  height: 35px;
   margin-left: 5px;
+  position: absolute;
+  transition: 1s ease;
   cursor: pointer;
 }
 
@@ -122,8 +125,15 @@
   transform: scale(1.2);
 }
 
+#right{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #hero_right {
   width: 90%;
+  transition: 1s ease;
 }
 
 @media screen and (max-width: 950px) {
@@ -303,4 +313,35 @@ display: flex;
 }
 
 
+/* _______
+location bar */
+#loc_select{
+  width:400px;
+  outline: none !important;
+  font-size: 18px;
+  
+}
+
+.css-yk16xz-control{
+  border-radius: 40px !important;
+  outline: none !important;
+  user-select: none;
+  outline: none !important;
+}
+
+.css-1pahdxg-control{
+  box-shadow: none !important;
+  
+}
+.css-1pahdxg-control:hover{
+  border-color: none !important;
+}
+
+/* ===========
+Location toggle button animation */
+
+.rotate{
+  transform: rotate(-90deg);
+  color:red;
+}
 

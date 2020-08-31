@@ -1,25 +1,56 @@
-import React from 'react'
-import {ReactComponent as Cat_btn} from '../../assets/category_btn.svg'
-import {ReactComponent as Search_btn} from '../../assets/search_btn.svg'
+import React, { useState } from 'react'
+import { ReactComponent as Cat_btn } from '../../assets/category_btn.svg'
+import { ReactComponent as Search_btn } from '../../assets/search_btn.svg'
+import { ReactComponent as Down } from '../../assets/down.svg'
 import Hero_right from '../../assets/hero_right.svg'
+import Location from '../../components/Location'
+import { motion, AnimatePresence } from "framer-motion"
+
 
 export default function Home() {
+
+    let [loc, setLoc] = useState('Hydepark corner');
+    let [open, setopen] = useState(false);
+
+    const locationUpdate = (location) => {
+        setLoc(loc = location);
+        setopen(open = !open);
+    }
+
+    const locationToggle = () => {
+        setopen(open = !open);
+    }
+
+
     return (
         <div id="container">
             <div id="hero">
                 <div id="left">
-                <div id="herotext">
-                    <span className="intro">Shop with confidence</span>
-                    <span className="intro_sub">Search our entire store in  <span id="location">Hydepark corner</span><span id="drop">▼</span></span>
-                </div>
+                    <div id="herotext">
+                        <span className="intro">Shop with confidence</span>
+                        <span className="intro_sub">Search our entire store in  <span id="location">{loc}</span><Down id="drop" onClick={locationToggle} className={open ? 'rotate' : null} /></span>
+                    </div>
 
-                <div id="search_container">
-                 <Cat_btn id="cat_btn"/> <Search_btn id="search_btn"/><input type="text" name="" id="search"/>
+                    <div id="search_container">
+                        <Cat_btn id="cat_btn" /> <Search_btn id="search_btn" /><input type="text" name="" id="search" />
+                    </div>
                 </div>
-                </div>
-                <div id="right">
-                    <img src={Hero_right} alt="" id="hero_right" />
-                </div>
+                <AnimatePresence>
+                    <motion.div id="right" >
+
+
+
+                        {!open && <motion.img src={Hero_right} alt="" id="hero_right" initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }} />}
+
+                       {open && <motion.div initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}>
+                        <Location updatelocation={locationUpdate} />
+                        </motion.div>}
+                    </motion.div>
+                </AnimatePresence>
             </div>
         </div>
     )
