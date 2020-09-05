@@ -1,0 +1,125 @@
+    /* Cantact US*/
+    
+    #contactUs_container {
+        /* background-color: #1a2572; */
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+    
+    #contactus_formcontainer {
+        width: 50%;
+    }
+    
+    #contactusinfocontainer {
+        width: 50%;
+    }
+    
+    #cinfo {
+        height: 30%;
+        margin: 0;
+    }
+    
+    #infoimg {
+        height: 411px;
+        width: 682px;
+        box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 10px !important;
+    }
+    
+    .w_10 {
+        width: 10px;
+    }
+    
+    .w_50_p {
+        width: 50%;
+    }
+    
+    .h_10 {
+        height: 10px;
+        ;
+    }
+    
+    .boder {
+        border: 2px;
+    }
+
+    
+    .contactustxt {
+        width: 100%;
+        height: 33px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        font-size: 15px;
+        padding-left: 5px;
+    }
+    
+    #contactustxtaria {
+        width: 100%;
+        height: 100px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        font-size: 20px;
+    }
+    
+    #contactcard_with {
+        padding: 0px 0px 50px 101px;
+        width: 657px;
+    }
+    
+    #contactusTabal {
+        width: 100%;
+        padding: 31px;
+    }
+    
+    #contactinfocard {
+        display: flex;
+        padding: 0 0 0 0;
+        align-items: center;
+        padding: 0;
+        width: 100%;
+    }
+    
+    #contactimgcard {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 500px;
+    }
+    
+    #captiontd {
+        width: 225px;
+    }
+    
+    #contactInfodetails {
+        padding-left: 33px;
+        padding-bottom: 12px;
+    }
+    
+
+    
+    #a56 {
+        width: 30px;
+    }
+    
+    
+    div.mapcontaint>div {
+        position: absolute !important;
+        width: 682px !important;
+        height: 411px !important;
+    }
+    
+    div.mapcontaint>div>div {
+        border-radius: 10px !important;
+    }
+
+    
+    h2 {
+        margin-bottom: 5px !important;
+        margin-left: 0px !important;
+    }
+
+    h1{
+        margin-top: 0px;
+        margin-bottom: 0;
+    }
