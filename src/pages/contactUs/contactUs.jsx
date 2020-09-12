@@ -1,22 +1,34 @@
 import React from 'react'
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import './contactUs.css';
 
 
 export class contactUs extends React.Component {
-
     dtSet = {
 
-        fName: { status: false, val: '' },
-        lName: { status: false, val: '' },
-        email: { status: false, val: '' },
-        tp: { status: false, val: '' },
-        comment: { status: false, val: '' },
-        captcha: { status: false, val: '' }
+        fName: { status: false, val: '', message: 'Can not be empty and must be more than 3 character long' },
+        lName: { status: false, val: '', message: 'Can not be empty and must be more than 3 character long' },
+        email: { status: false, val: '', message: 'Place heck your email address agin' },
+        tp: { status: false, val: '', message: 'Place heck your phone number agin' },
+        comment: { status: false, val: '', message: 'can not be empty' },
+        captcha: { status: false, val: '', message: 'Enter the message as it\'s show' }
     }
-
     constructor(props) {
         super(props);
-
+        this.state = {
+            fName: 'none',
+            lName: 'none',
+            email: 'none',
+            tp: 'none',
+            comment: 'none',
+            captcha: 'none',
+            fNameclass: 'contactustxt',
+            lNameclass: 'contactustxt',
+            emailclass: 'contactustxt',
+            tpclass: 'contactustxt',
+            commentclass: '',
+            captchaclass: 'contactustxt',
+        };
     }
 
 
@@ -24,11 +36,17 @@ export class contactUs extends React.Component {
         let val = event.target.value
 
         if (val === '' || val.length < 3) {
-    
+            this.setState({
+                fName: 'block',
+                fNameclass: 'textborder contactustxt'
+            });
             this.dtSet.fName.status = false;
         }
         else {
-       
+            this.setState({
+                fName: 'none',
+                fNameclass: 'contactustxt'
+            });
             this.dtSet.fName.status = true;
             this.dtSet.fName.val = val;
         }
@@ -38,11 +56,17 @@ export class contactUs extends React.Component {
         let val = event.target.value
 
         if (val === '' || val.length < 3) {
-        
+            this.setState({
+                lName: 'block',
+                lNameclass: 'textborder contactustxt'
+            });
             this.dtSet.lName.status = false;
         }
         else {
-      
+            this.setState({
+                lName: 'none',
+                lNameclass: 'contactustxt'
+            });
             this.dtSet.lName.status = true;
             this.dtSet.lName.val = val;
         }
@@ -50,12 +74,19 @@ export class contactUs extends React.Component {
     }
     emailValidater = (event) => {
         let val = event.target.value
+        var emailRgex = new RegExp('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$', 'g');
 
-        if (val === '') {
-      
+        if (val === '' || !emailRgex.test(val)) {
+            this.setState({
+                email: 'block',
+                emailclass: 'textborder contactustxt'
+            });
             this.dtSet.email.status = false;
         } else {
-   
+            this.setState({
+                email: 'none',
+                emailclass: 'contactustxt'
+            });
             this.dtSet.email.status = true;
             this.dtSet.email.val = val;
         }
@@ -63,13 +94,20 @@ export class contactUs extends React.Component {
     }
     tpValidater = (event) => {
         let val = event.target.value;
+        var tpRgex = new RegExp('^\\d{10}$')
 
-        if (val === '') {
-    
+        if (val === '' || !tpRgex.test(val)) {
+            this.setState({
+                tp: 'block',
+                tpclass: 'textborder contactustxt'
+            });
             this.dtSet.tp.status = false;
         }
         else {
-        
+            this.setState({
+                tp: 'none',
+                tpclass: 'contactustxt'
+            });
             this.dtSet.tp.status = true;
             this.dtSet.tp.val = val;
         }
@@ -78,10 +116,16 @@ export class contactUs extends React.Component {
     commentValidater = (event) => {
         let val = event.target.value
         if (val === '') {
-         
+            this.setState({
+                comment: 'block',
+                commentclass: 'textborder contactustxt'
+            });
             this.dtSet.comment.status = false;
         } else {
-      
+            this.setState({
+                comment: 'none',
+                commentclass: 'contactustxt'
+            });
             this.dtSet.comment.status = true;
             this.dtSet.comment.val = val;
         }
@@ -90,24 +134,30 @@ export class contactUs extends React.Component {
     captchaValidater = (event) => {
         let val = event.target.value
         this.dtSet.captcha.val = val;
+        this.dtSet.captcha.event = event;
         this.dtSet.captcha.status = true;
-
+        this.setState({
+            captchaclass: 'contactustxt',
+            captcha: 'none'
+        });
 
     }
     formsubmiter = () => {
-      
+
+
+        if (this.dtSet.fName.status && this.dtSet.lName.status && this.dtSet.email.status && this.dtSet.tp.status && this.dtSet.comment.status) {
+
+        }
+        else {
+
+        }
     }
 
     render() {
         return (
             <div id="mainpanal">
-                <div id="breadcom">
-                    <a id="breadcomText" href="/home">Home</a> /
-            <a id="breadcomText" href="#">Contact Us</a>
-                </div>
                 <div id="maindiv">
                     <h1 id="map_h1">Contact Us</h1>
-
                     <div id="contactUs_container">
                         <div id="contactus_formcontainer">
 
@@ -126,6 +176,7 @@ export class contactUs extends React.Component {
                                                     type="text"
                                                     name="fName"
                                                     id="contactustxt"
+                                                    className={this.state.fNameclass}
                                                     onChange={this.fNameValidater}
                                                     required />
                                             </td>
@@ -133,6 +184,7 @@ export class contactUs extends React.Component {
                                             <td className="w_50_p">
                                                 <input type="text"
                                                     id="contactustxt"
+                                                    className={this.state.lNameclass}
                                                     name="lName"
                                                     placeholder=""
                                                     onChange={this.lNameValidater}
@@ -140,16 +192,31 @@ export class contactUs extends React.Component {
                                             </td>
                                         </tr>
                                         <tr>
+                                            <td>
+                                                <div className="alert-danger" style={{ display: this.state.fName }}>{this.dtSet.fName.message}</div>
+                                            </td>
+                                            <td className="w_10"></td>
+                                            <td>
+                                                <div className="alert-danger" style={{ display: this.state.lName }}>{this.dtSet.lName.message}</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <td colSpan="3"> Email: </td>
                                         </tr>
                                         <tr>
-                                            <td colSpan="3" data-tip="ex: example@exmple.com">
+                                            <td colSpan="3">
                                                 <input type="text"
                                                     id="contactustxt"
+                                                    className={this.state.emailclass}
                                                     placeholder=""
                                                     name="email"
                                                     onChange={this.emailValidater}
                                                     required />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colSpan="3">
+                                                <div className="alert-danger" style={{ display: this.state.email }}>{this.dtSet.email.message}</div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -159,9 +226,15 @@ export class contactUs extends React.Component {
                                             <td colSpan="3">
                                                 <input type="text"
                                                     id="contactustxt"
+                                                    className={this.state.tpclass}
                                                     name="tp"
                                                     onChange={this.tpValidater}
                                                     required />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colSpan="3">
+                                                <div className="alert-danger" style={{ display: this.state.tp }}>{this.dtSet.tp.message}</div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -171,10 +244,16 @@ export class contactUs extends React.Component {
                                             <td colSpan="3">
                                                 <textarea
                                                     id="contactustxtaria"
+                                                    className={this.state.commentclass}
                                                     name="comment"
                                                     onChange={this.commentValidater}
                                                     required >
                                                 </textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colSpan="3">
+                                                <div className="alert-danger" style={{ display: this.state.comment }}>{this.dtSet.comment.message}</div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -184,9 +263,15 @@ export class contactUs extends React.Component {
                                             <td colSpan="3">
                                                 <input type="text"
                                                     id="contactustxt"
+                                                    className={this.state.captchaclass}
                                                     name="captcha"
                                                     onChange={this.captchaValidater}
                                                     required />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colSpan="3">
+                                                <div className="alert-danger" style={{ display: this.state.captcha }}>{this.dtSet.captcha.message}</div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -205,6 +290,7 @@ export class contactUs extends React.Component {
                                     </table>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
