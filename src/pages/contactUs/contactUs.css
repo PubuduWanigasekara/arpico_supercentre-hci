@@ -159,13 +159,7 @@
         padding-bottom: 12px;
     }
     
-    #stack-top {
-        height: 184px;
-        position: absolute;
-        top: 28.7%;
-        left: 76.91%;
-        border-radius: 10px;
-    }
+
     
     #a56 {
         width: 30px;
@@ -196,9 +190,7 @@
         border-radius: 10px !important;
     }
     
-    #stack-top>svg {
-        border-radius: 40px !important;
-    }
+
     
     h2 {
         margin-bottom: 5px !important;
@@ -211,14 +203,4 @@
     }
     hr.botem{margin: 0;}
 
-    #phonestack-top{
-        height: 112px;
-        position: absolute;
-        top: 11.1%;
-        left: 14.5%;
-        border-radius: 10px;
-    }
 
-    rect{
-        fill: #0000ff00;
-    }

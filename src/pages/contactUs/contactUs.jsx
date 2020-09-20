@@ -1,5 +1,4 @@
 import React from 'react'
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import './contactUs.css';
 
 
@@ -144,12 +143,16 @@ export class contactUs extends React.Component {
     }
     formsubmiter = () => {
 
-
         if (this.dtSet.fName.status && this.dtSet.lName.status && this.dtSet.email.status && this.dtSet.tp.status && this.dtSet.comment.status) {
 
+            if (this.dtSet.captcha.val != 'DGGB') {
+                this.setState({
+                    captcha: 'block',
+                    captchaclass: 'textborder contactustxt'
+                });
+            }
         }
         else {
-
         }
     }
 
@@ -158,6 +161,7 @@ export class contactUs extends React.Component {
             <div id="mainpanal">
                 <div id="maindiv">
                     <h1 id="map_h1">Contact Us</h1>
+                    <hr/>
                     <div id="contactUs_container">
                         <div id="contactus_formcontainer">
 
@@ -204,7 +208,7 @@ export class contactUs extends React.Component {
                                             <td colSpan="3"> Email: </td>
                                         </tr>
                                         <tr>
-                                            <td colSpan="3">
+                                            <td colSpan="3" data-tip="ex: example@exmple.com">
                                                 <input type="text"
                                                     id="contactustxt"
                                                     className={this.state.emailclass}
@@ -223,7 +227,7 @@ export class contactUs extends React.Component {
                                             <td colSpan="3"> Phone Number: </td>
                                         </tr>
                                         <tr>
-                                            <td colSpan="3">
+                                            <td colSpan="3" data-tip="ex: 07xxxxxxxx/+947xxxxxxxx">
                                                 <input type="text"
                                                     id="contactustxt"
                                                     className={this.state.tpclass}
@@ -290,7 +294,6 @@ export class contactUs extends React.Component {
                                     </table>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
