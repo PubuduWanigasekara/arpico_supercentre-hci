@@ -142,6 +142,11 @@ export class contactUs extends React.Component {
 
     }
     formsubmiter = () => {
+        var txt = "First Name:    " + this.dtSet.fName.val +
+            "\nLast Name:  " + this.dtSet.lName.val +
+            "\nEmail:  " + this.dtSet.email.val +
+            "\nPhone Number:  " + this.dtSet.tp.val +
+            "\n\nComment:    " + this.dtSet.comment.val;
 
         if (this.dtSet.fName.status && this.dtSet.lName.status && this.dtSet.email.status && this.dtSet.tp.status && this.dtSet.comment.status) {
 
@@ -150,9 +155,49 @@ export class contactUs extends React.Component {
                     captcha: 'block',
                     captchaclass: 'textborder contactustxt'
                 });
+            } else {
             }
         }
         else {
+            if (!this.dtSet.fName.status) {
+                this.setState({
+                    fName: 'block',
+                    fNameclass: 'textborder contactustxt'
+                });
+            }
+
+            if (!this.dtSet.lName.status) {
+                this.setState({
+                    lName: 'block',
+                    lNameclass: 'textborder contactustxt'
+                });
+            }
+            if (!this.dtSet.email.status) {
+                this.setState({
+                    email: 'block',
+                    emailclass: 'textborder contactustxt'
+                });
+            }
+            if (!this.dtSet.tp.status) {
+                this.setState({
+                    tp: 'block',
+                    tpclass: 'textborder contactustxt'
+                });
+            }
+            if (!this.dtSet.comment.status) {
+                this.setState({
+                    comment: 'block',
+                    commentclass: 'textborder contactustxt'
+                });
+            }
+
+            if (!this.dtSet.captcha.status) {
+                this.setState({
+                    captcha: 'block',
+                    captchaclass: 'textborder contactustxt'
+                });
+            }
+
         }
     }
 
