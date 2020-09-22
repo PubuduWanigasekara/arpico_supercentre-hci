@@ -7,6 +7,7 @@ import Faq from "./pages/footer/faq/Faq";
 import TermsAndConditions from "./pages/footer/termsAndConditions/TermsAndConditions";
 import Cart from "./pages/cart/Cart";
 import Grocery from "./pages/categories/grocery/Grocery";
+import Login from "./pages/login/Login"
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -20,6 +21,7 @@ function App() {
       <Router>
         <Header/>
         <Switch>
+        <Route path={"/login"} exact component={Login} />
           <Route path={"/"} exact component={Home} />
           <Route path={"/faq"} component={Faq} />
           <Route

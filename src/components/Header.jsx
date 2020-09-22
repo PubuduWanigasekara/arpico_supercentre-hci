@@ -1,4 +1,6 @@
 import React, { useEffect , useState } from 'react'
+import {motion} from 'framer-motion'
+import Logo from '../assets/logo.png'
 
 
 export default function Header() {
@@ -46,7 +48,7 @@ export default function Header() {
         <div>
             <div id="navbar">
                 <div id="logo">
-                    <img src="https://arpicosupercentre.com/pub/media/logo/default/logo.png" alt="" style={logo}/>
+                    <img src={Logo} alt="" style={logo}/>
                </div>
                 <div id="links">
 
@@ -59,6 +61,19 @@ export default function Header() {
                    
                 </div>
             </div>
+
+            {/* <div id="mobnav">
+
+            </div> */}
+            {mobmenu && <motion.div  
+            initial={{opacity:0.5}}
+            exit={{ opacity: 0.5 }}
+            whileHover={{ scale: 1.1 , opacity:1}}
+            whileTap={{ scale: 0.9 ,opacity:1}}
+            id="mobnavBtn">
+                M
+            </motion.div>}
+            
         </div>
     )
 }

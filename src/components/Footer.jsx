@@ -5,6 +5,7 @@ import {ReactComponent as Master} from '../assets/mastercard.svg'
 import {ReactComponent as Fb} from '../assets/facebook.svg'
 import {ReactComponent as Tw} from '../assets/twitter.svg'
 import {ReactComponent as Ins} from '../assets/instagram.svg'
+import Logo from '../assets/logo.png'
 
 
 
@@ -27,11 +28,11 @@ export default function Footer() {
     }
 
     return (
-        <div>
+        <>
             <div id="footer">
                <div id="footer_top">
                    <div id="logo">
-                   <img src="https://arpicosupercentre.com/pub/media/logo/default/logo.png" alt="" style={logo}/>
+                   <img src={Logo} alt="" style={logo}/>
                    </div>
                    <div id="subs">
                        <Mail_icon id="mail_icon"/>
@@ -100,6 +101,6 @@ export default function Footer() {
                    </div>
                </div>
             </div>
-        </div>
+        </>
     )
 }

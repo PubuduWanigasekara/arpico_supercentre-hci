@@ -5,7 +5,7 @@ import { ReactComponent as Down } from '../../assets/down.svg'
 import Hero_right from '../../assets/hero_right.svg'
 import Location from '../../components/Location'
 import { motion, AnimatePresence } from "framer-motion"
-
+import ProductCard from '../../components/ProductCard'
 
 export default function Home() {
 
@@ -24,6 +24,10 @@ export default function Home() {
 
     return (
         <div id="container">
+
+
+            {/* hero section */}
+
             <div id="hero">
                 <div id="left">
                     <div id="herotext">
@@ -38,8 +42,6 @@ export default function Home() {
                 <AnimatePresence>
                     <motion.div id="right" >
 
-
-
                         {!open && <motion.img src={Hero_right} alt="" id="hero_right" initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }} />}
@@ -52,6 +54,23 @@ export default function Home() {
                     </motion.div>
                 </AnimatePresence>
             </div>
+
+            {/* recent products */}
+            <section id="recentProducts">
+               <div id="recent_title">
+               Recent products
+               </div>
+        <section id="recent_container">
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        </section>
+</section>
         </div>
     )
 }

@@ -26,6 +26,22 @@
   font-weight: 600;
 }
 
+/* mobile nvbar button */
+
+#mobnavBtn{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background-color:orange;
+  position: fixed;;
+  bottom: 50px;
+  float:right;
+  right:50px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* buttons */
 
 .button {
@@ -45,7 +61,8 @@
 
 #container {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
+  overflow: hidden;
 }
 
 #container #hero {
@@ -342,6 +359,129 @@ Location toggle button animation */
 
 .rotate{
   transform: rotate(-90deg);
-  color:red;
 }
 
+
+#recentProducts{
+  height:auto;
+  width:100%;
+  margin-top:100px;
+}
+
+#recent_container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgb(250, 249, 249);
+  padding: 30px 0px 20px 0px;
+}
+
+#recent_title{
+  font-size: 25px;
+  margin:20px 0px 40px 55px;
+}
+
+/* product card */
+
+#cardBase{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0px 0px 0px;
+  width:calc(330px)
+
+}
+
+#card_container{
+  width:90%;
+  height:auto;
+  border-radius: 10px;
+  background-color:#fff;
+  box-shadow: 0px 2px 8px 1px rgba(0,0,0,0.2);
+}
+
+#card_container img{
+  width:100%;
+  object-fit:contain;
+  background-size: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#card_title{
+  padding-left: 10px;
+  font-size:18px;
+  font-weight: 600;
+}
+
+#card_des{
+  font-size: 12px;
+  padding: 3px 0px 0px 10px;
+}
+
+#card_price{
+  padding: 8px 0px 0px 10px;
+  font-size: 25px;
+  font-weight: 400;
+}
+#card_quantity{
+  width:200px;
+  display: flex;
+  align-items: center;
+  margin: 0px 0px 0px 5px;
+}
+
+#card_round_btn{
+  border-radius: 50%;
+  width:30px;
+  height:30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 8px 5px 10px 5px;
+  outline: none;
+  border:none;
+  background-color: rgb(223, 222, 222);
+  cursor: pointer;
+}
+
+#card_number{
+  width:45px;
+  height:25px;
+  border-radius: 40px;
+  outline: none;
+  border:none;
+  background-color: rgb(223, 222, 222);
+  text-align: center;
+}
+
+#card_controllers{
+  display: flex;
+  right: 0;
+  justify-content: flex-end;
+  margin:0px 10px 10px 0px;
+  padding:20px 0px 0px 0px;
+}
+
+#card_r_wishlist{
+  border-radius: 50%;
+  width:40px;
+  height:40px;
+  outline: none;
+  border:none;
+  background-color: rgb(223, 222, 222);
+  cursor: pointer;
+}
+#card_r_view{
+  border-radius: 40px;
+  width:100px;
+  height:40px;
+  font-size: 16px;
+  outline: none;
+  border:none;
+  background-color: rgb(223, 222, 222);
+  cursor: pointer;
+  margin: 0px 3px 0px 0px;
+}

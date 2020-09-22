@@ -18,14 +18,6 @@ export default function Location(props) {
     return (
         <div>
             <Select options={options} onChange={update} id="loc_select" />
-            {/* <select name="loc" id="loc" onChange={update}>
-                <option value="" selected hidden>Select shop</option>
-                <option value="Hydepark corner">Hydepark corner</option>
-                <option value="horana">horana</option>
-                <option value="malabe">malabe</option>
-                <option value="kaduwela">kaduwela</option>
-            </select> */}
-           
         </div>
     )
 }
