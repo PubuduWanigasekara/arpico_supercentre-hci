@@ -1,7 +1,7 @@
 import React, { useEffect , useState } from 'react'
 import {motion} from 'framer-motion'
 import Logo from '../assets/logo.png'
-
+import {Link} from "react-router-dom";
 
 export default function Header() {
 
@@ -41,7 +41,10 @@ export default function Header() {
 
     const logo = {
             width:'120px'
-        
+    }
+
+    const linkstyle = {
+        textDecoration: 'none'
     }
 
     return (
@@ -53,10 +56,10 @@ export default function Header() {
                 <div id="links">
 
                     <ul style={{display: !mobmenu ? 'flex' : 'none'}}>
-                        <li>Home</li>
-                        <li>Contact us</li>
-                        <li>Faq</li>
-                        <li><button className="button primary outline login">login</button></li>
+                        <li><Link style={linkstyle} to="/home">Home</Link></li>
+                        <li><Link style={linkstyle} to="/contact-us">Contact us</Link></li>
+                        <li><Link style={linkstyle} to="/faq">Faq</Link></li>
+                        <li><Link style={linkstyle} to="/login" ><button className="button primary outline login">login</button></Link></li>
                     </ul>
                    
                 </div>
