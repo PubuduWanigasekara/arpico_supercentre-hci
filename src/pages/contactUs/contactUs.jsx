@@ -1,4 +1,5 @@
 import React from 'react'
+import swal from 'sweetalert';
 import './contactUs.css';
 
 
@@ -156,6 +157,23 @@ export class contactUs extends React.Component {
                     captchaclass: 'textborder contactustxt'
                 });
             } else {
+
+                swal({
+                    title: " please confirm your information ",
+                    text: txt,
+                    buttons: {
+                        cancel: "Close",
+                        catch: {
+                            text: "Confirme",
+                            value: "confirmed",
+                        }
+                    }
+                }
+                ).then((value) => {
+                    if (value === "confirmed") {
+                        swal("", "Informations are sended", "success");
+                    }
+                });
             }
         }
         else {
@@ -198,12 +216,14 @@ export class contactUs extends React.Component {
                 });
             }
 
+            swal("Someting wrong ", "please check the information again", "error");
         }
     }
 
     render() {
         return (
             <div id="mainpanal">
+    
                 <div id="maindiv">
                     <h1 id="map_h1">Contact Us</h1>
                     <hr/>
@@ -339,6 +359,7 @@ export class contactUs extends React.Component {
                                     </table>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
