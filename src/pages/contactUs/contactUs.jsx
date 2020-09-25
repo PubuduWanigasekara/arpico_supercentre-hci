@@ -361,8 +361,27 @@ export class contactUs extends React.Component {
                             </div>
 
                         </div>
+                        <div id="contactusinfocontainer">
+                            <div id="cinfo">
+                                <div id="contactinfocard">
+                                    <div id="card_container">
+                                        <div id="contactInfodetails">
+                                            <h2>Contact information</h2><hr />
+                            📍   No: 310, High Level Road, Nawinna, Maharagama.<br />
+                            📞 Phone: 011 43 10 500 <br />
+                            📧 Email: info@arpicosupercentre.com<br />
+                            🕐 Support 24/7/365<br />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="infoimg" className="mapcontaint">
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+
             </div>
         );
     }
