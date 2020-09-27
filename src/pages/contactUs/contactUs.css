@@ -192,6 +192,10 @@
         height: 411px !important;
     }
     
+    div.mapcontaint>div>div {
+        border-radius: 10px !important;
+    }
+    
     #stack-top>svg {
         border-radius: 40px !important;
     }

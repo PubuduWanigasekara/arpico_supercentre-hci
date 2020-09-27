@@ -1,4 +1,5 @@
 import React from 'react'
+import { Map, GoogleApiWrapper } from 'google-maps-react';
 import swal from 'sweetalert';
 import './contactUs.css';
 
@@ -223,7 +224,7 @@ export class contactUs extends React.Component {
     render() {
         return (
             <div id="mainpanal">
-    
+
                 <div id="maindiv">
                     <h1 id="map_h1">Contact Us</h1>
                     <hr/>
@@ -376,15 +377,27 @@ export class contactUs extends React.Component {
                                 </div>
                             </div>
                             <div id="infoimg" className="mapcontaint">
+                                <Map
+                                    google={this.props.google}
+                                    zoom={17}
+                                    style={{
+                                        position: 'absolute',
+                                        width: '682px',
+                                        height: '411px',
+                                    }}
+                                    initialCenter={{ lat: 6.853084, lng: 79.916848 }}
+                                >
+                                </Map>
                             </div>
                         </div>
 
                     </div>
                 </div>
-
             </div>
         );
     }
 }
 
-export default contactUs
+export default GoogleApiWrapper({
+    apiKey: ("AIzaSyDi0kmH7TLYbwpGDGwCgOogc0rqHMAgb9I")
+})(contactUs)
