@@ -1,0 +1,9 @@
+#cat_container{
+    width:100%;
+    height:100vh;
+    background-color: burlywood;
+    position: fixed;
+    top:0;
+    z-index: 9999;
+    overflow: hidden;
+}

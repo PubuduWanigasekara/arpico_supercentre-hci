@@ -6,11 +6,14 @@ import Hero_right from '../../assets/hero_right.svg'
 import Location from '../../components/Location'
 import { motion, AnimatePresence } from "framer-motion"
 import ProductCard from '../../components/ProductCard'
+import HomeIcons from '../../components/HomeIcons'
+import Categories from '../../components/Categories'
 
 export default function Home() {
 
     let [loc, setLoc] = useState('Hydepark corner');
     let [open, setopen] = useState(false);
+    let [catopen, setCatopen] = useState(false);
 
     const locationUpdate = (location) => {
         setLoc(loc = location);
@@ -19,6 +22,17 @@ export default function Home() {
 
     const locationToggle = () => {
         setopen(open = !open);
+    }
+
+    const catToggle = ()=>{
+        setCatopen(!catopen);
+        window.scrollTo({ top: 0, behavior: `smooth` });
+
+        if(catopen == false){
+            document.body.style.overflow = 'hidden'; 
+        }else{
+            document.body.style.overflow = ''; 
+        }
     }
 
 
@@ -36,7 +50,7 @@ export default function Home() {
                     </div>
 
                     <div id="search_container">
-                        <Cat_btn id="cat_btn" /> <Search_btn id="search_btn" /><input type="text" name="" id="search" />
+                    <Cat_btn id="cat_btn" onClick={catToggle} /> <Search_btn id="search_btn" /><input type="text" name="" id="search" />
                     </div>
                 </div>
                 <AnimatePresence>
@@ -54,6 +68,15 @@ export default function Home() {
                     </motion.div>
                 </AnimatePresence>
             </div>
+            <AnimatePresence>
+            {catopen && 
+            <motion.section id="cat_section" initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>
+                 < Categories openCat={catToggle}/>
+          
+            </motion.section> }
+            </AnimatePresence>
 
             {/* recent products */}
             <section id="recentProducts">
@@ -65,11 +88,13 @@ export default function Home() {
         <ProductCard/>
         <ProductCard/>
         <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
+        
         </section>
+</section>
+
+
+<section id="home_icons">
+    <HomeIcons/>
 </section>
         </div>
     )

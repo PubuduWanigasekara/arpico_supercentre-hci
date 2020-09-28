@@ -1,0 +1,30 @@
+#icon_container{
+display:flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-evenly;
+width:100%;
+}
+
+#icon_img{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1A2572;
+    border-radius: 50%;
+    
+}
+
+#text{
+    position: absolute;
+    margin-top:120px;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+#text_sub{
+    position: absolute;
+    margin-top:160px;
+}

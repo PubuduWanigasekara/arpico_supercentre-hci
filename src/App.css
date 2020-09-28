@@ -405,8 +405,8 @@ Location toggle button animation */
   width:100%;
   object-fit:contain;
   background-size: cover;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 #card_title{
@@ -484,4 +484,23 @@ Location toggle button animation */
   background-color: rgb(223, 222, 222);
   cursor: pointer;
   margin: 0px 3px 0px 0px;
+}
+
+#home_icons{
+  height:calc(100vh / 1.5);
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width:100%;
+ 
+
+}
+
+
+/* category container */
+
+#cat_section{
+  height:100vh;
+  overflow: hidden;
 }
