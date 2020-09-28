@@ -8,6 +8,7 @@ import TermsAndConditions from "./pages/footer/termsAndConditions/TermsAndCondit
 import Cart from "./pages/cart/Cart";
 import Grocery from "./pages/categories/grocery/Grocery";
 import Login from "./pages/login/Login"
+import Baby from './pages/babyNeeds/Baby'
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -30,7 +31,12 @@ function App() {
           />
           <Route path={"/cart"} component={Cart} />
           <Route path={"/categories-grocery"} component={Grocery} />
+          <Route path={"/baby"} component={Baby} />
+
+
+          {/* this one should place always bottom */}
           <Route path={"/*"} exact component={Home} />
+          
         </Switch>
         <Footer/>
       </Router>

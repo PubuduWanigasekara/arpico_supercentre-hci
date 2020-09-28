@@ -1,0 +1,17 @@
+#content_top{
+    width:100%;
+    height:calc(100vh / 2);
+    background-color:red;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    justify-content: center;
+}
+
+#price_range{
+    background:#fff;
+}
+
+#whistlist_holder{
+    background:blue;
+}

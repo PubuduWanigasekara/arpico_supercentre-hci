@@ -497,6 +497,11 @@ Location toggle button animation */
 
 }
 
+/* router link style */
+
+a{
+  color:#000;
+}
 
 /* category container */
 
