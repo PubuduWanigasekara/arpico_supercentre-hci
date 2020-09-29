@@ -36,7 +36,9 @@ export default function Baby() {
                      sort by  <Select options={options} id="sorter" />
                     </div>
                    
-                    <button>down</button>
+                    <button>
+                    <i class="ar-up"></i>
+                        </button>
                     <button>up</button>
                     </div>
                 <div>2</div>

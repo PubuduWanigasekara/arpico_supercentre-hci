@@ -91,3 +91,7 @@ height: calc( 100vh / 4)
    width:150px !important;
    outline: none !important;
 }
+
+i{
+    color:#000;
+}

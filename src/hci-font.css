@@ -1,8 +1,5 @@
 @font-face {
   font-family: 'hci';
-  src: url('../font/hci.eot?50162595');
-  src: url('../font/hci.eot?50162595#iefix') format('embedded-opentype'),
-       url('../font/hci.svg?50162595#hci') format('svg');
   font-weight: normal;
   font-style: normal;
 }
