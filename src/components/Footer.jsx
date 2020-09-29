@@ -5,7 +5,7 @@ import {ReactComponent as Master} from '../assets/mastercard.svg'
 import {ReactComponent as Fb} from '../assets/facebook.svg'
 import {ReactComponent as Tw} from '../assets/twitter.svg'
 import {ReactComponent as Ins} from '../assets/instagram.svg'
-import Logo from '../assets/logo.png'
+import Logo from '../assets/logo.svg'
 
 
 

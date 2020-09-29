@@ -1,7 +1,6 @@
 #content_top{
     width:100%;
-    height:calc(100vh / 2);
-    background-color:red;
+    height:calc(100vh / 1.7);
     display: grid;
     grid-template-columns: repeat(2,1fr);
     align-items: center;
@@ -14,4 +13,81 @@
 
 #whistlist_holder{
     background:blue;
+}
+
+
+
+#content_sort{
+    bottom: 0;
+    height:calc(100vh / 3);
+    background-color: burlywood;
+
+}
+
+#item_count{
+width:calc(100vw / 4);
+display: block;
+height:auto;
+height:50px;
+}
+
+#items_number{
+    /* width:80px; */
+    height:25px;
+    border-radius: 50px;
+    padding:5px 20px 5px 20px;
+    text-align:center;
+    background-color: #fff;
+    margin:20px 0px 0px 40px;
+    position: absolute;
+}
+
+#sort_controllers{
+   
+display:grid;
+padding:20px 0px 0px 20px;
+grid-template-columns: 1.5fr 2fr 1fr;
+align-items: center;
+justify-content: center;
+height: calc( 100vh / 4)
+}
+
+#sort_controllers select{
+    border-radius: 50px;
+    padding:0px 10px 0px 10px;
+    height:30px;
+    outline:none;
+}
+
+.first_controllers{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.first_controllers div{
+    margin-left:10px;
+    align-items: center;
+    display: flex;
+}
+
+.first_controllers button{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    border:none;
+    outline: none;
+    cursor: pointer;
+
+}
+
+.first_controllers button:nth-child(3){
+ margin-left:20px;
+}
+
+
+#sorter{
+   font-size: 12px;
+   width:150px !important;
+   outline: none !important;
 }

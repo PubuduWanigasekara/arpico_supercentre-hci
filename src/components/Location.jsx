@@ -17,7 +17,7 @@ export default function Location(props) {
       
     return (
         <div>
-            <Select options={options} onChange={update} id="loc_select" />
+            <Select options={options} placeholder={"value"} onChange={update} id="loc_select" />
         </div>
     )
 }
