@@ -1,6 +1,6 @@
 import React, { useEffect , useState } from 'react'
 import {motion} from 'framer-motion'
-import Logo from '../assets/logo.png'
+import Logo from '../assets/logo.svg'
 import {Link} from "react-router-dom";
 
 export default function Header() {
@@ -8,6 +8,8 @@ export default function Header() {
     
 
     let [mobmenu, setmobmenu] = useState(false);
+
+    let [loggedin, setLoggedin] = useState(true);
 
     useEffect(() => {
 
@@ -59,7 +61,20 @@ export default function Header() {
                         <li><Link style={linkstyle} to="/home">Home</Link></li>
                         <li><Link style={linkstyle} to="/contact-us">Contact us</Link></li>
                         <li><Link style={linkstyle} to="/faq">Faq</Link></li>
-                        <li><Link style={linkstyle} to="/login" ><button className="button primary outline login">login</button></Link></li>
+                        {loggedin ? <>
+                            <li><button id="profile">
+                            <i class="ar-propic"></i> 
+                         </button>
+                         <i class="ar-down-1"></i> 
+                         </li>
+                         <li id="cart_li">
+                             <i class="ar-bag" id="bag"></i>
+                             <div id="cart_total">20</div>
+                             </li>
+                        </> :  <li><Link style={linkstyle} to="/login" ><button className="button primary outline login">login</button></Link></li>}
+                       
+                        
+
                     </ul>
                    
                 </div>
