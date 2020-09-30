@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer"
 import Home from "./pages/home/Home";
+import wishlist from "./pages/wishlist/wishlist";
 import Faq from "./pages/footer/faq/Faq";
 import TermsAndConditions from "./pages/footer/termsAndConditions/TermsAndConditions";
 import Cart from "./pages/cart/Cart";
@@ -29,9 +30,11 @@ function App() {
             path={"/terms-and-conditions"}
             component={TermsAndConditions}
           />
+          <Route path={"/wishlist"} component={wishlist} />
           <Route path={"/cart"} component={Cart} />
           <Route path={"/categories-grocery"} component={Grocery} />
           <Route path={"/baby"} component={Baby} />
+
 
 
           {/* this one should place always bottom */}
