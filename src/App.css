@@ -26,6 +26,51 @@
   font-weight: 600;
 }
 
+#profile{
+  width:50px;
+  height:50px;
+  border-radius: 50%;
+  outline:none;
+  background-color: #C4C4C4;
+  border:none;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#profile i{
+  color:#fff;
+  font-size:30px;
+}
+
+#bag{
+  font-size:35px;
+  color:#696969;
+ 
+}
+
+#cart_li{
+  position: relative;
+}
+
+#cart_total{
+  position: absolute;
+  right:0;
+  top:0;
+  width:auto;
+  padding: 2px;
+  margin:10px 0px 0px 0px;
+  font-size:15px;
+  color:#fff;
+  background-color: #1B2473;
+  border-radius: 4px;
+  height:15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 /* mobile nvbar button */
 
 #mobnavBtn{

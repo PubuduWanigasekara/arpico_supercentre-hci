@@ -7,7 +7,7 @@ import Faq from "./pages/footer/faq/Faq";
 import TermsAndConditions from "./pages/footer/termsAndConditions/TermsAndConditions";
 import Cart from "./pages/cart/Cart";
 import Grocery from "./pages/categories/grocery/Grocery";
-import Login from "./pages/login/Login"
+import Login from "./pages/Login"
 import Baby from './pages/babyNeeds/Baby'
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";

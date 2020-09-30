@@ -1,4 +1,5 @@
 import React, { useEffect , useState } from 'react'
+import {Link} from "react-router-dom"
 import {ReactComponent as Mail_icon} from '../assets/mail.svg'
 import {ReactComponent as Visa} from '../assets/visa.svg'
 import {ReactComponent as Master} from '../assets/mastercard.svg'
@@ -11,20 +12,20 @@ import Logo from '../assets/logo.svg'
 
 export default function Footer() {
 
-    
+
     let year = new Date().getFullYear();
-    
+
 
     useEffect(() => {
 
-      
-     
-        
+
+
+
     });
 
     const logo = {
             width:'120px'
-        
+
     }
 
     return (
@@ -43,43 +44,36 @@ export default function Footer() {
 
 
                <div id="footer_links">
-                  
-                      
+
+
                        <ul>
-                           <li> Explore</li>
-                           <li>Home</li>
+                           <li>EXPLORE</li>
+                           <li><Link to="/home">Home</Link></li>
                            <li>About Us</li>
                            <li>Contact Us</li>
                            <li>Store Locations</li>
-                         
                        </ul>
 
                        <ul>
-                           <li> POLICY STATEMENT</li>
-                           <li>Home</li>
-                           <li>About Us</li>
-                           <li>Contact Us</li>
-                           <li>Store Locations</li>
-                         
+                           <li>POLICY STATEMENT</li>
+                           <li>Retail Chain</li>
+                           <li>Product Variety</li>
+                           <li>Terms and Conditions</li>
                        </ul>
 
                        <ul>
                            <li>SUPPORT</li>
-                           <li>Home</li>
-                           <li>About Us</li>
-                           <li>Contact Us</li>
-                           <li>Store Locations</li>
-                         
+                           <li>Whats in Store</li>
+                           <li>Accept Payments</li>
+                           <li><Link to="/faq">FAQ</Link></li>
                        </ul>
                        <ul>
                            <li>SHOP LOCATION</li>
-                           <li>Home</li>
-                           <li>About Us</li>
-                           <li>Contact Us</li>
-                           <li>Store Locations</li>
-                         
+                           <li>No: 310, High Level Road, Nawinna, Maharagama.</li>
+                           <li>Phone: 011 43 10 500</li>
+                           <li>Email: info@arpicosupercentre.com</li>
+                           <li>Support 24/7/365</li>
                        </ul>
-                    
                </div>
 
                <div id="footer_bottom">

@@ -37,12 +37,21 @@ export default function Baby() {
                     </div>
                    
                     <button>
-                    <i class="ar-up"></i>
+                    <i class="ar-down"></i>
                         </button>
-                    <button>up</button>
+                    <button>
+                    <i class="ar-up"></i>
+                    </button>
                     </div>
-                <div>2</div>
-                <div>3</div>
+                <div id="search_controller">
+                <i class="ar-search"></i>
+                    <input type="text" name="" id="search_box_c"/>
+                </div>
+                <div id="wishlist_btn_holder">
+                <div id="wishlist_round">
+                    <i class="ar-heart"></i>
+                    </div>
+                </div>
                </div>
            </div>
         </>
