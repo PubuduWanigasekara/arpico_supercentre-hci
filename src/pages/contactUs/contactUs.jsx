@@ -1,6 +1,9 @@
 import React from 'react'
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import swal from 'sweetalert';
+import Lottie from "lottie-react";
+import cus from './19948-contact-us.json';
+import animphone from './phone.json';
 import './contactUs.css';
 
 
@@ -224,7 +227,10 @@ export class contactUs extends React.Component {
     render() {
         return (
             <div id="mainpanal">
-     
+                <div id="breadcom">
+                    <a id="breadcomText" href="/home">Home</a> /
+            <a id="breadcomText" href="#">Contact Us</a> <Lottie id="phonestack-top" animationData={animphone} />
+                </div>
                 <div id="maindiv">
                     <h1 id="map_h1">Contact Us</h1>
                     <hr/>
@@ -367,6 +373,7 @@ export class contactUs extends React.Component {
                                 <div id="contactinfocard">
                                     <div id="card_container">
                                         <div id="contactInfodetails">
+                                            <Lottie id="stack-top" animationData={cus} />
                                             <h2>Contact information</h2><hr />
                             📍   No: 310, High Level Road, Nawinna, Maharagama.<br />
                             📞 Phone: 011 43 10 500 <br />
@@ -400,6 +407,7 @@ export class contactUs extends React.Component {
 
                     </div>
                 </div>
+                <hr className="botem"/>
             </div>
         );
     }
