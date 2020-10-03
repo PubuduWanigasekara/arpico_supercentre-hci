@@ -38,6 +38,19 @@
   justify-content: center;
 }
 
+
+#user_menu{
+  background-color: indianred;
+  width:200px;
+  height:100px;
+  position: absolute;
+  top:0;
+  right:0;
+  margin:69px 120px 0px 0px;
+  z-index:9999;
+  border-radius: 4px;
+}
+
 #profile i{
   color:#fff;
   font-size:30px;

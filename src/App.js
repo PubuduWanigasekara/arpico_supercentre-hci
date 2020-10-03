@@ -15,14 +15,21 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function App() {
   let [loaded, setload] = useState(false);
 
+  let[login , setLogin] = useState(false);
+
   useEffect(() => {});
+
+
+  const LoginSet = (type)=>{
+    setLogin(login = type);
+  }
 
   return (
     <div className="App">
       <Router>
-        <Header/>
+        <Header isLogged={login} logSet={LoginSet}/>
         <Switch>
-        <Route path={"/login"} exact component={Login} />
+        <Route path={"/login"} exact component={()=><Login logSet={LoginSet}/>}  />
           <Route path={"/"} exact component={Home} />
           <Route path={"/faq"} component={Faq} />
           <Route
