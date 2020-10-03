@@ -10,6 +10,7 @@ import store_locations from "./pages/store_locations/store_locations";
 import Cart from "./pages/cart/Cart";
 import Grocery from "./pages/categories/grocery/Grocery";
 import Login from "./pages/login/Login"
+
 import Baby from './pages/babyNeeds/Baby'
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
