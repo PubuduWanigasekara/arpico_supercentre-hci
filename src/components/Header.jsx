@@ -3,13 +3,12 @@ import {motion} from 'framer-motion'
 import Logo from '../assets/logo.svg'
 import {Link} from "react-router-dom";
 
-export default function Header() {
+export default function Header(props) {
 
-    
+
 
     let [mobmenu, setmobmenu] = useState(false);
 
-    let [loggedin, setLoggedin] = useState(true);
 
     useEffect(() => {
 
@@ -61,7 +60,7 @@ export default function Header() {
                         <li><Link style={linkstyle} to="/home">Home</Link></li>
                         <li><Link style={linkstyle} to="/contact-us">Contact us</Link></li>
                         <li><Link style={linkstyle} to="/faq">Faq</Link></li>
-                        {loggedin ? <>
+                        {props.isLogged ? <>
                             <li><button id="profile">
                             <i class="ar-propic"></i> 
                          </button>
@@ -76,6 +75,11 @@ export default function Header() {
                         
 
                     </ul>
+
+                    <div id="user_menu">
+                        <li>profile</li>
+                        <li></li>
+                    </div>
                    
                 </div>
             </div>
