@@ -8,6 +8,7 @@ import Faq from "./pages/footer/faq/Faq";
 import TermsAndConditions from "./pages/footer/termsAndConditions/TermsAndConditions";
 import store_locations from "./pages/store_locations/store_locations";
 import Cart from "./pages/cart/Cart";
+import contactUs from "./pages/contactUs/contactUs";
 import Grocery from "./pages/categories/grocery/Grocery";
 import Login from "./pages/login/Login"
 import Baby from './pages/babyNeeds/Baby'
@@ -36,6 +37,7 @@ function App() {
           <Route path={"/categories-grocery"} component={Grocery} />
           <Route path={"/baby"} component={Baby} />
           <Route path={"/store_locations"} component={store_locations} />
+          <Route path={"/contactus"} component={contactUs} />
 
 
 
