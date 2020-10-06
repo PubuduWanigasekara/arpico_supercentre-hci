@@ -1,28 +1,59 @@
 import React from "react";
+import { ReactComponent as Search_btn } from "../../../assets/search_btn.svg";
 
 export default function Faq() {
-  const questiondiv = {
-    justifyContent: "center",
-    marginLeft: "10%",
+  const questionandansdiv = {
+    margin: "auto",
+    width: "75%",
+    marginTop: "30px",
+    // backgroundColor: "red",
   };
-  const questionnumbers = {
-    width: "50%",
+
+  const question = {
+    width: "100%",
     height: "60px",
     borderRadius: "15px",
     // border: "15px",
     // backgroundColor: "#f0f0f0",
     border: "3px solid #1A2572",
     outline: "none",
-    padding: "0px 0px 0px 130px",
-    fontSize: "20px",
+    // padding: "0px 0px 0px 0px",
+    // fontSize: "20px",
     alignItems: "10px",
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-around",
+    // justifyContent: "space-around",
     flexDirection: "row",
+    // marginLeft: "auto",
+    // marginRight: "auto",
+    // display: "block",
   };
 
-  const plusbutton = {
+  const answer = {
+    width: "100%",
+    height: "60px",
+    borderRadius: "15px",
+    // border: "15px",
+    // backgroundColor: "#f0f0f0",
+    border: "3px solid #1A2572",
+    outline: "none",
+    // padding: "0px 0px 0px 0px",
+    fontSize: "15px",
+    alignItems: "10px",
+    display: "flex",
+    alignItems: "center",
+    // justifyContent: "space-around",
+    flexDirection: "row",
+    // marginLeft: "auto",
+    // marginRight: "auto",
+    // display: "block",
+  };
+
+  const questionText = {
+    marginLeft: "8%",
+  };
+
+  const questionButton = {
     borderRadius: "50%",
     width: "30px",
     height: "30px",
@@ -31,10 +62,15 @@ export default function Faq() {
     justifyContent: "center",
     flexDirection: "row",
     margin: "8px 5px 10px 5px",
+    margiLeft: "30%",
     outline: "none",
     border: "none",
     backgroundColor: "#1A2572",
     cursor: "pointer",
+    color: "white",
+    position: "absolute",
+    right: "15%",
+    // top: "calc(50% - .625rem)",
   };
 
   const ans = {
@@ -70,20 +106,26 @@ export default function Faq() {
     fontSize: "15px",
   };
 
-  const questionandansdiv = {
-    // marginLeft: "auto",
-    // marginRight: "auto",
-    // display: "block",
-    margin: "auto",
-    // backgroundColor: "red",
+  const faqSearchIcon = {
+    position: "absolute",
+    margin: "10px 390px",
+    // left: "300px",
+  };
+
+  const fqatitle = {
+    textAlign: "center",
   };
 
   return (
     <>
-      <div id="recent_title">Do you have any question?</div>
+      <div id="recent_title" style={fqatitle}>
+        Do you have any question?
+      </div>
       <div id="subs">
+        {/* <Search_btn id="search_btn" /> */}
+        <i class="ar-search" style={faqSearchIcon}></i>
         <input
-          type="email"
+          type="text"
           name=""
           style={faqsearch}
           placeholder="Type in a key word to find your answers"
@@ -91,32 +133,24 @@ export default function Faq() {
       </div>
 
       <div style={questionandansdiv}>
-        <div >
-          <div style={questiondiv}>
-            <div style={questionnumbers}>
-              Q1 How much do you charge for the delivery service?
-              <button style={plusbutton}> + </button>
+        <div>
+          <div style={question}>
+            <div style={questionText}>
+              <b>Q1</b> How much do you charge for the delivery service?
             </div>
-          </div>
-          <div style={ans}>
-            We charge Rs.350for any delivery within the specified delivery grid
-            and we are not doing any deliveries to cities outside the specified
-            grid at the moment
+            <div style={questionButton}>+</div>
           </div>
         </div>
+        <br />
 
         <div>
-          <div style={questiondiv}>
-            <div style={questionnumbers}>
-              Q2. What are your delivery hours?
-              <button style={plusbutton}> + </button>
+          <div style={question}>
+            <div style={questionText}>
+              We charge Rs.350for any delivery within the specified delivery
+              grid and we are not doing any deliveries to cities<br/> outside the
+              specified grid at the moment
             </div>
-          </div>
-          <div style={ans}>
-            You can usually have your shopping delivered between 11am-1pm and
-            6pm-8pm. You can pick your order 2 hours after the order is placed
-            during open hours. Please bring your NIC to prove your identity.
-            Products are subject to availability of the selected outlet.
+            <div style={questionButton}>-</div>
           </div>
         </div>
       </div>
