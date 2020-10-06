@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function WishlistProductCard(props) {
+export default function CartProductCard(props) {
   // let [data,setData] = useState({
   //     qty:'',
   //     price:'',

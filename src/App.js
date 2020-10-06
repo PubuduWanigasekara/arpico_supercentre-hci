@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/home/Home";
-// import Wishlist from "./pages/wishlist/Wishlist";
+import Wishlist from "./pages/wishlist/wishlist";
 import Faq from "./pages/footer/faq/Faq";
 import TermsAndConditions from "./pages/footer/termsAndConditions/TermsAndConditions";
 import store_locations from "./pages/store_locations/store_locations";
@@ -42,7 +42,7 @@ function App() {
             path={"/terms-and-conditions"}
             component={TermsAndConditions}
           />
-          {/* <Route path={"/wishlist"} component={Wishlist} /> */}
+          <Route path={"/wishlist"} component={Wishlist} />
           <Route path={"/cart"} component={Cart} />
           <Route path={"/categories-grocery"} component={Grocery} />
           <Route path={"/baby"} component={Baby} />
