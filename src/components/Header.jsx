@@ -60,7 +60,7 @@ export default function Header(props) {
                         <li><Link style={linkstyle} to="/home">Home</Link></li>
                         <li><Link style={linkstyle} to="/contact-us">Contact us</Link></li>
                         <li><Link style={linkstyle} to="/faq">Faq</Link></li>
-                        {props.isLogged ? <>
+                        {!props.isLogged ? <>
                             <li><button id="profile">
                             <i class="ar-propic"></i> 
                          </button>
@@ -76,10 +76,10 @@ export default function Header(props) {
 
                     </ul>
 
-                    <div id="user_menu">
+                    {/* <div id="user_menu">
                         <li>profile</li>
                         <li></li>
-                    </div>
+                    </div> */}
                    
                 </div>
             </div>
