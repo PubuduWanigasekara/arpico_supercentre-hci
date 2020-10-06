@@ -1,18 +1,18 @@
 import React from 'react'
 
-export default function ProductCard() {
+export default function ProductCard(props) {
     return (
         <div id="cardBase">
             <div id="card_container">
                 <img src="http://lorempixel.com/270/200/food/" alt=""/>
                 <div id="card_title">
-                    sample
+                    {props.title}
                 </div>
                 <div id="card_des">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                {props.des}
                 </div>
                 <div id="card_price">
-                    LKR 200
+                Rs {props.price}.00 
                 </div>
                 <div id="card_quantity">
                     <button id="card_round_btn">
