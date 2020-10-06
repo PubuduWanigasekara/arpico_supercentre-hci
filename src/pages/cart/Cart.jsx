@@ -10,13 +10,17 @@ export default function Cart() {
   const rightdiv = {
     display: "inline",
     float: "right",
-    hight: "20px",
-    
+    borderRadius: "10px",
+    border: "3px solid #1A2572",
+    width: "55%",
   };
   const leftdiv = {
     display: "inline",
     float: "left",
-    
+    // backgroundColor: "red",
+    borderRadius: "10px",
+    border: "3px solid #1A2572",
+    width: "40%",
   };
 
   //   cart
@@ -74,7 +78,7 @@ export default function Cart() {
             </div>
             <div>
               <h5>Shipping Methods</h5>
-              <div>
+              <div id="cartbuttonsdiv"> 
                 <button className="button primary filled">LKR350.00</button>
                 <button className="button primary filled">
                   Arpico Delivery
