@@ -43,7 +43,7 @@ function App() {
             path={"/terms-and-conditions"}
             component={TermsAndConditions}
           />
-          {/* <Route path={"/wishlist"} component={Wishlist} /> */}
+          <Route path={"/wishlist"} component={Wishlist} />
           <Route path={"/cart"} component={Cart} />
           <Route path={"/categories-grocery"} component={Grocery} />
           <Route path={"/baby"} component={Baby} />

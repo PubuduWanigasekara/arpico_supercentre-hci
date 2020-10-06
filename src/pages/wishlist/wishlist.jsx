@@ -1,58 +1,50 @@
-import React, { useEffect, useState } from 'react'
-import WishlistProductCard from '../../components/WishlistProductCard'
+import React, { useEffect, useState } from "react";
+import WishlistProductCard from "../../components/WishlistProductCard";
 
 export default function Wishlist() {
+  let [data, Setdata] = useState([]);
 
-    let [data, Setdata] = useState([])
-
-    useEffect(() => {
-
-        if (JSON.parse(localStorage.getItem('wishlistItems'))) {
-            console.log("1");
-            Setdata(JSON.parse(localStorage.getItem('wishlistItems')))
-        }
-        else {
-            console.log("0");
-        }
-
-    }, []);
-
-    let sdata = {
-        name: "test",
-        price: 300,
-        qty: 2
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem("wishlistItems"))) {
+      console.log("1");
+      Setdata(JSON.parse(localStorage.getItem("wishlistItems")));
+    } else {
+      console.log("0");
     }
+  }, []);
 
-    const add = () => {
-        Setdata([...data, sdata])
+  let sdata = {
+    name: "test",
+    price: 300,
+    qty: 2,
+  };
 
-        console.log(data);
-    }
-   
+  const add = () => {
+    Setdata([...data, sdata]);
 
-    const remove = (itm)=>{     
-        data.splice(itm,1)
-    }
+    console.log(data);
+  };
 
-    return (
-        <div>
+  const remove = (itm) => {
+    data.splice(itm, 1);
+  };
 
-            {data.map((it , index) => {
-                return (
-                    <WishlistProductCard
-                        removeItem={()=>remove}
-                        key={index}
-                        item={index}
-                        name={it.name}
-                        price={it.price}
-                        qty={it.qty} />
-                )
-            }
-            )}
+  return (
+    <div>
+      {data.map((it, index) => {
+        return (
+          <WishlistProductCard
+            removeItem={() => remove}
+            key={index}
+            item={index}
+            name={it.name}
+            price={it.price}
+            qty={it.qty}
+          />
+        );
+      })}
 
-
-
-            <button onClick={add}>test</button>
-        </div>
-    )
+      <button onClick={add}>test</button>
+    </div>
+  );
 }

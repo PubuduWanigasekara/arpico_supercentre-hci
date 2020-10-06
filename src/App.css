@@ -29,72 +29,69 @@
   width:50px;
   height:50px;
   border-radius: 50%;
-  outline:none;
-  background-color: #C4C4C4;
-  border:none;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-#user_menu{
-  background-color: indianred;
-  width:200px;
-  height:100px;
-  position: absolute;
-  top:0;
-  right:0;
-  margin:69px 120px 0px 0px;
-  z-index:9999;
-  border-radius: 4px;
-}
-
-#profile i{
-  color:#fff;
-  font-size:30px;
-}
-
-#bag{
-  font-size:35px;
-  color:#696969;
- 
-}
-
-#cart_li{
-  position: relative;
-}
-
-#cart_total{
-  position: absolute;
-  right:0;
-  top:0;
-  width:auto;
-  padding: 2px;
-  margin:10px 0px 0px 0px;
-  font-size:15px;
-  color:#fff;
-  background-color: #1B2473;
-  border-radius: 4px;
-  height:15px;
+  outline: none;
+  background-color: #c4c4c4;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+#user_menu {
+  background-color: indianred;
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 69px 120px 0px 0px;
+  z-index: 9999;
+  border-radius: 4px;
+}
+
+#profile i {
+  color: #fff;
+  font-size: 30px;
+}
+
+#bag {
+  font-size: 35px;
+  color: #696969;
+}
+
+#cart_li {
+  position: relative;
+}
+
+#cart_total {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+  padding: 2px;
+  margin: 10px 0px 0px 0px;
+  font-size: 15px;
+  color: #fff;
+  background-color: #1b2473;
+  border-radius: 4px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* mobile nvbar button */
 
-#mobnavBtn{
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  background-color:orange;
-  position: fixed;;
+#mobnavBtn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: orange;
+  position: fixed;
   bottom: 50px;
-  float:right;
-  right:50px;
-  display:flex;
+  float: right;
+  right: 50px;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -153,7 +150,7 @@
 }
 
 #drop {
-  width:25px;
+  width: 25px;
   height: 35px;
   margin-left: 5px;
   position: absolute;
@@ -199,10 +196,10 @@
   transform: scale(1.2);
 }
 
-#right{
+#right {
   display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 #hero_right {
@@ -265,7 +262,7 @@ footer
 }
 
 #footer #footer_top {
-  padding:60px 0px 0px 0px;
+  padding: 60px 0px 0px 0px;
   height: 80px;
   display: flex;
   /* grid-template-columns: 1fr 1fr; */
@@ -350,82 +347,77 @@ footer
   grid-template-columns: 1fr 1fr;
 }
 
-#footer_bottom  #f_left{
-
+#footer_bottom #f_left {
 }
 
-#footer_bottom  #f_right{
+#footer_bottom #f_right {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
 }
 
-#footer_bottom  #f_left #pay_cards{
-display: flex;
+#footer_bottom #f_left #pay_cards {
+  display: flex;
 }
 
-#pay_cards{
-  margin:50px 0px 0px 125px;
+#pay_cards {
+  margin: 50px 0px 0px 125px;
 }
 
-#pay_card{
-  width:40px;
+#pay_card {
+  width: 40px;
   padding: 5px;
 }
 
-#copyright{
-  margin:10px 0px 0px 125px;
+#copyright {
+  margin: 10px 0px 0px 125px;
   font-size: 12px;
 }
 
-#social{
-  margin:50px 0px 0px 0px;
+#social {
+  margin: 50px 0px 0px 0px;
 }
 
-#s_links{
-  margin-left:10px;
+#s_links {
+  margin-left: 10px;
 }
-
 
 /* _______
 location bar */
-#loc_select{
-  width:400px;
+#loc_select {
+  width: 400px;
   outline: none !important;
   font-size: 18px;
-  
 }
 
-.css-yk16xz-control{
+.css-yk16xz-control {
   border-radius: 40px !important;
   outline: none !important;
   user-select: none;
   outline: none !important;
 }
 
-.css-1pahdxg-control{
+.css-1pahdxg-control {
   box-shadow: none !important;
-  
 }
-.css-1pahdxg-control:hover{
+.css-1pahdxg-control:hover {
   border-color: none !important;
 }
 
 /* ===========
 Location toggle button animation */
 
-.rotate{
+.rotate {
   transform: rotate(-90deg);
 }
 
-
-#recentProducts{
-  height:auto;
-  width:100%;
-  margin-top:100px;
+#recentProducts {
+  height: auto;
+  width: 100%;
+  margin-top: 100px;
 }
 
-#recent_container{
+#recent_container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -434,156 +426,152 @@ Location toggle button animation */
   padding: 30px 0px 20px 0px;
 }
 
-#recent_title{
+#recent_title {
   font-size: 25px;
-  margin:20px 0px 40px 55px;
+  margin: 20px 0px 40px 55px;
 }
 
 /* product card */
 
-#cardBase{
+#cardBase {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 50px 0px 0px 0px;
-  width:calc(330px)
-
+  width: calc(330px);
 }
 
-#card_container{
-  width:90%;
-  height:auto;
+#card_container {
+  width: 90%;
+  height: auto;
   border-radius: 10px;
-  background-color:#fff;
-  box-shadow: 0px 2px 8px 1px rgba(0,0,0,0.2);
+  background-color: #fff;
+  box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.2);
 }
 
-#card_container img{
-  width:100%;
-  object-fit:contain;
+#card_container img {
+  width: 100%;
+  object-fit: contain;
   background-size: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
-#card_title{
+#card_title {
   padding-left: 10px;
-  font-size:18px;
+  font-size: 18px;
   font-weight: 600;
 }
 
-#card_des{
+#card_des {
   font-size: 12px;
   padding: 3px 0px 0px 10px;
 }
 
-#card_price{
+#card_price {
   padding: 8px 0px 0px 10px;
   font-size: 25px;
   font-weight: 400;
 }
-#card_quantity{
-  width:200px;
+#card_quantity {
+  width: 200px;
   display: flex;
   align-items: center;
   margin: 0px 0px 0px 5px;
 }
 
-#card_round_btn{
+#card_round_btn {
   border-radius: 50%;
-  width:30px;
-  height:30px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin: 8px 5px 10px 5px;
   outline: none;
-  border:none;
+  border: none;
   background-color: rgb(223, 222, 222);
   cursor: pointer;
 }
 
-#card_number{
-  width:45px;
-  height:25px;
+#card_number {
+  width: 45px;
+  height: 25px;
   border-radius: 40px;
   outline: none;
-  border:none;
+  border: none;
   background-color: rgb(223, 222, 222);
   text-align: center;
 }
 
-#card_controllers{
+#card_controllers {
   display: flex;
   right: 0;
   justify-content: flex-end;
-  margin:0px 10px 10px 0px;
-  padding:20px 0px 0px 0px;
+  margin: 0px 10px 10px 0px;
+  padding: 20px 0px 0px 0px;
 }
 
-#card_r_wishlist{
+#card_r_wishlist {
   border-radius: 50%;
-  width:40px;
-  height:40px;
+  width: 40px;
+  height: 40px;
   outline: none;
-  border:none;
+  border: none;
   background-color: rgb(223, 222, 222);
   cursor: pointer;
 }
-#card_r_view{
+#card_r_view {
   border-radius: 40px;
-  width:100px;
-  height:40px;
+  width: 100px;
+  height: 40px;
   font-size: 16px;
   outline: none;
-  border:none;
+  border: none;
   background-color: rgb(223, 222, 222);
   cursor: pointer;
   margin: 0px 3px 0px 0px;
 }
 
-#home_icons{
-  height:calc(100vh / 1.5);
-  display:flex;
+#home_icons {
+  height: calc(100vh / 1.5);
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width:100%;
- 
-
+  width: 100%;
 }
 
 /* wishlist card */
-#w_card_container{
-  border-bottom: 2px solid #C4C4C4;
+#w_card_container {
+  border-bottom: 2px solid #c4c4c4;
   display: flex;
 }
 
-#w_card_img_container{
+#w_card_img_container {
   color: #fff;
-	display: inline-block;
-	font-size: 12px;
+  display: inline-block;
+  font-size: 12px;
   text-decoration: none;
 }
 
 #w_img {
   height: 145px;
-  border-radius: 5%
+  border-radius: 5%;
 }
 
-#w_cardBase{
+#w_cardBase {
   padding: 40px 15% 0px 15%;
-
 }
 
-#w_card_des{
+#w_card_des {
   font-size: 30px;
   padding: 17px 0px 0px 10px;
   display: flex;
 }
 
-#w_card_price{
+#w_card_price {
   padding: 8px 0px 0px 10px;
   font-size: 37px;
   font-weight: bold;
@@ -598,7 +586,7 @@ Location toggle button animation */
   height: 60px;
   border-radius: 50%;
   outline: none;
-  border:none;
+  border: none;
   background-color: rgb(223, 222, 222);
   cursor: pointer;
   margin-right: 10px;
@@ -606,25 +594,25 @@ Location toggle button animation */
 }
 .w_card_r_button_remove_icon {
   font-size: 30px;
-  color: #F87079;
+  color: #f87079;
 }
 
 .w_card_r_button_cart_icon {
   font-size: 30px;
-  color: #36EA33;
+  color: #36ea33;
 }
 
 #w_card_number {
   width: 55px;
-    height: 29px;
-    font-size: 20px;
-    margin-left: 10px;
-    margin-top: 9px;
-    background-color: #F26722;
-    border-radius: 40px;
-    outline: none;
-    border:none;
-    text-align: center;
+  height: 29px;
+  font-size: 20px;
+  margin-left: 10px;
+  margin-top: 9px;
+  background-color: #f26722;
+  border-radius: 40px;
+  outline: none;
+  border: none;
+  text-align: center;
 }
 
 .w_add_to_card_button {
@@ -663,13 +651,13 @@ Location toggle button animation */
   position: relative;
 }
 #mapdetails {
-z-index: 1;
-width: 25%;
-height: 100%;
-background-color: rgba(0,0,0,0);
-position: absolute;
-top: 5;
-left: 5;
+  z-index: 1;
+  width: 25%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 5;
+  left: 5;
 }
 #map {
   width: 100%;
@@ -678,9 +666,9 @@ left: 5;
   left: 5;
 }
 
-#map_headline{
-  background-color: #D8D8D8;
-    height: 100px;
+#map_headline {
+  background-color: #d8d8d8;
+  height: 100px;
 }
 
 #map_h1 {
@@ -695,23 +683,23 @@ left: 5;
   padding-left: 40px;
 }
 
-#map_details_card_des{
+#map_details_card_des {
   font-size: 15px;
   padding: 8px 0px 0px 20px;
 }
 
-#map_details_card_des_head{
+#map_details_card_des_head {
   padding: 8px 0px 0px 10px;
   font-size: 20px;
   font-weight: 400;
 }
 
 #map_card_container {
-  width:90%;
-  height:400px;
+  width: 90%;
+  height: 400px;
   border-radius: 10px;
-  background-color:#fff;
-  box-shadow: 0px 2px 8px 1px rgba(0,0,0,0.2);
+  background-color: #fff;
+  box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.2);
 }
 
 /* Cantact US*/
@@ -837,13 +825,13 @@ display: flex;
 }
 
 /* Bread come*/
-#breadcomText{
+#breadcomText {
   color: #666666;
 }
 
-#breadcom{
+#breadcom {
   padding-left: 48px;
-    padding-top: 5px;
+  padding-top: 5px;
 }
 
 #contactinfocard{
@@ -872,13 +860,27 @@ display: flex;
 
 /* router link style */
 
-a{
-  color:#000;
+a {
+  color: #000;
 }
 
 /* category container */
 
-#cat_section{
-  height:100vh;
+#cat_section {
+  height: 100vh;
   overflow: hidden;
+}
+
+/* cart  */
+#Cartlabel {
+  width: 40%;
+  height: 30px;
+  border-radius: 40px;
+  border: 1px solid #58575785;
+  background: none;
+  outline: none;
+  padding: 0px 0px 0px 80px;
+  margin-right: 80px;
+  font-size: 15px;
+  margin-top: 10px;
 }
