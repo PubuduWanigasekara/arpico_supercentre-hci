@@ -63,7 +63,8 @@ function App() {
           <Route path={"/payment"} component={Payment} />
 
           {/* this one should place always bottom */}
-          <Route path={"/*"} exact component={Home} />
+          <Route path={"/"} exact component={Home} />
+          
         </Switch>
         <Footer />
      
