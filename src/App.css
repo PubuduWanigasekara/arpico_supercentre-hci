@@ -38,7 +38,7 @@
 }
 
 #user_menu {
-  background-color: indianred;
+  background-color: #fff;
   width: 200px;
   height: 100px;
   position: absolute;
@@ -47,6 +47,17 @@
   margin: 69px 120px 0px 0px;
   z-index: 9999;
   border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border:1px solid #c4c4c4;
+  box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.2);
+}
+
+#user_menu li{
+text-align:center;
+width:100%;
+margin-left: 30px;
 }
 
 #profile i {
@@ -715,6 +726,10 @@ Location toggle button animation */
 
 a {
   color: #000;
+}
+
+.hover{
+  cursor: pointer;
 }
 
 /* category container */
