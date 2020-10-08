@@ -1,5 +1,5 @@
 import React, { useEffect , useState } from 'react'
-import {motion} from 'framer-motion'
+import {motion , AnimatePresence} from 'framer-motion'
 import Logo from '../assets/logo.svg'
 import {Link} from "react-router-dom";
 import {useHistory} from 'react-router-dom'
@@ -9,6 +9,7 @@ export default function Header(props) {
 
 
     let [mobmenu, setmobmenu] = useState(false);
+    let [propmenu, setpropMenu] = useState(false);
 
     const history = useHistory();
     useEffect(() => {
@@ -46,6 +47,11 @@ export default function Header(props) {
             cursor:'pointer'
     }
 
+
+    const toggleProfile = ()=>{
+        setpropMenu(!propmenu);
+    }
+
     const linkstyle = {
         textDecoration: 'none'
     }
@@ -67,14 +73,14 @@ export default function Header(props) {
                 <div id="links">
 
                     <ul style={{display: !mobmenu ? 'flex' : 'none'}}>
-                        <li><Link style={linkstyle} to="/home">Home</Link></li>
+                        <li><Link style={linkstyle} to="/">Home</Link></li>
                         <li><Link style={linkstyle} to="/contact-us">Contact us</Link></li>
                         <li><Link style={linkstyle} to="/faq">Faq</Link></li>
                         {!props.isLogged ? <>
                             <li><button id="profile">
                             <i class="ar-propic"></i> 
                          </button>
-                         <i class="ar-down-1"></i> 
+                         <i class="ar-down-1 hover" onClick={toggleProfile} ></i> 
                          </li>
                          <li id="cart_li">
                              <i class="ar-bag" id="bag"></i>
@@ -85,13 +91,25 @@ export default function Header(props) {
                         
 
                     </ul>
-
-                    {/* <div id="user_menu">
-                        <li>profile</li>
-                        <li></li>
-                    </div> */}
-                   
+                    <AnimatePresence initial={{ opacity: 0 , y:0 }}
+            animate={{ opacity: 1 }}
+            exit={{  opacity: 0  , y:20 }}>
+                {propmenu ? <>
+                    <motion.div id="user_menu" initial={{ opacity: 0 ,y:20 }}
+            animate={{ opacity: 1 , y:0 }}
+            exit={{ opacity: 0 , y:20 }}
+            transition ={{
+                duration: 0.3,
+              }}
+            >
+                        <motion.li><i class="ar-user pro_icons"></i>profile</motion.li>
+                        <motion.li><i class="ar-logout pro_icons2"></i>Log out</motion.li>
+                    </motion.div>
+                     </>:<> </>}
+                     </AnimatePresence>
+                     
                 </div>
+          
             </div>
 
             {/* <div id="mobnav">

@@ -39,6 +39,7 @@ function App() {
 
 
 
+
     return (<
         div className="App" >
        
@@ -80,13 +81,14 @@ function App() {
                     component={productVariety}
                 />
 
-                { /* this one should place always bottom */} <
-                    Route path={"/*"}
-                    exact component={Home}
-                /> </Switch>
-            <Footer />
-        </div>
-    );
+          {/* this one should place always bottom */}
+          <Route path={"/*"} exact component={Home} />
+          
+        </Switch>
+        <Footer />
+     
+    </div>
+  );
 }
 
 export default App;
