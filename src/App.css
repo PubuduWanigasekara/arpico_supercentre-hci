@@ -38,7 +38,7 @@
 }
 
 #user_menu {
-  background-color: indianred;
+  background-color: #fff;
   width: 200px;
   height: 100px;
   position: absolute;
@@ -50,7 +50,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border:1px solid #F26722;
+  border:1px solid #c4c4c4;
+  box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.2);
 }
 
 #user_menu li{
