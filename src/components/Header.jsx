@@ -2,6 +2,7 @@ import React, { useEffect , useState } from 'react'
 import {motion , AnimatePresence} from 'framer-motion'
 import Logo from '../assets/logo.svg'
 import {Link} from "react-router-dom";
+import {useHistory} from 'react-router-dom'
 
 export default function Header(props) {
 
@@ -10,8 +11,7 @@ export default function Header(props) {
     let [mobmenu, setmobmenu] = useState(false);
     let [propmenu, setpropMenu] = useState(false);
 
-    let isLogged = true;
-
+    const history = useHistory();
     useEffect(() => {
 
      
@@ -43,7 +43,8 @@ export default function Header(props) {
     });
 
     const logo = {
-            width:'120px'
+            width:'120px',
+            cursor:'pointer'
     }
 
 
@@ -55,11 +56,19 @@ export default function Header(props) {
         textDecoration: 'none'
     }
 
+    const navHome = ()=>{
+        
+        history.push("/");
+    }
+
+    const totop = ()=>{
+        window.scrollTo(0,0);
+    }
     return (
         <div>
             <div id="navbar">
                 <div id="logo">
-                    <img src={Logo} alt="" style={logo} />
+                    <img src={Logo} alt="" style={logo} onClick={navHome}/>
                </div>
                 <div id="links">
 
@@ -67,9 +76,9 @@ export default function Header(props) {
                         <li><Link style={linkstyle} to="/">Home</Link></li>
                         <li><Link style={linkstyle} to="/contact-us">Contact us</Link></li>
                         <li><Link style={linkstyle} to="/faq">Faq</Link></li>
-                        {isLogged ? <>
-                            <li><button id="profile" >
-                            <i  class="ar-propic"></i> 
+                        {!props.isLogged ? <>
+                            <li><button id="profile">
+                            <i class="ar-propic"></i> 
                          </button>
                          <i class="ar-down-1 hover" onClick={toggleProfile} ></i> 
                          </li>
@@ -110,9 +119,9 @@ export default function Header(props) {
             initial={{opacity:0.5}}
             exit={{ opacity: 0.5 }}
             whileHover={{ scale: 1.1 , opacity:1}}
-            whileTap={{ scale: 0.9 ,opacity:1}}
+            whileTap={{ scale: 0.9 ,opacity:1} , totop}
             id="mobnavBtn">
-                M
+                <i class="ar-up"></i>
             </motion.div>}
             
         </div>
