@@ -9,7 +9,9 @@ import ProductCard from '../../components/ProductCard'
 import HomeIcons from '../../components/HomeIcons'
 import Categories from '../../components/Categories'
 
+
 export default function Home() {
+
 
     let [loc, setLoc] = useState('Hydepark corner');
     let [open, setopen] = useState(false);
@@ -34,6 +36,8 @@ export default function Home() {
             document.body.style.overflow = ''; 
         }
     }
+
+
 
 
     return (

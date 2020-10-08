@@ -11,25 +11,36 @@ import Cart from "./pages/cart/Cart";
 import contactUs from "./pages/contactUs/contactUs";
 import Grocery from "./pages/categories/grocery/Grocery";
 import Login from "./pages/login/Login";
-
+import Payment from './pages/payment options/Payment'
 import Baby from "./pages/babyNeeds/Baby";
-
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {  Switch, Route, Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
 function App() {
   let [loaded, setload] = useState(false);
 
   let [login, setLogin] = useState(false);
 
-  useEffect(() => {});
+  const location = useLocation();
+
+ 
+
+  useEffect(() => {
+    const currentPath = location.pathname;
+
+    window.scrollTo(0,0);
+   
+  }, [location]);
 
   const LoginSet = (type) => {
     setLogin((login = type));
   };
 
+  
+
   return (
     <div className="App">
-      <Router>
+      
         <Header isLogged={login} logSet={LoginSet} />
         <Switch>
           <Route
@@ -49,12 +60,13 @@ function App() {
           <Route path={"/baby"} component={Baby} />
           <Route path={"/store_locations"} component={store_locations} />
           <Route path={"/contactus"} component={contactUs} />
+          <Route path={"/payment"} component={Payment} />
 
           {/* this one should place always bottom */}
           <Route path={"/*"} exact component={Home} />
         </Switch>
         <Footer />
-      </Router>
+     
     </div>
   );
 }
