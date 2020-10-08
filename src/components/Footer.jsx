@@ -57,7 +57,7 @@ export default function Footer() {
                        <ul>
                            <li>POLICY STATEMENT</li>
                            <li>Retail Chain</li>
-                           <li>Product Variety</li>
+                           <li><Link to="/productVariety">Product Variety</Link></li>
                            <li>Terms and Conditions</li>
                        </ul>
 
