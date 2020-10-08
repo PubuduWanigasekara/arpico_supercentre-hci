@@ -40,7 +40,7 @@ export default function Footer() {
           <ul>
             <li>EXPLORE</li>
             <li>
-              <Link to="/home">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>About Us</li>
             <li>Contact Us</li>
@@ -57,7 +57,7 @@ export default function Footer() {
           <ul>
             <li>SUPPORT</li>
             <li>Whats in Store</li>
-            <li>Accept Payments</li>
+            <li> <Link to="/payment">Accept Payments</Link></li>
             <li>
               <Link to="/faq">FAQ</Link>
             </li>

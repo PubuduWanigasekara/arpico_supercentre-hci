@@ -28,7 +28,7 @@ export default function Baby() {
     {minmax.min} - {minmax.max} LKR
                <div id="price_range_selector">
          
-                   <input type="range" name="" id="" onChange={e => setMinmax({...minmax , min : e.target.value})}/>
+                   <input type="range" name="" id="range_low" onChange={e => setMinmax({...minmax , min : e.target.value})}/>
                    <input type="range" name="" id="range_hi" onChange={e => setMinmax({...minmax , max : e.target.value})}/>
                </div>
             </div>

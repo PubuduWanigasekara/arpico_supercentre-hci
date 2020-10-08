@@ -11,7 +11,7 @@ export default function Categories(props) {
                     <i class="ar-plus"></i>
                 </button>
 
-                <motion.div id="cat_base" animate={{x:0}} initial={{x:50}} staggerChildren={100}>
+                <motion.div id="cat_base" animate={{y:0}} initial={{y:50}} staggerChildren={100}>
                     <motion.div>1</motion.div>
                     <motion.div>2</motion.div>
                     <motion.div>3</motion.div>

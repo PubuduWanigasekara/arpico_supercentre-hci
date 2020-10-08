@@ -165,7 +165,7 @@ i{
     margin-left:-5px
 }
 
-#range_hi{
+#range_low{
     transform: scaleX(-1);
 }
 
