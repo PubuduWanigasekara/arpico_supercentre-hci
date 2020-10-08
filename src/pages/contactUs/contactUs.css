@@ -45,7 +45,14 @@
     }
     
     #maindiv {
-        background: #d8d8d88f;
+        /* background: #d8d8d88f; */
+        /* background: rgb(216,216,216);
+background: linear-gradient(0deg, rgba(216,216,216,0.56) 0%, rgba(255,255,255,1) 100%); */
+    }
+
+    #mainpanal{
+        background: rgb(216,216,216);
+        background: linear-gradient(0deg, rgba(216,216,216,0.25) 0%, rgba(255,255,255,1) 90%);
     }
     
     .contactustxt {
@@ -159,8 +166,8 @@
     #stack-top {
         height: 184px;
         position: absolute;
-        top: 34.8%;
-        left: 77.01%;
+        top: 28.7%;
+        left: 76.91%;
         border-radius: 10px;
     }
     
@@ -198,6 +205,12 @@
     }
     
     h2 {
-        margin-bottom: 5px;
-        margin-left: 0px;
+        margin-bottom: 5px !important;
+        margin-left: 0px !important;
     }
+
+    h1{
+        margin-top: 0px;
+        margin-bottom: 0;
+    }
+    hr.botem{margin: 0;}

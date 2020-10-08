@@ -228,13 +228,14 @@ export class contactUs extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id="mainpanal">
                 <div id="breadcom">
                     <a id="breadcomText" href="/home">Home</a> /
             <a id="breadcomText" href="#">Contact Us</a>
                 </div>
                 <div id="maindiv">
                     <h1 id="map_h1">Contact Us</h1>
+                    <hr/>
                     <div id="contactUs_container">
                         <div id="contactus_formcontainer">
 
@@ -387,7 +388,7 @@ export class contactUs extends React.Component {
                             <div id="infoimg" className="mapcontaint">
                                 <Map
                                     google={this.props.google}
-                                    zoom={10}
+                                    zoom={17}
                                     style={{
                                         position: 'absolute',
                                         width: '682px',
@@ -408,6 +409,7 @@ export class contactUs extends React.Component {
 
                     </div>
                 </div>
+                <hr className="botem"/>
             </div>
         );
     }
