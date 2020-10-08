@@ -1,6 +1,7 @@
-import React from 'react'
+import React , {useState} from 'react'
 import './style.css'
 import Select from 'react-select'
+import ProductCard from '../../components/ProductCard'
 
 export default function Baby() {
 
@@ -11,12 +12,25 @@ export default function Baby() {
        
       ]
 
+    let [minmax,setMinmax] =  useState({
+        min:'0',
+        max:'20'
+    })
+
+    let cardCount = 8;
+
 
     return (
         <>
            <div id="content_top">
+             
             <div id="price_range">
-                range
+    {minmax.min} - {minmax.max} LKR
+               <div id="price_range_selector">
+         
+                   <input type="range" name="" id="range_low" onChange={e => setMinmax({...minmax , min : e.target.value})}/>
+                   <input type="range" name="" id="range_hi" onChange={e => setMinmax({...minmax , max : e.target.value})}/>
+               </div>
             </div>
             <div id="whistlist_holder">
 
@@ -53,7 +67,22 @@ export default function Baby() {
                     </div>
                 </div>
                </div>
+
            </div>
+
+
+           <section id="product_container">
+            <div id="product_list_cards">
+                <ProductCard></ProductCard>
+                <ProductCard></ProductCard>
+                <ProductCard></ProductCard>
+                <ProductCard></ProductCard>
+                <ProductCard></ProductCard>
+                <ProductCard></ProductCard>
+                <ProductCard></ProductCard>
+                <ProductCard></ProductCard>
+            </div>
+               </section>
         </>
     )
 }

@@ -2,15 +2,15 @@ import React, { useEffect , useState } from 'react'
 import {motion} from 'framer-motion'
 import Logo from '../assets/logo.svg'
 import {Link} from "react-router-dom";
+import {useHistory} from 'react-router-dom'
 
-export default function Header() {
+export default function Header(props) {
 
-    
+
 
     let [mobmenu, setmobmenu] = useState(false);
 
-    let [loggedin, setLoggedin] = useState(true);
-
+    const history = useHistory();
     useEffect(() => {
 
      
@@ -42,18 +42,27 @@ export default function Header() {
     });
 
     const logo = {
-            width:'120px'
+            width:'120px',
+            cursor:'pointer'
     }
 
     const linkstyle = {
         textDecoration: 'none'
     }
 
+    const navHome = ()=>{
+        
+        history.push("/");
+    }
+
+    const totop = ()=>{
+        window.scrollTo(0,0);
+    }
     return (
         <div>
             <div id="navbar">
                 <div id="logo">
-                    <img src={Logo} alt="" style={logo}/>
+                    <img src={Logo} alt="" style={logo} onClick={navHome}/>
                </div>
                 <div id="links">
 
@@ -61,7 +70,7 @@ export default function Header() {
                         <li><Link style={linkstyle} to="/home">Home</Link></li>
                         <li><Link style={linkstyle} to="/contact-us">Contact us</Link></li>
                         <li><Link style={linkstyle} to="/faq">Faq</Link></li>
-                        {loggedin ? <>
+                        {!props.isLogged ? <>
                             <li><button id="profile">
                             <i class="ar-propic"></i> 
                          </button>
@@ -76,6 +85,11 @@ export default function Header() {
                         
 
                     </ul>
+
+                    {/* <div id="user_menu">
+                        <li>profile</li>
+                        <li></li>
+                    </div> */}
                    
                 </div>
             </div>
@@ -87,9 +101,9 @@ export default function Header() {
             initial={{opacity:0.5}}
             exit={{ opacity: 0.5 }}
             whileHover={{ scale: 1.1 , opacity:1}}
-            whileTap={{ scale: 0.9 ,opacity:1}}
+            whileTap={{ scale: 0.9 ,opacity:1} , totop}
             id="mobnavBtn">
-                M
+                <i class="ar-up"></i>
             </motion.div>}
             
         </div>

@@ -147,3 +147,42 @@ i{
     color:red;
 }
 
+#price_range{
+    text-align: center;
+}
+
+#price_range_selector{
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#price_range_selector input{
+    margin:0;
+    padding:0;
+    margin-left:-5px
+}
+
+#range_low{
+    transform: scaleX(-1);
+}
+
+/* Product cards  */
+
+#product_container{
+    width:100%;
+    height:auto;
+    position: relative;
+   
+  
+}
+#product_list_cards{
+  padding:0px 40px 20px 40px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}
+
+
+

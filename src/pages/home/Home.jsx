@@ -9,7 +9,9 @@ import ProductCard from '../../components/ProductCard'
 import HomeIcons from '../../components/HomeIcons'
 import Categories from '../../components/Categories'
 
+
 export default function Home() {
+
 
     let [loc, setLoc] = useState('Hydepark corner');
     let [open, setopen] = useState(false);
@@ -34,6 +36,8 @@ export default function Home() {
             document.body.style.overflow = ''; 
         }
     }
+
+
 
 
     return (
@@ -72,7 +76,7 @@ export default function Home() {
             {catopen && 
             <motion.section id="cat_section" initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}>
+            exit={{ opacity: 0 }} transition={0.3}>
                  < Categories openCat={catToggle}/>
           
             </motion.section> }
@@ -84,10 +88,10 @@ export default function Home() {
                Recent products
                </div>
         <section id="recent_container">
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
+        <ProductCard title="sample" des="description 1" price={100}/>
+        <ProductCard title="sample 1" des="description 2" price={200}/>
+        <ProductCard title="sample 2" des="description 3" price={300}/>
+        <ProductCard title="sample 3" des="description 4" price={400}/>
         
         </section>
 </section>
