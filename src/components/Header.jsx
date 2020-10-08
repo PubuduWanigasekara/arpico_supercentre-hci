@@ -102,8 +102,8 @@ export default function Header(props) {
                 duration: 0.3,
               }}
             >
-                        <motion.li><i class="ar-user pro_icons"></i>profile</motion.li>
-                        <motion.li><i class="ar-logout pro_icons2"></i>Log out</motion.li>
+                        <motion.li><i class="ar-user pro_icons"></i><div id="text_profile">Profile</div></motion.li>
+                        <motion.li><i class="ar-logout pro_icons_logout"></i><div id="text_profile">Log out</div></motion.li>
                     </motion.div>
                      </>:<> </>}
                      </AnimatePresence>
