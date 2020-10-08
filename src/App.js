@@ -7,63 +7,82 @@ import Wishlist from "./pages/wishlist/wishlist";
 import Faq from "./pages/footer/faq/Faq";
 import TermsAndConditions from "./pages/footer/termsAndConditions/TermsAndConditions";
 import store_locations from "./pages/store_locations/store_locations";
+import productVariety from "./pages/productVariety/productVariety";
 import Cart from "./pages/cart/Cart";
 import contactUs from "./pages/contactUs/contactUs";
 import Grocery from "./pages/categories/grocery/Grocery";
 import Login from "./pages/login/Login";
 import Payment from './pages/payment options/Payment'
 import Baby from "./pages/babyNeeds/Baby";
-import {  Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 
 function App() {
-  let [loaded, setload] = useState(false);
+    let [loaded, setload] = useState(false);
 
-  let [login, setLogin] = useState(false);
+    let [login, setLogin] = useState(false);
 
-  const location = useLocation();
+    const location = useLocation();
 
- 
 
-  useEffect(() => {
-    const currentPath = location.pathname;
 
-    window.scrollTo(0,0);
-   
-  }, [location]);
+    useEffect(() => {
+        const currentPath = location.pathname;
 
-  const LoginSet = (type) => {
-    setLogin((login = type));
-  };
+        window.scrollTo(0, 0);
 
-  
+    }, [location]);
 
-  return (
-    <div className="App">
-      
-        <Header isLogged={login} logSet={LoginSet} />
-        <Switch>
-          <Route
-            path={"/login"}
-            exact
-            component={() => <Login logSet={LoginSet} />}
-          />
-          <Route path={"/"} exact component={Home} />
-          <Route path={"/faq"} component={Faq} />
-          <Route
-            path={"/terms-and-conditions"}
-            component={TermsAndConditions}
-          />
-          <Route path={"/wishlist"} component={Wishlist} />
-          <Route path={"/cart"} component={Cart} />
-          <Route path={"/categories-grocery"} component={Grocery} />
-          <Route path={"/baby"} component={Baby} />
-          <Route path={"/store_locations"} component={store_locations} />
-          <Route path={"/contactus"} component={contactUs} />
-          <Route path={"/payment"} component={Payment} />
+    const LoginSet = (type) => {
+        setLogin((login = type));
+    };
+
+
+
+
+    return (<
+        div className="App" >
+       
+            <Header isLogged={login} logSet={LoginSet} />
+            <Switch >
+                <Route path={"/login"} exact component={Login}/>
+                 <
+                    Route path={"/"}
+                    exact component={Home}
+                /> <
+                    Route path={"/faq"}
+                    component={Faq}
+                /> <
+                    Route path={"/terms-and-conditions"}
+                    component={TermsAndConditions}
+                /> <
+                    Route path={"/wishlist"}
+                    component={Wishlist}
+                /> <
+                    Route path={"/cart"}
+                    component={Cart}
+                /> <
+                    Route path={"/categories-grocery"}
+                    component={Grocery}
+                /> <
+                    Route path={"/baby"}
+                    component={Baby}
+                /> <
+                    Route path={"/store_locations"}
+                    component={store_locations}
+                /> <
+                    Route path={"/contact-us"}
+                    component={contactUs}
+                /> <
+                    Route path={"/payment"}
+                    component={Payment}
+                /> <
+                    Route path={"/productVariety"}
+                    component={productVariety}
+                />
 
           {/* this one should place always bottom */}
-          <Route path={"/"} exact component={Home} />
+          <Route path={"/*"} exact component={Home} />
           
         </Switch>
         <Footer />
