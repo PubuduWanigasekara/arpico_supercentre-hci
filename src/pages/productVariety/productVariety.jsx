@@ -12,9 +12,10 @@ export default class productVariety extends Component {
             <div>
                 <div id="bodypr">
                     <div id="pvcardBase" >
-                        <div>
+                        <div id="pvcard_container">
                             <h2 className="cardhedar">Product Variety</h2>
-                            
+                            <div className="d-flex">
+
                                 <div>
 
                                     <p>
@@ -27,13 +28,15 @@ export default class productVariety extends Component {
                                         “Arpico Showroom”, our pioneering retail model still continues to cater to customers across the country with a specialized range of essential household items ranging from hardware, plasticware, kitchenware, glassware, toys, stationery, garden tools, to water tanks, rubber products, mattresses & furniture.
                       </p>
                                 </div>
-                    
-                        
+                                <div className="pvImage">
+                                    <img src="https://firebasestorage.googleapis.com/v0/b/hciapp-7355d.appspot.com/o/unnamed.jpg?alt=media&token=45f543dc-14f7-4116-885f-e4ae6e5406f1" alt="" />
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div id="pvcardBase" >
-                        <div>
+                        <div id="pvcard_container">
                             <h2 className="cardhedar" >Retail Chain</h2>
                             <p>
                                 We operate through a growing network of “Arpico Supercentre” outlets located in key towns in the Western, Central and |Southern provinces with easy access routes to offer the most convenient shopping experience in Sri Lanka. The Arpico retail chain comprises of 17 Arpico Supercentres, 19 showrooms and 22 Arpico Daily supermarkets. Arpico Supercentres, the company’s flagship outlets, offer extensive parking, bill payments, banking facilities, oder lifestyle needs. Located in and around the footprint of Arpico Supercentres, Arpico Daily Supermarkets cater to your daily top-up requirements. Rapidly expanding, an Arpico Daily Supermarket will be closer to your neighborhood soon.
@@ -47,7 +50,11 @@ export default class productVariety extends Component {
                     <div id="pvcardBase">
                         <div id="pvcard_container" className="mb-15">
                             <h2 className="cardhedar" >What’s in Store</h2>
-                           
+                            <div className="d-flex">
+
+                                <div className="wsImage">
+                                    <img src="https://firebasestorage.googleapis.com/v0/b/hciapp-7355d.appspot.com/o/NTB-Arpico.jpg?alt=media&token=b7a4bb8b-bb4f-4677-a5ce-00fc982a9355" alt="" />
+                                </div>
                                 <div>
 
                                     <p>
@@ -63,7 +70,7 @@ export default class productVariety extends Component {
                                         Lowest prices for selected top moving fresh seafood, fruits, vegetables and meats during selected weekends or weekdays. Drop by at any Arpico Supermarket after work on Friday or with your family during the weekend to purchase your favourite fresh produce at the lowest prices.
                               </p>
                                 </div>
-                       
+                            </div>
                         </div>
                     </div>
                 </div>
