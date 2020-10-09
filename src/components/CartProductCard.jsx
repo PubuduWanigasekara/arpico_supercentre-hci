@@ -23,22 +23,22 @@ export default function CartProductCard(props) {
   return (
     <div id="w_cardBase">
       <div id="w_card_container">
-        <div id="w_card_img_container">
-          <img id="w_img" src="http://lorempixel.com/270/200/food/" alt="" />
+        <div id="c_card_img_container">
+          <img id="c_img" src="http://lorempixel.com/270/200/food/" alt="" />
         </div>
         <div id="w_card_product_details_container">
-          <div id="w_card_des">
-            {props.name} {props.key} <div id="w_card_number">{props.qty}X</div>
+          <div id="c_card_des">
+            {props.name} {props.key} <div id="c_card_number">{props.qty}X</div>
           </div>
-          <div id="w_card_price">LKR {props.price}</div>
+          <div id="c_card_price">{props.price} LKR</div>
         </div>
         <div>
-          <div id="card_controllers">
-            <button id="w_card_r_button">
-              <i class="ar-deliver w_card_r_button_cart_icon"></i>
+          <div id="cart_controllers">
+            <button id="c_card_r_button">
+              <i class="ar-deliver c_card_r_button_cart_icon"></i>
             </button>
-            <button id="w_card_r_button" onClick={() => rem(props.item)}>
-              <i class="ar-remove w_card_r_button_remove_icon"></i>
+            <button id="c_card_r_button" onClick={() => rem(props.item)}>
+              <i class="ar-remove c_card_r_button_remove_icon"></i>
             </button>
           </div>
         </div>

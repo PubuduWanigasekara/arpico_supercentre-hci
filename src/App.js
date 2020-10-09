@@ -12,12 +12,13 @@ import Cart from "./pages/cart/Cart";
 import contactUs from "./pages/contactUs/contactUs";
 import Grocery from "./pages/categories/grocery/Grocery";
 import Login from "./pages/login/Login";
-import Payment from './pages/payment options/Payment'
+import Payment from "./pages/payment options/Payment";
 import Baby from "./pages/babyNeeds/Baby";
 import { Switch, Route, Link } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 function App() {
+
     let [loaded, setload] = useState(false);
 
     let [login, setLogin] = useState(false);
@@ -87,6 +88,7 @@ function App() {
         </Switch>
         <Footer />
      
+
     </div>
   );
 }
