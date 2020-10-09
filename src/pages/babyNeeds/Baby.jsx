@@ -34,7 +34,7 @@ export default function Baby() {
                </div>
             </div>
             <div id="whistlist_holder">
-        <Whislist/>
+        <Whislist id="whishlist_comp"/>
             </div>
            </div>
 

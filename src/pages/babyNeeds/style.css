@@ -14,9 +14,12 @@
 
 
 #whistlist_holder{
-    background:blue;
+  
 }
 
+#whishlist_comp{
+    width:200px;
+}
 
 
 #content_sort{
