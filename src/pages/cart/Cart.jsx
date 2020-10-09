@@ -40,39 +40,40 @@ export default function Cart() {
             <div>
               <h5 id="cart_subtitle">Shipping Address</h5>
 
-              <div>
-                <label>First Name : </label>
-                <input id="Cartlabel" type="text" placeholder="" />
-                <br />
-                <label>Last Name : </label>
-                <input id="Cartlabel" type="text" placeholder="" />
-                <br />
-                <label>Address : </label>
-                <input id="Cartlabel" type="text" placeholder="" />
-                <br />
-                <label>Phone Number : </label>
-                <input id="Cartlabel" type="text" placeholder="" />
-                <br />
-              </div>
+              <form id="cart_form">
+                <label id="cart_label">First Name : </label>
+                <input id="cart_input" type="text" placeholder="" />
+
+                <label id="cart_label">Last Name : </label>
+                <input id="cart_input" type="text" placeholder="" />
+
+                <label id="cart_label">Address : </label>
+                <input id="cart_input" type="text" placeholder="" />
+
+                <label id="cart_label">Phone Number : </label>
+                <input id="cart_input" type="text" placeholder="" />
+              </form>
             </div>
             <div>
               <h5 id="cart_subtitle">Shipping Methods</h5>
               <div id="cartbuttonsdiv">
-                <button className="button primary filled">LKR350.00</button>
-                <button className="button primary filled">
+                <button className="button primary cart_button">
+                  LKR350.00
+                </button>
+                <button className="button primary cart_button">
                   Arpico Delivery
                 </button>
-                <button className="button primary filled">
+                <button className="button primary cart_button">
                   Arpico Doorstep delivery
                 </button>
               </div>
-              <button className="button primary filled">Next</button>
+              {/* <button className="button primary ">Next</button> */}
             </div>
           </div>
           {/* right */}
           <div id="cart_right_div">
             <h5 id="cart_subtitle">Order Summary</h5>
-            <div>
+            <div id="c_items_div">
               {data.map((it, index) => {
                 return (
                   <CartProductCard
