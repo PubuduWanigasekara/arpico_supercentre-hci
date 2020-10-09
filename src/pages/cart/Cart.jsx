@@ -2,11 +2,6 @@ import React, { useEffect, useState } from "react";
 import CartProductCard from "../../components/CartProductCard";
 
 export default function Cart() {
-  const maindiv = {
-    backgroudColor: "red",
-    hight: "100px",
-    margin: "70px",
-  };
   const rightdiv = {
     display: "inline",
     float: "right",
@@ -54,8 +49,8 @@ export default function Cart() {
   return (
     <>
       <div id="container">
-        <h3>Home/My CART</h3>
-        <div style={maindiv}>
+        <h3 id="cart_ttitle">Shopping Cart</h3>
+        <div id="cartmaindiv">
           {/* left */}
           <div style={leftdiv}>
             <div>
@@ -78,7 +73,7 @@ export default function Cart() {
             </div>
             <div>
               <h5>Shipping Methods</h5>
-              <div id="cartbuttonsdiv"> 
+              <div id="cartbuttonsdiv">
                 <button className="button primary filled">LKR350.00</button>
                 <button className="button primary filled">
                   Arpico Delivery
