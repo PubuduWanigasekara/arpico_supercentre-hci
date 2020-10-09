@@ -2,22 +2,6 @@ import React, { useEffect, useState } from "react";
 import CartProductCard from "../../components/CartProductCard";
 
 export default function Cart() {
-  const rightdiv = {
-    display: "inline",
-    float: "right",
-    borderRadius: "10px",
-    border: "3px solid #1A2572",
-    width: "55%",
-  };
-  const leftdiv = {
-    display: "inline",
-    float: "left",
-    // backgroundColor: "red",
-    borderRadius: "10px",
-    border: "3px solid #1A2572",
-    width: "40%",
-  };
-
   //   cart
   let [data, Setdata] = useState([]);
 
@@ -52,9 +36,9 @@ export default function Cart() {
         <h3 id="cart_ttitle">Shopping Cart</h3>
         <div id="cartmaindiv">
           {/* left */}
-          <div style={leftdiv}>
+          <div id="cart_left_div">
             <div>
-              <h5>Shipping Address</h5>
+              <h5 id="cart_subtitle">Shipping Address</h5>
 
               <div>
                 <label>First Name : </label>
@@ -72,7 +56,7 @@ export default function Cart() {
               </div>
             </div>
             <div>
-              <h5>Shipping Methods</h5>
+              <h5 id="cart_subtitle">Shipping Methods</h5>
               <div id="cartbuttonsdiv">
                 <button className="button primary filled">LKR350.00</button>
                 <button className="button primary filled">
@@ -86,8 +70,8 @@ export default function Cart() {
             </div>
           </div>
           {/* right */}
-          <div style={rightdiv}>
-            <h5>Order Summary</h5>
+          <div id="cart_right_div">
+            <h5 id="cart_subtitle">Order Summary</h5>
             <div>
               {data.map((it, index) => {
                 return (
