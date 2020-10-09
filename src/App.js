@@ -29,7 +29,7 @@ function App() {
     useEffect(() => {
         const currentPath = location.pathname;
 
-        window.scrollTo(0, 0);
+        window.scrollTo({top: 0, behavior: 'smooth'});
 
     }, [location]);
 
