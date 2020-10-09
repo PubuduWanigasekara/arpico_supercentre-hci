@@ -18,42 +18,77 @@ import { Switch, Route, Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 function App() {
-  let [loaded, setload] = useState(false);
 
-  let [login, setLogin] = useState(false);
+    let [loaded, setload] = useState(false);
 
-  const location = useLocation();
+    let [login, setLogin] = useState(false);
 
-  useEffect(() => {
-    const currentPath = location.pathname;
+    const location = useLocation();
 
-    window.scrollTo(0, 0);
-  }, [location]);
 
-  const LoginSet = (type) => {
-    setLogin((login = type));
-  };
 
-  return (
-    <div className="App">
-      <Header isLogged={login} logSet={LoginSet} />
-      <Switch>
-        <Route path={"/login"} exact component={Login} />
-        <Route path={"/"} exact component={Home} />{" "}
-        <Route path={"/faq"} component={Faq} />{" "}
-        <Route path={"/terms-and-conditions"} component={TermsAndConditions} />{" "}
-        <Route path={"/wishlist"} component={Wishlist} />{" "}
-        <Route path={"/cart"} component={Cart} />{" "}
-        <Route path={"/categories-grocery"} component={Grocery} />{" "}
-        <Route path={"/baby"} component={Baby} />{" "}
-        <Route path={"/store_locations"} component={store_locations} />{" "}
-        <Route path={"/contact-us"} component={contactUs} />{" "}
-        <Route path={"/payment"} component={Payment} />{" "}
-        <Route path={"/productVariety"} component={productVariety} />
-        {/* this one should place always bottom */}
-        <Route path={"/*"} exact component={Home} />
-      </Switch>
-      <Footer />
+    useEffect(() => {
+        const currentPath = location.pathname;
+
+        window.scrollTo({top: 0, behavior: 'smooth'});
+
+    }, [location]);
+
+    const LoginSet = (type) => {
+        setLogin((login = type));
+    };
+
+
+
+
+    return (<
+        div className="App" >
+       
+            <Header isLogged={login} logSet={LoginSet} />
+            <Switch >
+                <Route path={"/login"} exact component={Login}/>
+                 <
+                    Route path={"/"}
+                    exact component={Home}
+                /> <
+                    Route path={"/faq"}
+                    component={Faq}
+                /> <
+                    Route path={"/terms-and-conditions"}
+                    component={TermsAndConditions}
+                /> <
+                    Route path={"/wishlist"}
+                    component={Wishlist}
+                /> <
+                    Route path={"/cart"}
+                    component={Cart}
+                /> <
+                    Route path={"/categories-grocery"}
+                    component={Grocery}
+                /> <
+                    Route path={"/baby"}
+                    component={Baby}
+                /> <
+                    Route path={"/store_locations"}
+                    component={store_locations}
+                /> <
+                    Route path={"/contact-us"}
+                    component={contactUs}
+                /> <
+                    Route path={"/payment"}
+                    component={Payment}
+                /> <
+                    Route path={"/productVariety"}
+                    component={productVariety}
+                />
+
+          {/* this one should place always bottom */}
+          <Route path={"/*"} exact component={Home} />
+          
+        </Switch>
+        <Footer />
+     
+
     </div>
   );
 }
