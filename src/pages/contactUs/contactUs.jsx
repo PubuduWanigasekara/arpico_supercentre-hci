@@ -3,10 +3,8 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import swal from 'sweetalert';
 import Lottie from "lottie-react";
 import cus from './19948-contact-us.json';
-import c1 from './lf20_eBcQGa.json';
-import c2 from './lf20_DC9jU4.json';
-import c3 from './lf20_4eAwik.json';
-import './contactUs.css'
+import animphone from './phone.json';
+import './contactUs.css';
 
 
 export class contactUs extends React.Component {
@@ -231,7 +229,7 @@ export class contactUs extends React.Component {
             <div id="mainpanal">
                 <div id="breadcom">
                     <a id="breadcomText" href="/home">Home</a> /
-            <a id="breadcomText" href="#">Contact Us</a>
+            <a id="breadcomText" href="#">Contact Us</a> <Lottie id="phonestack-top" animationData={animphone} />
                 </div>
                 <div id="maindiv">
                     <h1 id="map_h1">Contact Us</h1>
