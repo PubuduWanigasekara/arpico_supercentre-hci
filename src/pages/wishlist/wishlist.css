@@ -1,0 +1,94 @@
+.button_addToCart {
+    border-radius: 40px;
+    background-color: #1a2572;
+    border: 2px solid #1a2572;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    width: 150px;
+    height: 40px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    margin-left: 75%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  
+  .button_addToCart span {
+    cursor: pointer;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button_addToCart span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button_addToCart:hover span {
+    padding-right: 25px;
+  }
+  
+  .button_addToCart:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  #w_Error_cardBase {
+    padding: 40px 15% 0px 15%;
+  }
+
+  #w_Error_card_container {
+    border-bottom: 2px solid #c4c4c4;
+    display: flex;
+    background-color: #c4c4c486;
+  }
+
+  .d_hide{
+      display: none !important;
+  }
+  .wishlistValidater{
+    text-align: center;
+    width: 100%;
+    height: 41px;
+    font-size: 28px;
+  }
+
+  .success-msg {
+    color: #270;
+    margin: 0% 0 0% 36%;
+    padding: 10px;
+    border-radius: 3px 3px 3px 3px;
+    text-align: center;
+    width: 25%;
+    text-shadow: -1px 6px 7px #000000bf;
+    font-size: 19px;
+  }
+
+  .error-msg {
+    color: #c07600;
+    margin: 0% 0 0% 36%;
+    padding: 10px;
+    border-radius: 3px 3px 3px 3px;
+    text-align: center;
+    width: 25%;
+    text-shadow: -1px 6px 7px #000000bf;
+    font-size: 19px;
+  }
+
+  .msg_cantainer{
+      width: 100%;
+      height: 25vh;
+      display: flex;
+      align-items: center;
+  }
+
+  #carrot{
+    width: 25%;
+    margin-left: 37.5%;
+  }
