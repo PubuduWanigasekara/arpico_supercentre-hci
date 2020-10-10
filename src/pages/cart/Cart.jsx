@@ -2,27 +2,6 @@ import React, { useEffect, useState } from "react";
 import CartProductCard from "../../components/CartProductCard";
 
 export default function Cart() {
-  const maindiv = {
-    backgroudColor: "red",
-    hight: "100px",
-    margin: "70px",
-  };
-  const rightdiv = {
-    display: "inline",
-    float: "right",
-    borderRadius: "10px",
-    border: "3px solid #1A2572",
-    width: "55%",
-  };
-  const leftdiv = {
-    display: "inline",
-    float: "left",
-    // backgroundColor: "red",
-    borderRadius: "10px",
-    border: "3px solid #1A2572",
-    width: "40%",
-  };
-
   //   cart
   let [data, Setdata] = useState([]);
 
@@ -54,46 +33,47 @@ export default function Cart() {
   return (
     <>
       <div id="container">
-        <h3>Home/My CART</h3>
-        <div style={maindiv}>
+        <h3 id="cart_ttitle">Shopping Cart</h3>
+        <div id="cartmaindiv">
           {/* left */}
-          <div style={leftdiv}>
+          <div id="cart_left_div">
             <div>
-              <h5>Shipping Address</h5>
+              <h5 id="cart_subtitle">Shipping Address</h5>
 
-              <div>
-                <label>First Name : </label>
-                <input id="Cartlabel" type="text" placeholder="" />
-                <br />
-                <label>Last Name : </label>
-                <input id="Cartlabel" type="text" placeholder="" />
-                <br />
-                <label>Address : </label>
-                <input id="Cartlabel" type="text" placeholder="" />
-                <br />
-                <label>Phone Number : </label>
-                <input id="Cartlabel" type="text" placeholder="" />
-                <br />
-              </div>
+              <form id="cart_form">
+                <label id="cart_label">First Name : </label>
+                <input id="cart_input" type="text" placeholder="" />
+
+                <label id="cart_label">Last Name : </label>
+                <input id="cart_input" type="text" placeholder="" />
+
+                <label id="cart_label">Address : </label>
+                <input id="cart_input" type="text" placeholder="" />
+
+                <label id="cart_label">Phone Number : </label>
+                <input id="cart_input" type="text" placeholder="" />
+              </form>
             </div>
             <div>
-              <h5>Shipping Methods</h5>
-              <div id="cartbuttonsdiv"> 
-                <button className="button primary filled">LKR350.00</button>
-                <button className="button primary filled">
+              <h5 id="cart_subtitle">Shipping Methods</h5>
+              <div id="cartbuttonsdiv">
+                <button className="button primary cart_button">
+                  LKR350.00
+                </button>
+                <button className="button primary cart_button">
                   Arpico Delivery
                 </button>
-                <button className="button primary filled">
+                <button className="button primary cart_button">
                   Arpico Doorstep delivery
                 </button>
               </div>
-              <button className="button primary filled">Next</button>
+              {/* <button className="button primary ">Next</button> */}
             </div>
           </div>
           {/* right */}
-          <div style={rightdiv}>
-            <h5>Order Summary</h5>
-            <div>
+          <div id="cart_right_div">
+            <h5 id="cart_subtitle">Order Summary</h5>
+            <div id="c_items_div">
               {data.map((it, index) => {
                 return (
                   <CartProductCard

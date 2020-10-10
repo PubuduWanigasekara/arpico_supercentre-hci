@@ -11,10 +11,15 @@
     background:#fff;
 }
 
+
+
 #whistlist_holder{
-    background:blue;
+  
 }
 
+#whishlist_comp{
+    width:200px;
+}
 
 
 #content_sort{
@@ -157,17 +162,37 @@ i{
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    margin-top: 10px;
 }
 
 #price_range_selector input{
     margin:0;
     padding:0;
-    margin-left:-5px
+   
 }
 
 #range_low{
     transform: scaleX(-1);
 }
+
+.range{
+    -webkit-appearance: none;
+    outline: none;
+    background: #d3d3d3;
+    height: 10px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 25px;
+    background: #1B2473;
+    cursor: pointer;
+    border-radius: 40px;
+  }
 
 /* Product cards  */
 

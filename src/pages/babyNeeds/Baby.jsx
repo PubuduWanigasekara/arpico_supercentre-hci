@@ -2,6 +2,7 @@ import React , {useState} from 'react'
 import './style.css'
 import Select from 'react-select'
 import ProductCard from '../../components/ProductCard'
+import Whislist from '../wishlist/wishlist'
 
 export default function Baby() {
 
@@ -28,12 +29,12 @@ export default function Baby() {
     {minmax.min} - {minmax.max} LKR
                <div id="price_range_selector">
          
-                   <input type="range" name="" id="range_low" onChange={e => setMinmax({...minmax , min : e.target.value})}/>
-                   <input type="range" name="" id="range_hi" onChange={e => setMinmax({...minmax , max : e.target.value})}/>
+                   <input type="range" name=""  className="range"  id="range_low" onChange={e => setMinmax({...minmax , min : e.target.value})}/>
+                   <input type="range" name=""  className="range"  id="range_hi" onChange={e => setMinmax({...minmax , max : e.target.value})}/>
                </div>
             </div>
             <div id="whistlist_holder">
-
+        <Whislist id="whishlist_comp"/>
             </div>
            </div>
 
