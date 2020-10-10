@@ -14,7 +14,7 @@ export class contactUs extends React.Component {
         lName: { status: false, val: '', message: 'Can not be empty and must be more than 3 character long' },
         email: { status: false, val: '', message: 'Place heck your email address agin' },
         tp: { status: false, val: '', message: 'Place heck your phone number agin' },
-        comment: { status: false, val: '', message: 'canot be empty' },
+        comment: { status: false, val: '', message: 'can not be empty' },
         captcha: { status: false, val: '', message: 'Enter the message as it\'s show' }
     }
     constructor(props) {
