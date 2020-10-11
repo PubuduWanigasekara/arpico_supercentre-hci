@@ -16,13 +16,23 @@ import Payment from "./pages/payment options/Payment";
 import Baby from "./pages/babyNeeds/Baby";
 import { Switch, Route, Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { AppContexts } from "./contexts/AppContextsProvider";
 
 function App() {
 
     let [loaded, setload] = useState(false);
-
     let [login, setLogin] = useState(false);
+    let [wishlistitems, setwishlistitems] = useState(
+        [
+            { id: 1, name: "z", price: 1030, qty: 6, isAddedToCart: false },
+            { id: 2, name: "z", price: 2050, qty: 5, isAddedToCart: false }
+        ]);
 
+    let [cartitems, setcartitems] = useState(
+        [
+            { id: 1, name: "z", price: 1030, qty: 6, isAddedToCart: true },
+            { id: 2, name: "z", price: 2050, qty: 5, isAddedToCart: true }
+        ]);
     const location = useLocation();
 
 
@@ -30,7 +40,7 @@ function App() {
     useEffect(() => {
         const currentPath = location.pathname;
 
-        window.scrollTo({top: 0, behavior: 'smooth'});
+        window.scrollTo({ top: 0, behavior: 'smooth' });
 
     }, [location]);
 
@@ -43,11 +53,12 @@ function App() {
 
     return (<
         div className="App" >
-       
+        <AppContexts.Provider value={{ wishlistitems, setwishlistitems, cartitems, setcartitems }}>
             <Header isLogged={login} logSet={LoginSet} />
             <Switch >
-                <Route path={"/login"} exact component={Login}/>
-                 <
+
+                <Route path={"/login"} exact component={Login} />
+                <
                     Route path={"/"}
                     exact component={Home}
                 /> <
@@ -82,15 +93,15 @@ function App() {
                     component={productVariety}
                 />
 
-          {/* this one should place always bottom */}
-          <Route path={"/*"} exact component={Home} />
-          
-        </Switch>
-        <Footer />
-     
+                {/* this one should place always bottom */}
+                <Route path={"/*"} exact component={Home} />
 
+            </Switch>
+            <Footer />
+
+        </AppContexts.Provider>
     </div>
-  );
+    );
 }
 
 export default App;
