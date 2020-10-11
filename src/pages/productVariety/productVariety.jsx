@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import './productVariety.css'
 
 
+
 export default class productVariety extends Component {
     constructor(props) {
         super(props);
+
     }
 
     render() {
@@ -15,6 +17,7 @@ export default class productVariety extends Component {
                         <div id="pvcard_container">
                             <h2 className="cardhedar">Product Variety</h2>
                             <div className="d-flex">
+                                <img className="pcimg" src="https://firebasestorage.googleapis.com/v0/b/hciapp-7355d.appspot.com/o/unnamed.jpg?alt=media&token=45f543dc-14f7-4116-885f-e4ae6e5406f1" alt="" />
 
                                 <div>
 
