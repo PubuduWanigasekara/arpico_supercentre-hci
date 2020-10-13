@@ -10,7 +10,6 @@ import { AppContexts } from "../../contexts/AppContextsProvider";
 
 
 export default function Wishlist() {
- // let [data, Setdata] = useState([]);
   let [stylererror, Setstylererror] = useState("d_hide msg_cantainer");
   let [stylersucsses, Setstylersucsses] = useState("d_hide msg_cantainer");
   let [playsucsses, Setplaysucsses] = useState(true);
@@ -19,7 +18,6 @@ export default function Wishlist() {
   const notify = () => toast("Wow so easy !");
   const {wishlistitems, setwishlistitems} = useContext(AppContexts);
   const {cartitems, setcartitems} = useContext(AppContexts);
-  //let lastMove = '';
 
 
 
@@ -43,7 +41,6 @@ export default function Wishlist() {
 
   useEffect(() => {
     if (JSON.parse(localStorage.getItem("wishlistItems"))) {
-      //Setdata(JSON.parse(localStorage.getItem("wishlistItems")));
       console.log("1");
       console.log(wishlistitems);
     } else {
@@ -121,7 +118,7 @@ export default function Wishlist() {
         message = wishlistitems[i].name;
       }
     }
-    toast.success("You added "+message+" to your shopping cart.");
+    toast.success("You added "+message+" to your shopping cart.",{position: toast.POSITION.BOTTOM_RIGHT});
     adddamy();
   }
   const remove = (id) => {
@@ -133,7 +130,7 @@ export default function Wishlist() {
         message = item.name;
       }
     }));
-    toast.error("You removed "+message+" from wish list");
+    toast.error("You removed "+message+" from wish list",{position: toast.POSITION.BOTTOM_RIGHT});
   };
 
   const removeall = () => {
