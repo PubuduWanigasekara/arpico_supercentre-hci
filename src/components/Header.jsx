@@ -1,8 +1,8 @@
-import React, { useEffect , useState } from 'react'
+import React, { useEffect , useState , useRef} from 'react'
 import {motion , AnimatePresence} from 'framer-motion'
 import Logo from '../assets/logo.svg'
 import {Link} from "react-router-dom";
-import {useHistory} from 'react-router-dom'
+import {useHistory , useLocation} from 'react-router-dom'
 
 export default function Header(props) {
 
@@ -10,11 +10,14 @@ export default function Header(props) {
 
     let [mobmenu, setmobmenu] = useState(false);
     let [propmenu, setpropMenu] = useState(false);
-
+    
+    
     const history = useHistory();
+    const location = useLocation();
+    let focus = useRef();
     useEffect(() => {
 
-     
+   
             const width = window.innerWidth;
 
             if (width < 780) {
@@ -40,6 +43,8 @@ export default function Header(props) {
             }
 
         }
+
+        
     });
 
     const logo = {
@@ -64,6 +69,8 @@ export default function Header(props) {
     const totop = ()=>{
         window.scrollTo(0,0);
     }
+
+    
     return (
         <div>
             <div id="navbar">
@@ -95,7 +102,7 @@ export default function Header(props) {
             animate={{ opacity: 1 }}
             exit={{  opacity: 0  , y:20 }}>
                 {propmenu ? <>
-                    <motion.div id="user_menu" initial={{ opacity: 0 ,y:20 }}
+                    <motion.div ref={focus} onMouseLeave={() => setpropMenu(false)} id="user_menu" initial={{ opacity: 0 ,y:20 }}
             animate={{ opacity: 1 , y:0 }}
             exit={{ opacity: 0 , y:20 }}
             transition ={{
@@ -109,7 +116,14 @@ export default function Header(props) {
                      </AnimatePresence>
                      
                 </div>
+
           
+            </div>
+
+             <div id="location_bar" style={location.pathname != '/' ? {display:''} : {display:'none'}}>
+             
+            {props.home} / <div onClick={()=> history.push(props.link)}>&nbsp;{props.name}</div> 
+               
             </div>
 
             {/* <div id="mobnav">
