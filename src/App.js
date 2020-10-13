@@ -39,6 +39,7 @@ function App() {
 
     useEffect(() => {
         const currentPath = location.pathname;
+        
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -49,19 +50,40 @@ function App() {
     };
 
 
+   
+
+    
+    let[nName , setLoc] = useState()
+    let[nLink , setLink] = useState()
+
+    const setLocbar=(name , nlink)=>{
+        
+        setLoc(name);
+        setLink(nlink)
+
+    }
+
+
 
 
     return (<
         div className="App" >
         <AppContexts.Provider value={{ wishlistitems, setwishlistitems, cartitems, setcartitems }}>
-            <Header isLogged={login} logSet={LoginSet} />
+            <Header isLogged={login} logSet={LoginSet} home={'Home'} name={nName} link={nLink}/>
             <Switch >
 
                 <Route path={"/login"} exact component={Login} />
+
+
+                // new router change
+
+                <Route exact path="/baby" render={() => {
+                    setLocbar('Baby needs','/baby');
+                    return <Baby />;
+                } } />
+                
+
                 <
-                    Route path={"/"}
-                    exact component={Home}
-                /> <
                     Route path={"/faq"}
                     component={Faq}
                 /> <
@@ -78,7 +100,8 @@ function App() {
                     component={Grocery}
                 /> <
                     Route path={"/baby"}
-                    component={Baby}
+                    component={() => <Baby updateLoc={()=> setLocbar('baby','/baby')} />}
+                    onEnter={() => alert("")}
                 /> <
                     Route path={"/store_locations"}
                     component={store_locations}
