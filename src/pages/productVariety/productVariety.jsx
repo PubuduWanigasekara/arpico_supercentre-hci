@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import './productVariety.css'
-
+import Aos from "aos"
+import "aos/dist/aos.css"
 
 
 export default class productVariety extends Component {
     constructor(props) {
         super(props);
-
+        Aos.init({ duration: 2000 });
     }
 
     render() {
@@ -14,10 +15,11 @@ export default class productVariety extends Component {
             <div>
                 <div id="bodypr">
                     <div id="pvcardBase" >
-                        <div id="pvcard_container">
-                            <h2 className="cardhedar">Product Variety</h2>
+                        <div id="pvcard_container" data-aos="fade-up"
+                            data-aos-anchor-placement="center-bottom">
+                            <h2 className="cardhedar">Product Variety</h2><hr />
                             <div className="d-flex">
-                                <img className="pcimg" src="https://firebasestorage.googleapis.com/v0/b/hciapp-7355d.appspot.com/o/unnamed.jpg?alt=media&token=45f543dc-14f7-4116-885f-e4ae6e5406f1" alt="" />
+                                {/* <img className="pcimg" src="https://firebasestorage.googleapis.com/v0/b/hciapp-7355d.appspot.com/o/unnamed.jpg?alt=media&token=45f543dc-14f7-4116-885f-e4ae6e5406f1" alt="" /> */}
 
                                 <div>
 
@@ -39,8 +41,9 @@ export default class productVariety extends Component {
                     </div>
 
                     <div id="pvcardBase" >
-                        <div id="pvcard_container">
-                            <h2 className="cardhedar" >Retail Chain</h2>
+                        <div id="pvcard_container" data-aos="fade-up"
+                            data-aos-anchor-placement="center-bottom">
+                            <h2 className="cardhedar" >Retail Chain</h2><hr />
                             <p>
                                 We operate through a growing network of “Arpico Supercentre” outlets located in key towns in the Western, Central and |Southern provinces with easy access routes to offer the most convenient shopping experience in Sri Lanka. The Arpico retail chain comprises of 17 Arpico Supercentres, 19 showrooms and 22 Arpico Daily supermarkets. Arpico Supercentres, the company’s flagship outlets, offer extensive parking, bill payments, banking facilities, oder lifestyle needs. Located in and around the footprint of Arpico Supercentres, Arpico Daily Supermarkets cater to your daily top-up requirements. Rapidly expanding, an Arpico Daily Supermarket will be closer to your neighborhood soon.
                       </p>
@@ -50,9 +53,10 @@ export default class productVariety extends Component {
                         </div>
                     </div>
 
-                    <div id="pvcardBase">
+                    <div id="pvcardBase" data-aos="fade-up"
+                        data-aos-anchor-placement="center-bottom">
                         <div id="pvcard_container" className="mb-15">
-                            <h2 className="cardhedar" >What’s in Store</h2>
+                            <h2 className="cardhedar" >What’s in Store</h2><hr />
                             <div className="d-flex">
 
                                 <div className="wsImage">
