@@ -6,10 +6,10 @@ import Home from "./pages/home/Home";
 import Wishlist from "./pages/wishlist/wishlist";
 import Faq from "./pages/footer/faq/Faq";
 import TermsAndConditions from "./pages/footer/termsAndConditions/TermsAndConditions";
-import store_locations from "./pages/store_locations/store_locations";
-import productVariety from "./pages/productVariety/productVariety";
+import Store_locations from "./pages/store_locations/store_locations";
+import ProductVariety from "./pages/productVariety/productVariety";
 import Cart from "./pages/cart/Cart";
-import contactUs from "./pages/contactUs/contactUs";
+import ContactUs from "./pages/contactUs/contactUs";
 import Grocery from "./pages/categories/grocery/Grocery";
 import Login from "./pages/login/Login";
 import Payment from "./pages/payment options/Payment";
@@ -39,7 +39,7 @@ function App() {
 
     useEffect(() => {
         const currentPath = location.pathname;
-        
+
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -50,14 +50,14 @@ function App() {
     };
 
 
-   
 
-    
-    let[nName , setLoc] = useState()
-    let[nLink , setLink] = useState()
 
-    const setLocbar=(name , nlink)=>{
-        
+
+    let [nName, setLoc] = useState()
+    let [nLink, setLink] = useState()
+
+    const setLocbar = (name, nlink) => {
+
         setLoc(name);
         setLink(nlink)
 
@@ -69,7 +69,7 @@ function App() {
     return (<
         div className="App" >
         <AppContexts.Provider value={{ wishlistitems, setwishlistitems, cartitems, setcartitems }}>
-            <Header isLogged={login} logSet={LoginSet} home={'Home'} name={nName} link={nLink}/>
+            <Header isLogged={login} logSet={LoginSet} home={'Home'} name={nName} link={nLink} />
             <Switch >
 
                 <Route path={"/login"} exact component={Login} />
@@ -78,43 +78,55 @@ function App() {
                 // new router change
 
                 <Route exact path="/baby" render={() => {
-                    setLocbar('Baby needs','/baby');
+                    setLocbar('Baby needs', '/baby');
                     return <Baby />;
-                } } />
-                
+                }} />
 
-                <
-                    Route path={"/faq"}
-                    component={Faq}
-                /> <
-                    Route path={"/terms-and-conditions"}
-                    component={TermsAndConditions}
-                /> <
-                    Route path={"/wishlist"}
-                    component={Wishlist}
-                /> <
-                    Route path={"/cart"}
-                    component={Cart}
-                /> <
-                    Route path={"/categories-grocery"}
-                    component={Grocery}
-                /> <
-                    Route path={"/baby"}
-                    component={() => <Baby updateLoc={()=> setLocbar('baby','/baby')} />}
-                    onEnter={() => alert("")}
-                /> <
-                    Route path={"/store_locations"}
-                    component={store_locations}
-                /> <
-                    Route path={"/contact-us"}
-                    component={contactUs}
-                /> <
-                    Route path={"/payment"}
-                    component={Payment}
-                /> <
-                    Route path={"/productVariety"}
-                    component={productVariety}
-                />
+                <Route exact path="/faq" render={() => {
+                    setLocbar('F.A.Q', '/faq');
+                    return <Faq />;
+                }} />
+
+                <Route exact path="/terms-and-conditions" render={() => {
+                    setLocbar('Terms and conditions', '/terms-and-conditions');
+                    return <TermsAndConditions />;
+                }} />
+
+                <Route exact path="/wishlist" render={() => {
+                    setLocbar('Wishlist', '/wishlist');
+                    return <Wishlist />;
+                }} />
+
+                <Route exact path="/cart" render={() => {
+                    setLocbar('Cart', '/cart');
+                    return <Cart />;
+                }} />
+
+                <Route exact path="/categories-grocery" render={() => {
+                    setLocbar('Grocery', '/categories-grocery');
+                    return <Grocery />;
+                }} />
+            
+                <Route exact path="/store_locations" render={() => {
+                    setLocbar('Store Locations', '/store_locations');
+                    return <Store_locations />;
+                }} />
+
+                <Route exact path="/contact-us" render={() => {
+                    setLocbar('Contact Us', '/contact-us');
+                    return <ContactUs />;
+                }} />
+
+                <Route exact path="/payment" render={() => {
+                    setLocbar('Payments', '/payment');
+                    return <Payment />;
+                }} />
+
+                <Route exact path="/productVariety" render={() => {
+                    setLocbar('product Variety', '/productVariety');
+                    return <ProductVariety />;
+                }} />
+
 
                 {/* this one should place always bottom */}
                 <Route path={"/*"} exact component={Home} />
