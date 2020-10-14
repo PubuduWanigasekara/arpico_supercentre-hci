@@ -122,7 +122,7 @@ export default function Header(props) {
 
              <div id="location_bar" style={location.pathname != '/' ? {display:''} : {display:'none'}}>
              
-            {props.home} / <div onClick={()=> history.push(props.link)}>&nbsp;{props.name}</div> 
+             <div onClick={()=> history.push('/')}>{props.home}&nbsp;</div> / <div onClick={()=> history.push(props.link)}>&nbsp;{props.name}</div> 
                
             </div>
 

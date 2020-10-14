@@ -14,6 +14,7 @@ import Grocery from "./pages/categories/grocery/Grocery";
 import Login from "./pages/login/Login";
 import Payment from "./pages/payment options/Payment";
 import Baby from "./pages/babyNeeds/Baby";
+import Signup from "./pages/signup/Signup";
 import { Switch, Route, Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { AppContexts } from "./contexts/AppContextsProvider";
