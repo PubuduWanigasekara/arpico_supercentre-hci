@@ -26,12 +26,18 @@ export default function Baby() {
            <div id="content_top">
              
             <div id="price_range">
-    {minmax.min} - {minmax.max} LKR
+                <div id="price_range_title">
+                choose price range
+                </div>
+                <div id="price_range_container">
+                {minmax.min} - {minmax.max} LKR
                <div id="price_range_selector">
          
                    <input type="range" name=""  className="range"  id="range_low" onChange={e => setMinmax({...minmax , min : e.target.value})}/>
                    <input type="range" name=""  className="range"  id="range_hi" onChange={e => setMinmax({...minmax , max : e.target.value})}/>
                </div>
+                </div>
+ 
             </div>
             <div id="whistlist_holder">
         <Whislist id="whishlist_comp"/>
