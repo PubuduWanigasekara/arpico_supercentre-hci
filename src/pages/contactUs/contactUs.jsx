@@ -371,7 +371,7 @@ export class contactUs extends React.Component {
                                             {/* <Lottie id="stack-top" animationData={cus} /> */}
                                             {/* <Lottie id="stack-top" animationData={cus2} /> */}
                                             <div id="stack-top"> </div>
-                                            <h2>Contact information</h2><hr />
+                                            <h2 className="cussubTital">Contact information</h2><hr className="cinfo"/>
                             📍   No: 310, High Level Road, Nawinna, Maharagama.<br />
                             📞 Phone: 011 43 10 500 <br />
                             📧 Email: info@arpicosupercentre.com<br />
