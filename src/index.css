@@ -19,3 +19,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* dont change these styles  */
+
+a:hover{
+  color: #000 !important;
+  font-weight: 500;
+  }

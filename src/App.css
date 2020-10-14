@@ -216,8 +216,17 @@ font-size:25px;
   margin-left: 25px;
   cursor: pointer;
   transition: 1s ease;
-  border-right: 2px solid #b1afaf;
+  /* border-right: 2px solid #b1afaf; */
   padding-right: 15px;
+  width:40px;
+}
+
+#separator{
+  width:2px;
+  height:20px;
+  background-color: #9A9A9A;
+  position: absolute;
+  margin-left: 63px;
 }
 
 #search_btn {

@@ -157,14 +157,24 @@
     #contactInfodetails {
         padding-left: 33px;
         padding-bottom: 12px;
+        background-image: url(https://firebasestorage.googleapis.com/v0/b/hciapp-7355d.appspot.com/o/CONTACT%20US%20EDIT.png?alt=media&token=6d523ae7-385a-488a-912a-de31e6297fb0);
+        background-image: url(https://firebasestorage.googleapis.com/v0/b/hciapp-7355d.appspot.com/o/Captur2fe%20copy.png?alt=media&token=556590f7-e54b-47d7-876f-3742a6850b2a);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: right;
     }
     
     #stack-top {
-        height: 184px;
+        height: 211px;
+        position: absolute;
+        top: 29.8%;
+        left: 78.51%;
+        /* height: 184px;
         position: absolute;
         top: 30.7%;
         left: 76.91%;
-        border-radius: 10px;
+        border-radius: 10px; */
+        /* background-image: url(https://firebasestorage.googleapis.com/v0/b/hciapp-7355d.appspot.com/o/CONTACT%20US%20EDIT.png?alt=media&token=6d523ae7-385a-488a-912a-de31e6297fb0); */
     }
     
     #a56 {
@@ -209,7 +219,11 @@
         margin-top: 0px;
         margin-bottom: 0;
     }
-    hr.botem{margin: 0;}
+    hr{
+        width: 85%;
+        text-align: left;
+        margin: auto 0;
+    }
 
     #phonestack-top{
         height: 112px;
