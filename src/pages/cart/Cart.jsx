@@ -1,33 +1,51 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import CartProductCard from "../../components/CartProductCard";
+import { AppContexts } from "../../contexts/AppContextsProvider";
+import {ToastContainer,toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Cart() {
   //   cart
-  let [data, Setdata] = useState([]);
-
+  let [total, Settotal] = useState(0);
+  const {cartitems, setcartitems} = useContext(AppContexts);
+  var t=0;
   useEffect(() => {
-    if (JSON.parse(localStorage.getItem("cartItems"))) {
-      console.log("1");
-      Setdata(JSON.parse(localStorage.getItem("cartItems")));
-    } else {
-      console.log("0");
+    for(var i=0;i<cartitems.length;i++){
+      t = t+ cartitems[i].qty*cartitems[i].price
+      console.log(t);
+      Settotal(t);
+      console.log(total);
     }
   }, []);
 
+
+
   let sdata = {
+    id: 4,
     name: "test",
     price: 300,
     qty: 2,
+    isAddedToCart: true
   };
 
   const add = () => {
-    Setdata([...data, sdata]);
-
-    console.log(data);
+    setcartitems([...cartitems, sdata]);
+    console.log(cartitems);
   };
 
-  const remove = (itm) => {
-    data.splice(itm, 1);
+  const remove = (id) => {
+    var message = '';
+    console.log(id);
+    setcartitems(cartitems.filter(item => {
+      if(item.id != id){
+        return item;
+      }else{
+        message = item.name;
+        var subTot = total-(item.qty*item.price);
+        Settotal(subTot)
+      }
+    }));
+    toast.error("You removed "+message+" from wish list",{position: toast.POSITION.BOTTOM_RIGHT});
   };
 
   return (
@@ -58,7 +76,7 @@ export default function Cart() {
               <h5 id="cart_subtitle">Shipping Methods</h5>
               <div id="cartbuttonsdiv">
                 <button className="button primary cart_button">
-                  LKR350.00
+                  LKR{total}
                 </button>
                 <button className="button primary cart_button">
                   Arpico Delivery
@@ -74,15 +92,15 @@ export default function Cart() {
           <div id="cart_right_div">
             <h5 id="cart_subtitle">Order Summary</h5>
             <div id="c_items_div">
-              {data.map((it, index) => {
+              {cartitems.map((it, index) => {
                 return (
                   <CartProductCard
-                    removeItem={() => remove}
                     key={index}
-                    item={index}
+                    item={it.id}
                     name={it.name}
                     price={it.price}
                     qty={it.qty}
+                    removeItem={(itm) => remove(itm)}
                   />
                 );
               })}
@@ -92,6 +110,7 @@ export default function Cart() {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 }

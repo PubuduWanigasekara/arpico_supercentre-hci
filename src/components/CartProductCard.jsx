@@ -1,25 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function CartProductCard(props) {
-  // let [data,setData] = useState({
-  //     qty:'',
-  //     price:'',
-  //     name:''
-  // })
-
-  //    function set(){
-  //     setData({...data , qty:props.qty})
-  //     setData({...data , price:props.price})
-  //     setData({...data , name:props.name})
-  //    }
-
-  const rem = (e) => {
-    console.log(e);
-    props.removeItem(e);
-  };
-
-  useEffect(() => {});
-
+export default ({key,item,name,price,qty,removeItem})=> {
   return (
     <div id="w_cardBase">
       <div id="w_card_container">
@@ -28,16 +9,13 @@ export default function CartProductCard(props) {
         </div>
         <div id="w_card_product_details_container">
           <div id="c_card_des">
-            {props.name} {props.key} <div id="c_card_number">{props.qty}X</div>
+            {name} {key} <div id="c_card_number">{qty}X</div>
           </div>
-          <div id="c_card_price">{props.price} LKR</div>
+          <div id="c_card_price">{price} LKR</div>
         </div>
         <div>
           <div id="cart_controllers">
-            <button id="c_card_r_button">
-              <i class="ar-deliver c_card_r_button_cart_icon"></i>
-            </button>
-            <button id="c_card_r_button" onClick={() => rem(props.item)}>
+            <button id="c_card_r_button" onClick={() => removeItem(item)}>
               <i class="ar-remove c_card_r_button_remove_icon"></i>
             </button>
           </div>
