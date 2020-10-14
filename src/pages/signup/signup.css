@@ -13,7 +13,6 @@ a:hover {
   text-decoration: underline;
 }
 
-
 #signup_container #signup_form {
   width: 90%;
   display: flex;
@@ -58,8 +57,6 @@ a:hover {
   margin-top: 20px;
 }
 
-
-
 #icons {
   width: 50px;
   position: absolute;
@@ -72,13 +69,6 @@ a:hover {
   text-align: center;
 }
 
-#personal_title {
-  color: #343434;
-  margin-top: 5px;
-  font-size: 16px;
-  font-weight: 500;
-  margin-left: 10px;
-}
 
 .newspaper {
   column-count: 2;
@@ -94,65 +84,64 @@ h2 {
 }
 
 * {
-    box-sizing: border-box;
-  }
-  
-  /* Create two equal columns that floats next to each other */
-  .column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  #signupImg{
-    width: 110%;
-    padding: 50px 0px 50px 50px;
-  }
-
-  #title_para{
-      font-weight: 400;
-  }
-
-#check_box{
-    width: 40px !important;
-    height: 15px !important;
-    margin-bottom:5px !important;
+  box-sizing: border-box;
 }
 
-#checkbox_label{
-    font-size: 12px !important;
-    font-weight: 400 !important;
-    padding-bottom: 10px !important;
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
 }
- 
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#signupImg {
+  width: 110%;
+  padding: 50px 0px 50px 50px;
+}
+
+#title_para {
+  font-weight: 400;
+}
+
+#check_box {
+  width: 40px !important;
+  height: 15px !important;
+  margin-bottom: 5px !important;
+}
+
+#checkbox_label {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  padding-bottom: 10px !important;
+}
 
 #signup_container #signup_form #inputs select {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    background: #fff;
-    background-clip: padding-box;
-    border: 1px solid #c2c2c2;
-    border-radius: 40px;
-    font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    height: 40px;
-    line-height: 1.42857143;
-    padding: 5px 10px 4px;
-    vertical-align: baseline;
-    width: 100%;
-    box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background: #fff;
+  background-clip: padding-box;
+  border: 1px solid #c2c2c2;
+  border-radius: 40px;
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  line-height: 1.42857143;
+  padding: 5px 10px 4px;
+  vertical-align: baseline;
+  width: 100%;
+  box-sizing: border-box;
 }
-#signup_container #signup_form #inputs option{
-    border: none;
+#signup_container #signup_form #inputs option {
+  border: none;
 }
 
-#input_one a{
-    margin-top: 10px !important;
+#input_one a {
+  margin-top: 10px !important;
 }

@@ -78,6 +78,11 @@ function App() {
 
                 // new router change
 
+                <Route exact path="/signup" render={() => {
+                    // setLocbar('Baby needs', '/baby');
+                    return <Signup />;
+                }} />
+                
                 <Route exact path="/baby" render={() => {
                     setLocbar('Baby needs', '/baby');
                     return <Baby />;

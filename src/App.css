@@ -26,12 +26,11 @@
   font-weight: 600;
 }
 
-#location_bar{
+#location_bar {
   align-items: center;
   padding-left: 80px;
   display: flex;
   margin-top: 20px;
-  
 }
 #profile {
   width: 50px;
@@ -46,7 +45,6 @@
 }
 
 #user_menu {
-  
   background-color: #fff;
   width: 200px;
   height: 100px;
@@ -63,13 +61,10 @@
   box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.2);
 }
 
-
-#user_menu li{
-text-align:right !important;
-width:auto;
-margin-left: 10px;
-
-
+#user_menu li {
+  text-align: right !important;
+  width: auto;
+  margin-left: 10px;
 }
 
 #profile i {
@@ -77,17 +72,16 @@ margin-left: 10px;
   font-size: 30px;
 }
 
-.pro_icons{
-  margin:0px 10px 0px 0px;
+.pro_icons {
+  margin: 0px 10px 0px 0px;
 }
 
-.pro_icons_logout{
-  margin:0px 10px 0px 0px;
+.pro_icons_logout {
+  margin: 0px 10px 0px 0px;
 }
 
-
-.ar-user{
-font-size:25px;
+.ar-user {
+  font-size: 25px;
 }
 
 #bag {
@@ -868,7 +862,7 @@ a {
   text-align: center;
   width: fit-content;
   padding: 0px 15px 0px 15px;
-  margin: 4px 10px;;
+  margin: 4px 10px;
 }
 
 #cart_controllers {
@@ -893,12 +887,12 @@ a {
 
 .c_card_r_button_remove_icon {
   font-size: 20px;
-  color: #EB4D4B;
+  color: #eb4d4b;
 }
 
 .c_card_r_button_cart_icon {
   font-size: 20px;
-  color: #36EA33;
+  color: #36ea33;
 }
 
 #c_card_img_container {
@@ -911,8 +905,43 @@ a {
   border-radius: 5%;
 }
 
-#c_items_div{
+#c_items_div {
   margin-top: -35px;
   margin-left: 10px;
   margin-bottom: 40px;
 }
+
+/* sigup */
+#signup_title {
+  font-size: 35px;
+  font-weight: 600;
+  color: #666666;
+  margin: 15px auto 5px 45px;
+}
+
+#signup_sub_title{
+  font-size: 12px;
+  padding: 3px 0px 0px 10px;
+}
+
+#signup-card{
+  padding: 20px 20px;
+}
+
+#personal_title1{
+  font-size: 23px;
+  font-weight: 500;
+  margin-top: -20px;
+}
+
+#signup_checkbox_label{
+  font-size: 12px;
+  padding: 3px 0px 0px 10px;
+  margin-left: -12px;
+  margin-top: 80px;
+}
+
+#signup_droupdown{
+  text-align: center;
+}
+
