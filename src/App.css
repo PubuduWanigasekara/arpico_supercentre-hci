@@ -213,7 +213,7 @@ font-size:25px;
 #cat_btn {
   position: absolute;
   justify-content: center;
-  margin-left: 25px;
+  margin-left: 20px;
   cursor: pointer;
   transition: 1s ease;
   /* border-right: 2px solid #b1afaf; */
@@ -226,13 +226,13 @@ font-size:25px;
   height:20px;
   background-color: #9A9A9A;
   position: absolute;
-  margin-left: 63px;
+  margin-left: 67px;
 }
 
 #search_btn {
   position: absolute;
   justify-content: center;
-  margin-left: 80px;
+  margin-left: 82px;
   cursor: pointer;
   transition: 1s ease;
 }
