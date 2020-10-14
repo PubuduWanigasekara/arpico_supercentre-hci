@@ -54,7 +54,7 @@ export default function Home() {
                     </div>
 
                     <div id="search_container">
-                    <Cat_btn id="cat_btn" onClick={catToggle} /> <Search_btn id="search_btn" /><input type="text" name="" id="search" />
+                    <Cat_btn id="cat_btn" onClick={catToggle} /> <div id="separator"></div> <Search_btn id="search_btn" /><input type="text" name="" id="search" />
                     </div>
                 </div>
                 <AnimatePresence>

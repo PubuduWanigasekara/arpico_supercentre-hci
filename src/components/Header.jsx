@@ -58,7 +58,7 @@ export default function Header(props) {
     }
 
     const linkstyle = {
-        textDecoration: 'none'
+        textDecoration: 'none',
     }
 
     const navHome = ()=>{
