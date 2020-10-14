@@ -9,7 +9,7 @@ import TermsAndConditions from "./pages/footer/termsAndConditions/TermsAndCondit
 import store_locations from "./pages/store_locations/store_locations";
 import productVariety from "./pages/productVariety/productVariety";
 import Cart from "./pages/cart/Cart";
-import contactUs from "./pages/contactUs/contactUs";
+import ContactUs from "./pages/contactUs/contactUs";
 import Grocery from "./pages/categories/grocery/Grocery";
 import Login from "./pages/login/Login";
 import Payment from "./pages/payment options/Payment";
@@ -99,16 +99,13 @@ function App() {
                     Route path={"/categories-grocery"}
                     component={Grocery}
                 /> <
-                    Route path={"/baby"}
-                    component={() => <Baby updateLoc={()=> setLocbar('baby','/baby')} />}
-                    onEnter={() => alert("")}
-                /> <
                     Route path={"/store_locations"}
                     component={store_locations}
-                /> <
-                    Route path={"/contact-us"}
-                    component={contactUs}
-                /> <
+                /> <Route exact path="/contact-us" render={() => {
+                    setLocbar('Contact us','/contact-us');
+                    return <ContactUs />;
+                } } />
+                 <
                     Route path={"/payment"}
                     component={Payment}
                 /> <
