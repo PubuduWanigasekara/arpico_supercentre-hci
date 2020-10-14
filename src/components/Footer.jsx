@@ -44,7 +44,7 @@ export default function Footer() {
             </li>
             <li>About Us</li>
             <li><Link to="/contact-us">Contact Us</Link></li>
-            <li><Link to="/productVariety">Store Locations</Link></li>
+            <li><Link to="/store_locations">Store Locations</Link></li>
           </ul>
 
                        <ul>
