@@ -109,7 +109,7 @@ export default function Cart() {
                 <h5 id="cart_subtitle">Shipping Methods</h5>
                 <div id="cartbuttonsdiv">
                   <button className="button primary cart_button">
-                    LKR{total}
+                    LKR {total + 375}
                   </button>
                   <button className="button primary cart_button">
                     Arpico Delivery
@@ -118,7 +118,9 @@ export default function Cart() {
                     Arpico Doorstep delivery
                   </button>
                 </div>
-                {/* <button className="button primary ">Next</button> */}
+                <div id="cart_checkout_btn_div">
+                  <button className="button primary" id="cart_checkout_button">Go to Payment</button>
+                </div>
               </div>
             </div>
           </div>

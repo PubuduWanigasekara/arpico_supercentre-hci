@@ -1010,3 +1010,20 @@ a {
   margin-left: 10px;
   margin-bottom: 40px;
 }
+
+#cart_checkout_btn_div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cart_checkout_button{
+  background: #1a2572;
+  color: #fff;
+  width: fit-content;
+  padding: 10px 15px 10px 15px;
+  margin: -30px 15px 15px 15px;
+  width: 470px;
+  font-weight: 400;
+  font-size: 20px;
+}
