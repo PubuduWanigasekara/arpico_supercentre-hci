@@ -4,8 +4,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/home/Home";
 import Wishlist from "./pages/wishlist/wishlist";
-import Faq from "./pages/footer/faq/Faq";
-import TermsAndConditions from "./pages/footer/termsAndConditions/TermsAndConditions";
 import Store_locations from "./pages/store_locations/store_locations";
 import ProductVariety from "./pages/productVariety/productVariety";
 import Cart from "./pages/cart/Cart";
@@ -15,6 +13,7 @@ import Login from "./pages/login/Login";
 import Payment from "./pages/payment options/Payment";
 import Baby from "./pages/babyNeeds/Baby";
 import Signup from "./pages/signup/Signup";
+import Faq from './pages/faq/Faq'
 import { Switch, Route, Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { AppContexts } from "./contexts/AppContextsProvider";
@@ -83,15 +82,9 @@ function App() {
                     return <Baby />;
                 }} />
 
-                <Route exact path="/faq" render={() => {
-                    setLocbar('F.A.Q', '/faq');
-                    return <Faq />;
-                }} />
+                
 
-                <Route exact path="/terms-and-conditions" render={() => {
-                    setLocbar('Terms and conditions', '/terms-and-conditions');
-                    return <TermsAndConditions />;
-                }} />
+               
 
                 <Route exact path="/wishlist" render={() => {
                     setLocbar('Wishlist', '/wishlist');
@@ -126,6 +119,11 @@ function App() {
                 <Route exact path="/productVariety" render={() => {
                     setLocbar('product Variety', '/productVariety');
                     return <ProductVariety />;
+                }} />
+
+                <Route exact path="/faq" render={() => {
+                    setLocbar('Frequently asked questions', '/faq');
+                    return <Faq />;
                 }} />
 
 

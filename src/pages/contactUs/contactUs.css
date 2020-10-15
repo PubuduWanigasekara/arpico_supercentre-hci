@@ -49,6 +49,7 @@
     #mainpanal{
         background: rgb(216,216,216);
         background: linear-gradient(0deg, rgba(216,216,216,0.25) 0%, rgba(255,255,255,1) 90%);
+        margin-top:50px;
     }
     
     .contactustxt {
@@ -210,19 +211,20 @@
         border-radius: 40px !important;
     }
     
-    h2 {
+    h2.cussubTital {
         margin-bottom: 5px !important;
         margin-left: 0px !important;
     }
 
-    h1{
+    h1.map_h1{
         margin-top: 0px;
         margin-bottom: 0;
     }
-    hr{
-        width: 85%;
+    hr.cinfo{
+        width: 84.3%;
         text-align: left;
         margin: auto 0;
+        margin-bottom: 8px;
     }
 
     #phonestack-top{

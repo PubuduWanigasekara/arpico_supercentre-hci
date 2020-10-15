@@ -89,7 +89,7 @@ export default function Header(props) {
                          </button>
                          <i class="ar-down-1 hover" onClick={toggleProfile} ></i> 
                          </li>
-                         <li id="cart_li">
+                         <li id="cart_li" onClick={()=> history.push('/cart')}>
                              <i class="ar-bag" id="bag"></i>
                              <div id="cart_total">20</div>
                              </li>
@@ -122,7 +122,7 @@ export default function Header(props) {
 
              <div id="location_bar" style={location.pathname != '/' ? {display:''} : {display:'none'}}>
              
-             <div onClick={()=> history.push('/')}>{props.home}&nbsp;</div> / <div onClick={()=> history.push(props.link)}>&nbsp;{props.name}</div> 
+             <div onClick={()=> history.push('/')} style={{cursor:'pointer'}}>{props.home}&nbsp;</div> / <div onClick={()=> history.push(props.link)}>&nbsp;{props.name}</div> 
                
             </div>
 
