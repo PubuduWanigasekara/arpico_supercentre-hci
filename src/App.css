@@ -859,8 +859,17 @@ a {
 }
 
 #c_img {
-  height: 80px;
-  border-radius: 5%;
+  height: 130px;
+  border-radius: 6%;
+}
+
+#c_cardBase {
+  padding: 40px 15% 0px 15%;
+}
+
+#c_card_container {
+  border-bottom: 2px solid #c4c4c4;
+  display: flex;
 }
 
 #c_items_div{
