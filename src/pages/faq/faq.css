@@ -1,13 +1,40 @@
-#faq_search_c{
-    height: calc(100vh / 4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#faq_head {
+  height: calc(100vh / 6);
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
 }
 
-#faq_container{
-    height: calc(100vh /1);
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+#faq_container {
+  height: calc(100vh / 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#faq_title {
+  font-size: 25px;
+  font-weight: 500;
+  display: block;
+  margin-left: 620px;
+  /* margin-right: auto; */
+}
+
+#faq_search_bar {
+  margin-left: 530px;
+  height: 33px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  font-size: 15px;
+  padding-left: 5px;
+  width: 430px;
+  margin-top: 5px;
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+#card_search_icon{
+    margin-left: 555px;
+    margin-top: 13px;
+    position: absolute;
 }

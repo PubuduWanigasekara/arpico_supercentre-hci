@@ -81,7 +81,7 @@ export default function Wishlist() {
   }, [wishlistitems]);
 
   let sdata = {
-    id: 4,
+    id: "09a60aadfca345bf8430f7db7ad1e46e",
     name: "test",
     price: 300,
     qty: 2,
@@ -95,7 +95,6 @@ export default function Wishlist() {
   };
 
   const add = () => {
-    sdata.id =Math.random();
     setwishlistitems([...wishlistitems, sdata]);
     console.log(wishlistitems);
   };
@@ -221,9 +220,9 @@ export default function Wishlist() {
 
 
 <button class={addbuttestyle} onClick={removeall}><span>Add all to cart </span></button>
-<button onClick={add}>test</button>
+{/* <button onClick={add}>test</button>
 <button onClick={acd}>test</button>
-<button onClick={notify}>Notify !</button>
+<button onClick={notify}>Notify !</button> */}
   <ToastContainer />
 </div>
   );
