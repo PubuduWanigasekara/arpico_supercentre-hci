@@ -66,8 +66,37 @@ function PasswordValidater(event) {
   }
   else {
     setshowpasswordeval("none");
-    
+  }
 
+  var passed = 0;
+
+  for (var i = 0; i < regArr.length; i++) {
+    if (new RegExp(regArr[i]).test(val)) {
+      passed++;
+    }
+  }
+
+  switch (passed) {
+    case 0:
+      setpercent("0");
+      setstrokeColor("#ff3333");
+      break;
+    case 1:
+      setpercent("25");
+      setstrokeColor("#ff3333");
+      break;
+    case 2:
+      setpercent("50");
+      setstrokeColor("#ff751a");
+      break;
+    case 3:
+      setpercent("75");
+      setstrokeColor("#ffd633");
+      break;
+    case 4:
+      setpercent("100");
+      setstrokeColor("#33ff33");
+      break;
 
   }
 }
@@ -141,8 +170,8 @@ function PasswordValidater(event) {
          </div>
                    
                 <div className="row" id="input_one">  {/* <Pass id="icons" className="pass"/> */}
-                   <input type="password"   name="password" id="password" placeholder="Password" required onChange={PasswordValidater}/></div>
-                   <Line percent="50" strokeWidth="3" strokeColor="#b69a31" />
+                   <input type="password"   name="password" id="password" placeholder="Password" required onChange={PasswordValidater} style={{marginBottom:"1px"}}/></div>
+                   <Line percent={percent} strokeWidth="3" strokeColor={strokeColor} />
                    <div className="alert-danger" style={{ display: showpasswordeval }}>Cheack password</div>
                    
                  <div className="row" id="input_one">
