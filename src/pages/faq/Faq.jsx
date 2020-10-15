@@ -37,7 +37,7 @@ export default function Faq() {
         >
           We charge Rs.350for any delivery within the specified delivery grid
           and we are not doing any deliveries to cities outside the specified
-          grid at the moment
+          grid at the moment.
         </Faqbase>
 
         <Faqbase
@@ -62,6 +62,82 @@ export default function Faq() {
           liquor on poya days and some special holidays will be restricted. If
           an order is placed on such days, the order will be delivered on the
           next working day. You will not be able to order more than 7 bottles.
+        </Faqbase>
+
+        <Faqbase
+          activecheck={setActive}
+          item={status}
+          number={4}
+          question={"Who can sign for a delivery?"}
+        >
+          Anyone in the household over the age of 18 may sign for deliveries
+          from Arpico.com.
+        </Faqbase>
+
+        <Faqbase
+          activecheck={setActive}
+          item={status}
+          number={5}
+          question={"What if I have missing items?"}
+        >
+          If you find have an item missing from your delivery, please call our
+          Customer Helpline on +94720100800.
+        </Faqbase>
+
+        <Faqbase
+          activecheck={setActive}
+          item={status}
+          number={6}
+          question={"What if I have damaged items?"}
+        >
+          You can hand any faulty or poor quality goods back to the sales
+          assistant at the time of delivery. Also return them to any Arpico
+          Supercentre (with proof of purchase) at a later date.
+        </Faqbase>
+
+        <Faqbase
+          activecheck={setActive}
+          item={status}
+          number={7}
+          question={"How do you deliver?"}
+        >
+          We keep your delivery at under supervised conditions during the whole
+          journey. The sales assistant brings the shopping to your door, where
+          you'll be given a delivery note to sign. If you ask, the driver will
+          also take the shopping into your kitchen.
+        </Faqbase>
+
+        <Faqbase
+          activecheck={setActive}
+          item={status}
+          number={8}
+          question={
+            "What happen if there is nobody at the delivery address to accept the order?"
+          }
+        >
+          The driver will leave notification of attempted delivery and you will
+          need to contact our Customer Service to re-arrange delivery.
+        </Faqbase>
+
+        <Faqbase
+          activecheck={setActive}
+          item={status}
+          number={9}
+          question={"How to order in grams for perishable items?"}
+        >
+          If you want to order 350 grams, enter 0.35 in the quantity field where
+          the unit is in Kilograms (Kg).
+        </Faqbase>
+
+        <Faqbase
+          activecheck={setActive}
+          item={status}
+          number={10}
+          question={"How do I earn Privilege Points?"}
+        >
+          When you shop with us on-line you will earn points on all your
+          purchases, just like you do in-store. For every Rs.100 you spend you
+          will earn 1 point.
         </Faqbase>
       </div>
     </>
