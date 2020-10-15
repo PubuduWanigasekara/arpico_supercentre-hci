@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import Chip from '../../assets/card_add.svg'
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
+import { useHistory } from 'react-router-dom'
 
 export default function Payment() {
 
@@ -16,8 +17,13 @@ export default function Payment() {
         focus: '',
         name: '',
         number: '',
-        
+
     })
+    let [validate, setValidate] = useState({
+        error: false,
+        msg: '',
+    })
+    const history = useHistory();
 
     const toggleCard = (e) => {
 
@@ -27,8 +33,9 @@ export default function Payment() {
 
 
     const showCards = () => {
+        setValidate({ ...validate, error: false, msg: '' });
         setShowcards(!show);
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
     }
 
     const handleInputFocus = (e) => {
@@ -40,12 +47,53 @@ export default function Payment() {
 
         setcardData({ ...cardData, [name]: value });
 
-        
+
     }
 
     const checkNum = (e) => {
         e.target.value = e.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
     }
+
+
+    const validateCard = () => {
+
+        if(show){
+            setValidate({ ...validate, error: false, msg: '' });
+            history.push('/')
+        }else{
+            if (cardData.name === '' || null) {
+                setValidate({ ...validate, error: true, msg: 'please enter card holder name' });
+            }
+            else if (cardData.number === '' || null) {
+                setValidate({ ...validate, error: true, msg: 'please enter valid card number' });
+            }
+            else if (cardData.number.length < 16) {
+                setValidate({ ...validate, error: true, msg: 'please enter valid card number' });
+            }
+    
+            else if (cardData.cvc == '' || null) {
+                setValidate({ ...validate, error: true, msg: 'please enter valid cvv number' });
+            }
+            else if (cardData.cvc.length < 3) {
+                setValidate({ ...validate, error: true, msg: 'please enter valid cvv number' });
+            }
+            else if (cardData.expiry === '' || null) {
+                setValidate({ ...validate, error: true, msg: 'please enter valid expire date' });
+            }
+            else if (cardData.expiry.length < 4) {
+                setValidate({ ...validate, error: true, msg: 'please enter valid expire date' });
+                setValidate({ ...validate, error: true, msg: 'please enter valid expire date' });
+            }
+            
+            else {
+                setValidate({ ...validate, error: false, msg: '' });
+                history.push('/')
+            }
+        }
+        }
+
+        
+
     return (
         <div>
             <div id="payment_container">
@@ -95,10 +143,10 @@ export default function Payment() {
                                             />
                                             <div>
                                                 <input
-                                                className="short_input"
+                                                    className="short_input"
                                                     type="tel"
                                                     name="cvc"
-                                                    placeholder="cvc"
+                                                    placeholder="cvv"
                                                     maxLength={3}
                                                     onFocus={handleInputFocus}
                                                     onInput={checkNum}
@@ -107,7 +155,7 @@ export default function Payment() {
                                                 />
 
                                                 <input
-                                                className="short_input"
+                                                    className="short_input"
                                                     pattern="[0-9]+"
                                                     type="tel"
                                                     name="expiry"
@@ -122,7 +170,7 @@ export default function Payment() {
                                             </div>
                                         </form>
 
-                                        
+
                                     </motion.div>
                                 </> : <></>}
 
@@ -147,23 +195,29 @@ export default function Payment() {
                                             number={cardData.number}
 
                                         />
-                                        {cardData.focus}
+
                                     </>
                                 }
 
-                            </> : <> 
-                            {/* <motion.img src={Chip} id="chip_card" initial={{ opacity: 0, scale: 0 }}
+                            </> : <>
+                                {/* <motion.img src={Chip} id="chip_card" initial={{ opacity: 0, scale: 0 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, Y: 100, scale: 0 }}></motion.img>  */}
                                 <Cards id="creditcard"
-                                            cvc={cardData.cvc}
-                                            expiry={cardData.expiry}
-                                            focused={cardData.focus}
-                                            name={cardData.name}
-                                            number={cardData.number}
-                                            
-                                        />
-                                </>}
+                                    cvc={cardData.cvc}
+                                    expiry={cardData.expiry}
+                                    focused={cardData.focus}
+                                    name={cardData.name}
+                                    number={cardData.number}
+
+                                />
+                            </>}
+                        <button id="pay_now" onClick={validateCard}>Pay now</button>
+                        { validate.error &&
+                            <div id="payment_error">
+                                {validate.msg}
+                            </div>
+                        }
                     </div>
                 </div>
             </div>

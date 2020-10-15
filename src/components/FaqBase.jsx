@@ -37,8 +37,8 @@ export default function FaqBase(props) {
                             </div>
                         </div>
                         {open &&
-                            <motion.div initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
+                            <motion.div initial={{ opacity: 0 , y:10}}
+                            animate={{ opacity: 1 , y:0 }}
                             exit={{  opacity: 0  }}
                             transition={{ type: "spring", stiffness: 100 , delay:0.5}}
                             

@@ -49,6 +49,7 @@
     #mainpanal{
         background: rgb(216,216,216);
         background: linear-gradient(0deg, rgba(216,216,216,0.25) 0%, rgba(255,255,255,1) 90%);
+        margin-top:50px;
     }
     
     .contactustxt {

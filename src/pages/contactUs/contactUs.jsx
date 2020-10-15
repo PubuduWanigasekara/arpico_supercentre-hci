@@ -227,7 +227,7 @@ export class contactUs extends React.Component {
         return (
             <div id="mainpanal">
                 <div id="maindiv">
-                    <h1 id="map_h1">Contact Us</h1>
+                  
               
                     <div id="contactUs_container">
                         <div id="contactus_formcontainer">
