@@ -727,10 +727,10 @@ a {
   /* float: right; */
   border-radius: 23px;
   /* border: 3px solid #1A2572; */
-  /* width: 10%; */
   background: #f6f4f4;
   margin-bottom: 40px;
   display: table;
+  width: 100%;
 }
 
 #card_rigit_main_div {
@@ -764,6 +764,7 @@ a {
   color: #666666;
   font-size: 20px;
   margin: 30px auto 15px 35px;
+  cursor: pointer;
 }
 
 #cart_form {
@@ -842,6 +843,10 @@ a {
   float: left;
   margin-bottom: 10px;
   /* width: calc(100% - 200px); */
+}
+
+.cart_d_none{
+  display: none !important;
 }
 
 #dis_button {

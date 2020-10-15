@@ -8,6 +8,8 @@ export default function Cart() {
   //   cart
   let [total, Settotal] = useState(0);
   const { cartitems, setcartitems } = useContext(AppContexts);
+  let [addresshow, Setaddresshow] = useState("cart_d_none");
+  var show= false;
   var t = 0;
   useEffect(() => {
     for (var i = 0; i < cartitems.length; i++) {
@@ -29,6 +31,17 @@ export default function Cart() {
   const add = () => {
     setcartitems([...cartitems, sdata]);
     console.log(cartitems);
+  };
+
+  const togal = () => {
+   
+    if(show){
+      Setaddresshow("cart_d_none");
+      
+    }else{
+      Setaddresshow("");
+    }
+    show = !show;
   };
 
   const remove = (id) => {
@@ -58,9 +71,12 @@ export default function Cart() {
           {/* right */}
           <div id="card_rigit_main_div">
             <div id="cart_right_div">
-              <h5 id="cart_subtitle">Shipping Address</h5>
+              <div onClick={togal} title="click to see addres">
+              <h5 id="cart_subtitle" >Shipping Address</h5>
+              </div>
+              
 
-              <form id="cart_form">
+              <div id="cart_form" className={addresshow}>
                 <label id="cart_label">First Name : </label>
                 <input id="cart_input" type="text" placeholder="" />
 
@@ -77,7 +93,7 @@ export default function Cart() {
                   type="text"
                   placeholder=""
                 />
-              </form>
+              </div>
             </div>
 
             <div id="cart_right_div">
