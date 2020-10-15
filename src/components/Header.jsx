@@ -120,11 +120,7 @@ export default function Header(props) {
           
             </div>
 
-             <div id="location_bar" style={location.pathname != '/' ? {display:''} : {display:'none'}}>
-             
-             <div onClick={()=> history.push('/')} style={{cursor:'pointer'}}>{props.home}&nbsp;</div> / <div onClick={()=> history.push(props.link)}>&nbsp;{props.name}</div> 
-               
-            </div>
+            
 
             {/* <div id="mobnav">
 

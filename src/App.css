@@ -476,6 +476,18 @@ Location toggle button animation */
   width: calc(330px);
 }
 
+#stock_status{
+  position: absolute;
+  background-color: #f56827e5;
+  width: 100px;
+  height: 30px;
+  float: right;
+  margin: 0 auto;
+  padding: 10px 10px 10px 15px;
+  color: #fff;
+  border-top-left-radius: 10px;
+}
+
 #card_container {
   width: 90%;
   height: auto;
