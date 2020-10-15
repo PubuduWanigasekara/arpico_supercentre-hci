@@ -9,7 +9,7 @@ export default function Cart() {
   let [total, Settotal] = useState(0);
   const { cartitems, setcartitems } = useContext(AppContexts);
   let [addresshow, Setaddresshow] = useState("cart_d_none");
-  var show= false;
+  var show = false;
   var t = 0;
   useEffect(() => {
     for (var i = 0; i < cartitems.length; i++) {
@@ -34,11 +34,11 @@ export default function Cart() {
   };
 
   const togal = () => {
-   
-    if(show){
+
+    if (show) {
       Setaddresshow("cart_d_none");
-      
-    }else{
+
+    } else {
       Setaddresshow("");
     }
     show = !show;
@@ -63,6 +63,11 @@ export default function Cart() {
     });
   };
 
+  const qtyRemover=(index,newQty)=>{
+    cartitems[index].qty = newQty;
+    setcartitems(...cartitems);
+  }
+
   return (
     <>
       <div id="container">
@@ -72,9 +77,9 @@ export default function Cart() {
           <div id="card_rigit_main_div">
             <div id="cart_right_div">
               <div onClick={togal} title="click to see addres">
-              <h5 id="cart_subtitle" >Shipping Address</h5>
+                <h5 id="cart_subtitle" >Shipping Address</h5>
               </div>
-              
+
 
               <div id="cart_form" className={addresshow}>
                 <label id="cart_label">First Name : </label>
@@ -153,6 +158,7 @@ export default function Cart() {
                     price={it.price}
                     qty={it.qty}
                     removeItem={(itm) => remove(itm)}
+                    qtyRemover={(index,newQty)=>qtyRemover(index,newQty)}
                   />
                 );
               })}
