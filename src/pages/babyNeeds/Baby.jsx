@@ -1,11 +1,20 @@
-import React , {useState} from 'react'
+import React , {useState , useEffect} from 'react'
 import './style.css'
 import Select from 'react-select'
 import ProductCard from '../../components/ProductCard'
 import Whislist from '../wishlist/wishlist'
+import Viewproduct from '../../components/Viewproduct'
 
+// let selectedProduct = productobj.find(productk => productk.id === `${props.params.product}`);
+        // console.log(selectedProduct)
 export default function Baby() {
 
+    let data = require('../../assets/products.json')
+    
+    let babyneeds = data.baby_needs
+  
+    console.log(`baby ${babyneeds}`)
+   
 
 
     const options = [
@@ -19,6 +28,10 @@ export default function Baby() {
     })
 
     let cardCount = 8;
+
+    useEffect(()=>{
+        console.log(data)
+    })
 
 
     return (
@@ -77,17 +90,16 @@ export default function Baby() {
 
            </div>
 
-
+      
            <section id="product_container">
             <div id="product_list_cards">
-                <ProductCard></ProductCard>
-                <ProductCard></ProductCard>
-                <ProductCard></ProductCard>
-                <ProductCard></ProductCard>
-                <ProductCard></ProductCard>
-                <ProductCard></ProductCard>
-                <ProductCard></ProductCard>
-                <ProductCard></ProductCard>
+            {babyneeds.map((data, index) => {
+          return (
+            <ProductCard key={index} index={index} id={data.id} img={data.image} title={data.tital} price={data.price} des={data.description} stock={data.inStock}></ProductCard>
+          );
+        })}
+                
+                
             </div>
                </section>
         </>

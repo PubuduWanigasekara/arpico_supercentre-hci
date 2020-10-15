@@ -10,8 +10,15 @@ import HomeIcons from '../../components/HomeIcons'
 import Categories from '../../components/Categories'
 
 
+
 export default function Home() {
 
+        let data = require('../../assets/products.json')
+
+        let electro = data.electronics
+        let baby = data.baby_needs
+        let house = data.house_hold
+        let grosary = data.grocery
 
     let [loc, setLoc] = useState('Hydepark corner');
     let [open, setopen] = useState(false);
@@ -88,10 +95,10 @@ export default function Home() {
                Recent products
                </div>
         <section id="recent_container">
-        <ProductCard title="sample" des="description 1" price={100}/>
-        <ProductCard title="sample 1" des="description 2" price={200}/>
-        <ProductCard title="sample 2" des="description 3" price={300}/>
-        <ProductCard title="sample 3" des="description 4" price={400}/>
+        <ProductCard title={electro[1].tital}des={electro[1].description} price={electro[1].price} img={electro[1].image} stock={true}/>
+        <ProductCard title={house[2].tital}des={house[2].description} price={house[2].price} img={house[2].image} stock={true}/>
+        <ProductCard title={baby[3].tital}des={baby[3].description} price={baby[3].price} img={baby[3].image} stock={true}/>
+        <ProductCard title={grosary[3].tital}des={grosary[3].description} price={grosary[3].price} img={grosary[3].image} stock={true}/>
         
         </section>
 </section>

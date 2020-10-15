@@ -14,6 +14,7 @@ import Payment from "./pages/payment options/Payment";
 import Baby from "./pages/babyNeeds/Baby";
 import Signup from "./pages/signup/Signup";
 import Faq from './pages/faq/Faq'
+import Viewproduct from './components/Viewproduct'
 import { Switch, Route, Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { AppContexts } from "./contexts/AppContextsProvider";
@@ -124,6 +125,11 @@ function App() {
                 <Route exact path="/faq" render={() => {
                     setLocbar('Frequently asked questions', '/faq');
                     return <Faq />;
+                }} />
+
+                <Route exact path="/view/:product" render={() => {
+                    setLocbar('view product ', '/faq');
+                    return <Viewproduct />;
                 }} />
 
 
