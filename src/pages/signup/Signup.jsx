@@ -1,12 +1,20 @@
 import React, {useState} from 'react';
 import './signup.css'
+import { Line, Circle } from 'rc-progress';
 
 export default function Signup() {
   let [showfnameval, setshowfnameval] = useState("none");
   let [showlnameval, setshowlnameval] = useState("none");
   let [showemailval, setshowemailval] = useState("none");
+  let [showpasswordeval, setshowpasswordeval] = useState("none");
+  let [showpasswordconfermval, setshowpasswordconfermval] = useState("none");
 
-  var passwordtype;
+  let [percent, setpercent] = useState("none");
+  let [strokeColor, setstrokeColor] = useState("none");
+
+  let regArr = ["[A-Z]","[a-z]","[0-9]","[$@$!%*#?&]"]
+
+  let [passwordtype, setpasswordtype] = useState("");
 
   function FNameValidater(event) {
     let val = event.target.value
@@ -50,26 +58,30 @@ function LNameValidater(event) {
 
 function PasswordValidater(event) {
   let val = event.target.value
-  passwordtyp=val
+  setpasswordtype(val);
 
   console.log(val);
   if (val === '' || val.length < 3) {
-    setshowfnameval("")
+    setshowpasswordeval("")
   }
   else {
-    setshowfnameval("none");
+    setshowpasswordeval("none");
+    
+
+
   }
+}
 
   function ConfirmPasswordValidater(event) {
     let val = event.target.value
 
-    console.log(val);
-    if (val === '' || val.length < 3) {
-      setshowfnameval("")
+    if (val === passwordtype || val === '' ) {
+      setshowpasswordconfermval("none")
     }
     else {
-      setshowfnameval("none");
+      setshowpasswordconfermval("");
     }
+  }
 
 
 
@@ -129,9 +141,13 @@ function PasswordValidater(event) {
          </div>
                    
                 <div className="row" id="input_one">  {/* <Pass id="icons" className="pass"/> */}
-                   <input type="password"   name="password" id="password" placeholder="Password" required/></div>
+                   <input type="password"   name="password" id="password" placeholder="Password" required onChange={PasswordValidater}/></div>
+                   <Line percent="50" strokeWidth="3" strokeColor="#b69a31" />
+                   <div className="alert-danger" style={{ display: showpasswordeval }}>Cheack password</div>
+                   
                  <div className="row" id="input_one">
-                 <input type="password"   name="cnf-password" id="cnf-password" placeholder="Confirm Password" required/>
+                 <input type="password"   name="cnf-password" id="cnf-password" placeholder="Confirm Password" required onChange={ConfirmPasswordValidater}/>
+                 <div className="alert-danger" style={{ display: showpasswordconfermval }}>Wrong password</div>
                  </div>
         
 
