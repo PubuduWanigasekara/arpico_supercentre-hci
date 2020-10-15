@@ -20,6 +20,15 @@ export default function Cart() {
     }
   }, []);
 
+  useEffect(() => {
+    for (var i = 0; i < cartitems.length; i++) {
+      t = t + cartitems[i].qty * cartitems[i].price;
+      console.log(t);
+      Settotal(t);
+      console.log(total);
+    }
+  }, [cartitems]);
+
   let sdata = {
     id: 4,
     name: "test",
@@ -64,8 +73,9 @@ export default function Cart() {
   };
 
   const qtyRemover=(index,newQty)=>{
-    cartitems[index].qty = newQty;
-    setcartitems(...cartitems);
+    console.log("index " + index +"newQty "+newQty)
+  cartitems[index].qty = newQty;
+    setcartitems([...cartitems]);
   }
 
   return (
@@ -149,10 +159,13 @@ export default function Cart() {
           <div id="cart_left_div">
             <h5 id="cart_subtitle">My Cart</h5>
             <div id="c_items_div">
-              {cartitems.map((it, index) => {
+              {
+              cartitems.map((it,index) => {
+                console.log(index);
                 return (
                   <CartProductCard
                     key={index}
+                    mykey={index+1}
                     item={it.id}
                     name={it.name}
                     price={it.price}
