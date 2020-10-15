@@ -77,6 +77,12 @@ function App() {
 
 
                 // new router change
+                
+
+                <Route exact path="/signup" render={() => {
+                    setLocbar('Signup', '/singup');
+                    return <Signup />;
+                }} />
 
                 <Route exact path="/baby" render={() => {
                     setLocbar('Baby needs', '/baby');
@@ -87,7 +93,7 @@ function App() {
                     setLocbar('F.A.Q', '/faq');
                     return <Faq />;
                 }} />
-
+               
                 <Route exact path="/terms-and-conditions" render={() => {
                     setLocbar('Terms and conditions', '/terms-and-conditions');
                     return <TermsAndConditions />;
