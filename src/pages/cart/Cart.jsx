@@ -55,9 +55,9 @@ export default function Cart() {
       <div id="container">
         <h3 id="cart_ttitle">Shopping Cart</h3>
         <div id="cartmaindiv">
-          {/* left */}
-          <div id="cart_right_div">
-            <div>
+          {/* right */}
+          <div id="card_rigit_main_div">
+            <div id="cart_right_div">
               <h5 id="cart_subtitle">Shipping Address</h5>
 
               <form id="cart_form">
@@ -71,46 +71,58 @@ export default function Cart() {
                 <input id="cart_input" type="text" placeholder="" />
 
                 <label id="cart_label">Phone Number : </label>
-                <input id="cart_input" type="text" placeholder="" />
+                <input
+                  id="cart_input"
+                  style={{ marginBottom: "30px" }}
+                  type="text"
+                  placeholder=""
+                />
               </form>
             </div>
-            <div>
-              <h5 id="cart_subtitle">Order Summary</h5>
-              <form>
-                <label id="cart_label">Sub Total </label>
-                <label id="cart_input">LKR {total}</label>
 
-                <label id="cart_label">Shipping Fee </label>
-                <label id="cart_input">LKR 375</label>
+            <div id="cart_right_div">
+              <div id="card_dis_div">
+                <h5 id="cart_subtitle">Order Summary</h5>
+                <form>
+                  <label id="cart_label">Sub Total :</label>
+                  <label id="cart_price_label">LKR {total}</label>
 
-                <input id="cart_input" type="text" placeholder="Enter Discount Code" />
-                <button className="button primary cart_button">
-                  Apply 
-                </button>
-                <hr/>
+                  <label id="cart_label">Shipping Fee :</label>
+                  <label id="cart_price_label">LKR 375</label>
 
-                <label id="cart_label">ORDER TOTAL </label>
-                <label id="cart_input">LKR {total + 375}</label>
-              </form>
-            </div>
-            <br />
-            <div>
-              <h5 id="cart_subtitle">Shipping Methods</h5>
-              <div id="cartbuttonsdiv">
-                <button className="button primary cart_button">
-                  LKR{total}
-                </button>
-                <button className="button primary cart_button">
-                  Arpico Delivery
-                </button>
-                <button className="button primary cart_button">
-                  Arpico Doorstep delivery
-                </button>
+                  <div>
+                    <label id="cart_label">Discount Code :</label>
+                    <input id="cart_dis_label" type="text" placeholder="" />
+                    <button className="button primary" id="dis_button">
+                      Apply Discount
+                    </button>
+                  </div>
+
+                  <hr id="card_line" />
+
+                  <label id="cart_label">Order Total : </label>
+                  <label id="cart_total_label">LKR {total + 375}</label>
+                </form>
               </div>
-              {/* <button className="button primary ">Next</button> */}
+              <br />
+              <div>
+                <h5 id="cart_subtitle">Shipping Methods</h5>
+                <div id="cartbuttonsdiv">
+                  <button className="button primary cart_button">
+                    LKR{total}
+                  </button>
+                  <button className="button primary cart_button">
+                    Arpico Delivery
+                  </button>
+                  <button className="button primary cart_button">
+                    Arpico Doorstep delivery
+                  </button>
+                </div>
+                {/* <button className="button primary ">Next</button> */}
+              </div>
             </div>
           </div>
-          {/* right */}
+          {/* left */}
           <div id="cart_left_div">
             <h5 id="cart_subtitle">My Cart</h5>
             <div id="c_items_div">
