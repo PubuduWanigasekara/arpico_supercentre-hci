@@ -722,7 +722,7 @@ a {
 }
 
 #cartmaindiv {
-  margin: 15px 150px 30px 150px;
+  margin: 15px 90px 30px 90px;
 }
 
 #cart_right_div {
@@ -740,7 +740,7 @@ a {
   float: left;
   border-radius: 23px;
   /* border: 3px solid #1A2572; */
-  width: 56%;
+  width: 57%;
   background: #f6f4f4;
   margin-bottom: 40px;
 }
@@ -764,7 +764,7 @@ a {
 }
 
 #cart_input {
-  width: 51%;
+  width: 46%;
   height: 30px;
   border-radius: 40px;
   border: 1px solid #58575785;
