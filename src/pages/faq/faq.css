@@ -11,7 +11,7 @@
   flex-direction: column;
   align-items: center;
   padding-bottom: 100px;
-  margin-top: 100px;
+  margin-top: 20px;
 }
 
 #faq_title {
@@ -19,6 +19,7 @@
   font-weight: 500;
   display: block;
   margin-left: 620px;
+  margin-top: 25px;
   /* margin-right: auto; */
 }
 
@@ -37,7 +38,7 @@
 }
 
 #faq_search_bar_base{
-margin-top: 50px;
+margin-top: 20px;
 }
 #card_search_icon{
     margin-left: 555px;

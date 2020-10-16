@@ -29,6 +29,9 @@ export default function Grocery() {
 
   return (
     <>
+      <div>
+        <h3 id="cart_ttitle">Grocery</h3>
+      </div>
       <div id="content_top">
         <div id="price_range">
           <div id="price_range_title">choose price range</div>

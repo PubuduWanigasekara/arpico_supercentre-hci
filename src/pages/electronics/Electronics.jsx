@@ -29,6 +29,7 @@ export default function Electronics () {
 
   return (
     <>
+    <h3 id="cart_ttitle">Electronics</h3>
       <div id="content_top">
         <div id="price_range">
           <div id="price_range_title">choose price range</div>
