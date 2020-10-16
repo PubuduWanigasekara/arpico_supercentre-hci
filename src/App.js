@@ -94,6 +94,13 @@ function App() {
           />
           <Route
             exact
+            path="/electronics"
+            render={() => {
+              return <Electronics />;
+            }}
+          />
+          <Route
+            exact
             path="/wishlist"
             render={() => {
               setLocbar("Wishlist", "/wishlist");
