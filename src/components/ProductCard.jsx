@@ -4,7 +4,7 @@ import {useHistory , Link} from 'react-router-dom'
 export default function ProductCard(props) {
 
     const history = useHistory();
-
+    let [quentity,setQ] = useState(1);
     let product = {
         title:props.title,
         price:props.price,
@@ -15,10 +15,20 @@ export default function ProductCard(props) {
         index:props.index
     }
 
-   
-    let [quentity,setQ] = useState(0)
+    let sdata = {
+        id: product.id,
+        name: product.title,
+        price: product.price,
+        qty:quentity,
+        img : product.image,
+        isAddedToCart: false
+      };
 
-   
+
+
+   const add = ()=>{
+    props.addw(sdata)
+   }
 
     const increment = ()=>{
         
@@ -26,7 +36,7 @@ export default function ProductCard(props) {
     }
 
     const decrement = ()=>{
-        if(quentity <= 0){
+        if(quentity <= 1){
 
         }else{
             setQ(quentity--)
@@ -35,12 +45,11 @@ export default function ProductCard(props) {
 
     let wishlist = JSON.parse(localStorage.getItem('wishlistitems'))
     console.log(wishlist)
-   
-
 
     const addtoWishlist=()=>{
-        let wishdata = JSON.stringify(wishlist)
+       
         wishlist.push(product);
+        let wishdata = JSON.stringify(wishlist)
         localStorage.setItem('wishlistitems',wishdata)
     }
    
@@ -62,11 +71,11 @@ export default function ProductCard(props) {
                 </div>
                 <div id="card_quantity">
                     <button id="card_round_btn">
-                    <i class="ar-minus " onClick={decrement}></i>
+                    <i class="ar-minus" onClick={decrement}></i>
                     </button>
                     <input type="text" name="" value={quentity} id="card_number"/>
                         <button id="card_round_btn" onClick={increment}>
-                            <i class="ar-plus "></i>
+                            <i class="ar-plus"></i>
                         </button>
                 </div>
 
@@ -77,8 +86,8 @@ export default function ProductCard(props) {
                 </button>
                     </Link>
                
-                    <button id="card_r_wishlist" onClick={addtoWishlist}>
-                    <i class="ar-plus white"></i>
+                    <button id="card_r_wishlist" onClick={add}>
+                    <i class="ar-plus"></i>
                     </button>
                 </div>
             </div>

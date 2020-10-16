@@ -39,7 +39,7 @@ function App() {
   let [login, setLogin] = useState(false);
   let [wishlistitems, setwishlistitems] = useState([]);
 
-  let [cartitems, setcartitems] = useState();
+  let [cartitems, setcartitems] = useState([]);
   const location = useLocation();
 
   let history = useHistory();
@@ -57,10 +57,17 @@ function App() {
   let [nName, setLoc] = useState();
   let [nLink, setLink] = useState();
 
-  const setLocbar = (name, nlink) => {
-    setLoc(name);
-    setLink(nlink);
-  };
+    const setLocbar = (name, nlink) => {
+
+        setLoc(name);
+        setLink(nlink)
+
+    }
+
+    let additemToWishlist = (obj)=>{
+
+        setwishlistitems([...wishlistitems, obj]);
+    }
 
   return (
     <div className="App">
@@ -77,13 +84,10 @@ function App() {
         <Switch>
           <Route path={"/login"} exact component={Login} />
           // new router change
-          <Route
-            exact
-            path="/baby"
-            render={() => {
-              return <Baby />;
-            }}
-          />
+                <Route exact path="/baby"   render={() => {
+
+                    return <Baby additemToWishlist={additemToWishlist}/>;
+                }} />
           <Route
             exact
             path="/grocery"
