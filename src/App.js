@@ -15,14 +15,15 @@ import Baby from "./pages/babyNeeds/Baby";
 import Signup from "./pages/signup/Signup";
 import Faq from './pages/faq/Faq'
 import Viewproduct from './components/Viewproduct'
-import { Switch, Route, Link } from "react-router-dom";
+import Notfound from './pages/notfound/Notfound'
+import { Switch, Route, useHistory} from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { AppContexts } from "./contexts/AppContextsProvider";
 
 function App() {
 
     let [loaded, setload] = useState(false);
-    let [login, setLogin] = useState(false);
+    let [login, setLogin] = useState(true);
     let [wishlistitems, setwishlistitems] = useState(
         [
             { id: 1, name: "z", price: 1030, qty: 6, isAddedToCart: false },
@@ -36,7 +37,7 @@ function App() {
         ]);
     const location = useLocation();
 
-
+    let history = useHistory()
 
     useEffect(() => {
         const currentPath = location.pathname;
@@ -78,7 +79,7 @@ function App() {
 
                 // new router change
 
-                <Route exact path="/baby" render={() => {
+                <Route exact path="/baby"   render={() => {
                     setLocbar('Baby needs', '/baby');
                     return <Baby />;
                 }} />
@@ -127,14 +128,14 @@ function App() {
                     return <Faq />;
                 }} />
 
-                <Route exact path="/view/:product" render={() => {
-                    setLocbar('view product ', '/faq');
-                    return <Viewproduct />;
-                }} />
+                <Route exact path="/view/:index/:product" component={Viewproduct} />
 
-
+                // not found page
                 {/* this one should place always bottom */}
-                <Route path={"/*"} exact component={Home} />
+                <Route path={"*"} exact component={Home} />
+
+                
+               
 
             </Switch>
             <Footer />

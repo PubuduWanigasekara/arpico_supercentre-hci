@@ -14,8 +14,9 @@ export default function Faq() {
     <>
       <div id="faq_head">
         <div id="faq_title">How we can help you?</div>
+       
+        <div id="faq_search_bar_base">
         <i id="card_search_icon" class="ar-search"></i>
-        <div>
           <input type="text" name="" id="faq_search_bar" placeholder=""></input>
         </div>
       </div>

@@ -6,10 +6,12 @@
 }
 
 #faq_container {
-  height: calc(100vh / 1);
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 100px;
+  margin-top: 100px;
 }
 
 #faq_title {
@@ -22,6 +24,7 @@
 
 #faq_search_bar {
   margin-left: 530px;
+  margin-top: 100px;
   height: 33px;
   border: 1px solid #ccc;
   border-radius: 30px;
@@ -33,6 +36,9 @@
   padding-top: 5px;
 }
 
+#faq_search_bar_base{
+margin-top: 50px;
+}
 #card_search_icon{
     margin-left: 555px;
     margin-top: 13px;
