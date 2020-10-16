@@ -3,8 +3,13 @@ import CartProductCard from "../../components/CartProductCard";
 import { AppContexts } from "../../contexts/AppContextsProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {useHistory} from 'react-router-dom'
 
 export default function Cart() {
+
+
+  const history = useHistory();
+
   //   cart
   let [total, Settotal] = useState(0);
   const { cartitems, setcartitems } = useContext(AppContexts);
@@ -164,7 +169,7 @@ export default function Cart() {
                   </button>
                 </div>
                 <div id="cart_checkout_btn_div">
-                  <button className="button primary" id="cart_checkout_button">
+                  <button className="button primary" id="cart_checkout_button" onClick={()=> history.push('/payment')}>
                     Go to Payment
                   </button>
                 </div>
