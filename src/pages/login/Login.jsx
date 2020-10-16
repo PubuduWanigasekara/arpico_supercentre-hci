@@ -12,12 +12,13 @@ export default function Login() {
            <div id="login_form">
                <div id="inputs">
                    <span id="title">
-                   Sign in
+                   
+                   <h3 id="cart_ttitle">Sign In</h3>
                    </span>
                     {/* <Mail id="icons" className="mail"/> */}
-                   <input type="email" name="email" id="email" placeholder="email"/>
+                   <input type="email" name="email" id="email" placeholder="Enter your email"/>
                    {/* <Pass id="icons" className="pass"/> */}
-                   <input type="password" name="password" id="password"/>
+                   <input type="password" name="password" id="password" />
                    <button>Login</button>
                </div>
            </div>
