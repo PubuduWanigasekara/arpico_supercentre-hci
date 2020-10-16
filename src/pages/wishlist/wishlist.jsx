@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
+import { Link } from 'react-router-dom'
 import WishlistProductCard from "../../components/WishlistProductCard";
 import Lottie from 'react-lottie';
 import { ToastContainer, toast } from 'react-toastify'
@@ -230,6 +231,7 @@ export default function Wishlist() {
       {/* <button onClick={add}>test</button>
 <button onClick={acd}>test</button>
 <button onClick={notify}>Notify !</button> */}
+<Link to="/cart"><button class="button primary" id="wish_go_button" style={{cursor:"pointer"}} ><span>Go to cart  <i class="ar-deliver w_go_button_cart_icon"></i> </span></button></Link>
       <ToastContainer />
     </div>
   );
