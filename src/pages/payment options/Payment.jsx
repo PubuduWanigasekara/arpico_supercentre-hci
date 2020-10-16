@@ -96,6 +96,7 @@ export default function Payment() {
 
     return (
         <div>
+            <h3 id="cart_ttitle">Payment</h3>
             <div id="payment_container">
                 <div id="payment_tabs">
                     <div id="tab1">
