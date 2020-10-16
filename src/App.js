@@ -41,13 +41,12 @@ function App() {
         localStorage.setItem('wishlistitems',JSON.stringify([]))
     }
 
-   
 
     let [loaded, setload] = useState(false);
     let [login, setLogin] = useState(false);
     let [wishlistitems, setwishlistitems] = useState([]);
 
-    let [cartitems, setcartitems] = useState();
+    let [cartitems, setcartitems] = useState([]);
     const location = useLocation();
 
     let history = useHistory()
@@ -78,7 +77,10 @@ function App() {
 
     }
 
-
+    let additemToWishlist = (obj)=>{
+       
+        setwishlistitems([...wishlistitems, obj]);
+    }
 
 
     return (<
@@ -94,7 +96,7 @@ function App() {
 
                 <Route exact path="/baby"   render={() => {
                    
-                    return <Baby />;
+                    return <Baby additemToWishlist={additemToWishlist}/>;
                 }} />
 
                 
@@ -111,8 +113,6 @@ function App() {
                     return <Cart />;
                 }} />
 
-                
-            
                 <Route exact path="/store_locations" render={() => {
                     setLocbar('Store Locations', '/store_locations');
                     return <Store_locations />;

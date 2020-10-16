@@ -6,7 +6,7 @@ import Whislist from '../wishlist/wishlist'
 
 
 
-export default function Baby() {
+export default function Baby(props) {
 
     
     
@@ -28,6 +28,10 @@ export default function Baby() {
     
          
     })
+
+    const addWishlist =(data)=>{
+        props.additemToWishlist(data)
+    }
 
 
     const options = [
@@ -111,7 +115,7 @@ export default function Baby() {
             <div id="product_list_cards">
             {babyneeds.map((data, index) => {
           return (
-            <ProductCard key={index} index={'baby_needs'} id={data.id} img={data.image} title={data.tital} price={data.price} des={data.description} stock={data.inStock}></ProductCard>
+            <ProductCard  addw={addWishlist}  key={index} index={'baby_needs'} id={data.id} img={data.image} title={data.tital} price={data.price} des={data.description} stock={data.inStock}></ProductCard>
           );
         })}
                 

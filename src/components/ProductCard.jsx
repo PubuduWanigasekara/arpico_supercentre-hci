@@ -4,7 +4,7 @@ import {useHistory , Link} from 'react-router-dom'
 export default function ProductCard(props) {
 
     const history = useHistory();
-
+    let [quentity,setQ] = useState(1);
     let product = {
         title:props.title,
         price:props.price,
@@ -15,10 +15,20 @@ export default function ProductCard(props) {
         index:props.index
     }
 
+    let sdata = {
+        id: product.id,
+        name: product.title,
+        price: product.price,
+        qty:quentity,
+        img : product.image,
+        isAddedToCart: false
+      };
    
-    let [quentity,setQ] = useState(0)
+ 
 
-   
+   const add = ()=>{
+    props.addw(sdata)
+   }
 
     const increment = ()=>{
         
@@ -26,7 +36,7 @@ export default function ProductCard(props) {
     }
 
     const decrement = ()=>{
-        if(quentity <= 0){
+        if(quentity <= 1){
 
         }else{
             setQ(quentity--)
@@ -76,7 +86,7 @@ export default function ProductCard(props) {
                 </button>
                     </Link>
                
-                    <button id="card_r_wishlist" onClick={addtoWishlist}>
+                    <button id="card_r_wishlist" onClick={add}>
                     <i class="ar-plus"></i>
                     </button>
                 </div>

@@ -53,7 +53,7 @@ export default function Wishlist() {
     }
   }, []);
 
-  const storageadd = () => { setwishlistitems(JSON.parse(localStorage.getItem('wishlistItems'))) }
+  const storageadd = () => { setwishlistitems(JSON.parse(localStorage.getItem('wishlistItems'))); console.log("dfg"); }
 
 
 
@@ -219,6 +219,7 @@ export default function Wishlist() {
               qty={it.qty}
               price={it.price}
               item={it.id}
+              img={it.img}
               remove={(id) => remove(id)}
               addToCartOneByOne={(index) => addToCartOneByOne(index)} />
           );

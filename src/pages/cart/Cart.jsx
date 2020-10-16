@@ -182,10 +182,10 @@ export default function Cart() {
                     key={index}
                     mykey={index + 1}
                     item={it.id}
-                    name="Pubudu Arosha"
-                    // name={it.name}
+                    name={it.name}
                     price={it.price}
                     qty={it.qty}
+                    img={it.img}
                     removeItem={(itm) => remove(itm)}
                     qtyRemover={(index, newQty) => qtyRemover(index, newQty)}
                   />

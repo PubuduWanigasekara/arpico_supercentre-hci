@@ -16,16 +16,14 @@ export default function FruitsAndVegetables() {
       
       getdata();
      
-      console.log(babyneeds)
+      console.log(babyneeds)     
 
-      
-       
   })
 
 
   const options = [
       { value: 'price', label: 'price' },
-     
+
     ]
 
   let [minmax,setMinmax] =  useState({
