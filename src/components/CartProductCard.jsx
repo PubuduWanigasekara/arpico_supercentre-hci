@@ -33,9 +33,9 @@ export default ({ key, mykey, item, name, price, qty, removeItem, qtyRemover }) 
         </div>
 
         <div id="c_card_product_details_container2">
-          <button id="card_round_btn" onClick={() => qtychanger(false, mykey)}>-</button>
-          <input type="text" name="" value={qtys} id="card_number" />
-          <button id="card_round_btn" onClick={() => qtychanger(true, mykey)}>+</button>
+          <button id="card_round_btn" onClick={() => qtychanger(true, mykey)}><i class="ar-plus"></i></button>
+          <input type="text" name="" value={qtys} id="c_card_number" />
+          <button id="card_round_btn" onClick={() => qtychanger(false, mykey)}><i class="ar-minus"></i></button>
         </div>
 
         <div id="c_card_product_details_container3">

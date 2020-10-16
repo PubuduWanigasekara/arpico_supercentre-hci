@@ -206,7 +206,7 @@ export default function Wishlist() {
     return (
 
       <WishlistProductCard
-        name={it.name}
+        name="Pubudu Arosha"
         key={index}
         qty={it.qty}
         price={it.price}
