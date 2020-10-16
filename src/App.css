@@ -10,6 +10,8 @@
   justify-content: space-between;
 }
 
+
+
 #navbar #logo {
   margin: 10px 0px 0px 50px;
 }
@@ -42,6 +44,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#price_range_title{
+  margin-top: -50px !important;
+  padding-bottom: 20px !important;
+  font-size: 20px;
+}
+
+#price_range_container{
+  border-radius: 20px !important;
 }
 
 #user_menu {
@@ -539,16 +551,17 @@ Location toggle button animation */
   margin: 8px 5px 10px 5px;
   outline: none;
   border: none;
-  background-color: rgb(223, 222, 222);
+  background-color: rgb(190, 189, 189);
+  color:#000;
   cursor: pointer;
   font-size: 15px;
   font-weight: 600;
 }
 
 #card_number {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
+  width: 50px;
+  height: 26px;
+  border-radius: 40px;
   outline: none;
   border: none;
   background-color: rgb(223, 222, 222);
@@ -570,7 +583,7 @@ Location toggle button animation */
   height: 40px;
   outline: none;
   border: none;
-  background-color: rgb(223, 222, 222);
+  background-color: #F56727;
   cursor: pointer;
 }
 #card_r_view {
@@ -580,7 +593,8 @@ Location toggle button animation */
   font-size: 16px;
   outline: none;
   border: none;
-  background-color: rgb(223, 222, 222);
+  background-color: #182671;
+  color:#fff;
   cursor: pointer;
   margin: 0px 3px 0px 0px;
 }
@@ -1069,4 +1083,8 @@ a {
   transform: rotate(-180deg);
   color:#666666 ;
   font-size: 20px;
+}
+
+.white{
+  color:#fff;
 }

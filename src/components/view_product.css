@@ -16,7 +16,7 @@
 }
 
 #vp_des{
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #vp_price{
@@ -38,6 +38,10 @@
     margin-left: 20px;
     color:#fff;
    
+}
+
+#view_product_details{
+    padding-right: 10px;
 }
 
 #vp_out{

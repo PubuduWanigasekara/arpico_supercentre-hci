@@ -23,8 +23,8 @@ export default function ProductCard(props) {
         img : product.image,
         isAddedToCart: false
       };
-   
- 
+
+
 
    const add = ()=>{
     props.addw(sdata)
