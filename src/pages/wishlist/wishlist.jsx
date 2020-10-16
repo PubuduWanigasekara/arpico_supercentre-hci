@@ -53,7 +53,7 @@ export default function Wishlist() {
     }
   }, []);
 
-  const storageadd = () => { setwishlistitems(JSON.parse(localStorage.getItem('wishlistItems'))) }
+  const storageadd = () => { setwishlistitems(JSON.parse(localStorage.getItem('wishlistItems'))); console.log("dfg"); }
 
 
 
@@ -190,7 +190,7 @@ export default function Wishlist() {
 
       <div className={stylersucsses}>
         <div class="success-msg">
-          All items are sented to cart<br />
+          All items are added to cart<br />
           <Lottie options={defaultOptions_carrot}
             height={95}
             width={117}
@@ -219,6 +219,7 @@ export default function Wishlist() {
               qty={it.qty}
               price={it.price}
               item={it.id}
+              img={it.img}
               remove={(id) => remove(id)}
               addToCartOneByOne={(index) => addToCartOneByOne(index)} />
           );
@@ -229,7 +230,9 @@ export default function Wishlist() {
 
 
       <button class={addbuttestyle} onClick={removeall}><span>Add all to cart </span></button>
-    
+      {/* <button onClick={add}>test</button>
+<button onClick={acd}>test</button>
+<button onClick={notify}>Notify !</button> */}
       <ToastContainer />
     </div>
   );

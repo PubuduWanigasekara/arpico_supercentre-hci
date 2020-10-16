@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default ({ key, mykey, item, name, price, qty, removeItem, qtyRemover }) => {
+export default ({ key, mykey, item, name, price, qty,img, removeItem, qtyRemover }) => {
   let [qtys, Setqtys] = useState(qty);
 
 
@@ -23,7 +23,7 @@ export default ({ key, mykey, item, name, price, qty, removeItem, qtyRemover }) 
         <div id="c_card_img_container">
           <img
             id="c_img"
-            src="https://images.all-free-download.com/images/graphicthumb/two_green_apple_hd_picture_167248.jpg"
+            src={img}
             alt=""
           />
         </div>

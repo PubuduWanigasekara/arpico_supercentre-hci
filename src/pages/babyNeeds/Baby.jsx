@@ -4,7 +4,7 @@ import Select from "react-select";
 import ProductCard from "../../components/ProductCard";
 import Whislist from "../wishlist/wishlist";
 
-export default function Baby() {
+export default function Baby(props) {
   let data = JSON.parse(localStorage.getItem("data"));
   let babyneeds = data.baby_needs;
   let count = babyneeds.length;
@@ -12,6 +12,10 @@ export default function Baby() {
   useEffect(() => {
     console.log(babyneeds);
   });
+
+    const addWishlist =(data)=>{
+        props.additemToWishlist(data)
+    }
 
   const options = [{ value: "price", label: "price" }];
 
@@ -88,6 +92,7 @@ export default function Baby() {
           {babyneeds.map((data, index) => {
             return (
               <ProductCard
+              addw={addWishlist}
                 key={index}
                 index={"baby_needs"}
                 id={data.id}
