@@ -32,6 +32,17 @@ export default function ProductCard(props) {
             setQ(quentity--)
         }
     }
+
+    let wishlist = JSON.parse(localStorage.getItem('wishlistitems'))
+    console.log(wishlist)
+
+    const addtoWishlist=()=>{
+       
+        wishlist.push(product);
+        let wishdata = JSON.stringify(wishlist)
+        localStorage.setItem('wishlistitems',wishdata)
+    }
+   
     
     return (
         <div id="cardBase">
@@ -65,7 +76,7 @@ export default function ProductCard(props) {
                 </button>
                     </Link>
                
-                    <button id="card_r_wishlist" onClick={()=>  console.log(product)}>
+                    <button id="card_r_wishlist" onClick={addtoWishlist}>
                     <i class="ar-plus"></i>
                     </button>
                 </div>
