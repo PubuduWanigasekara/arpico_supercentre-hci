@@ -9,6 +9,7 @@ export default function Cart() {
   let [total, Settotal] = useState(0);
   const { cartitems, setcartitems } = useContext(AppContexts);
   let [addresshow, Setaddresshow] = useState("cart_d_none");
+  let [toggal, Settoggal] = useState(true);
   var show = false;
   var t = 0;
   useEffect(() => {
@@ -56,10 +57,8 @@ export default function Cart() {
   };
 
   const togal = () => {
-
     if (show) {
       Setaddresshow("cart_d_none");
-
     } else {
       Setaddresshow("");
     }
@@ -85,11 +84,11 @@ export default function Cart() {
     });
   };
 
-  const qtyRemover=(index,newQty)=>{
-    console.log("index " + index +"newQty "+newQty)
-  cartitems[index].qty = newQty;
+  const qtyRemover = (index, newQty) => {
+    console.log("index " + index + "newQty " + newQty);
+    cartitems[index].qty = newQty;
     setcartitems([...cartitems]);
-  }
+  };
 
   return (
     <>
@@ -100,9 +99,11 @@ export default function Cart() {
           <div id="card_rigit_main_div">
             <div id="cart_right_div">
               <div onClick={togal} title="click to see addres">
-                <h5 id="cart_subtitle" >Shipping Address</h5>
+                <h5 id="cart_subtitle">
+                  Shipping Address <i id="c_ar_down_1"></i>
+                  <i class="ar-down-1" id="cart_rotate"></i>
+                </h5>
               </div>
-
 
               <div id="cart_form" className={addresshow}>
                 <label id="cart_label">First Name : </label>
@@ -150,7 +151,7 @@ export default function Cart() {
               </div>
               <br />
               <div>
-                <h5 id="cart_subtitle">Shipping Methods</h5>
+                <h5 id="cart_subtitle">Shipping Methods </h5>
                 <div id="cartbuttonsdiv">
                   <button className="button primary cart_button">
                     LKR {total + 375}
@@ -159,11 +160,13 @@ export default function Cart() {
                     Arpico Delivery
                   </button>
                   <button className="button primary cart_button">
-                    Arpico Doorstep delivery
+                    Arpico Doorstep Delivery
                   </button>
                 </div>
                 <div id="cart_checkout_btn_div">
-                  <button className="button primary" id="cart_checkout_button">Go to Payment</button>
+                  <button className="button primary" id="cart_checkout_button">
+                    Go to Payment
+                  </button>
                 </div>
               </div>
             </div>
@@ -172,24 +175,24 @@ export default function Cart() {
           <div id="cart_left_div">
             <h5 id="cart_subtitle">My Cart</h5>
             <div id="c_items_div">
-              {
-              cartitems.map((it,index) => {
+              {cartitems.map((it, index) => {
                 console.log(index);
                 return (
                   <CartProductCard
                     key={index}
-                    mykey={index+1}
+                    mykey={index + 1}
                     item={it.id}
-                    name={it.name}
+                    name="Pubudu Arosha"
+                    // name={it.name}
                     price={it.price}
                     qty={it.qty}
                     removeItem={(itm) => remove(itm)}
-                    qtyRemover={(index,newQty)=>qtyRemover(index,newQty)}
+                    qtyRemover={(index, newQty) => qtyRemover(index, newQty)}
                   />
                 );
               })}
 
-              <button onClick={add}>test</button>
+              {/* <button onClick={add}>test</button> */}
             </div>
           </div>
         </div>

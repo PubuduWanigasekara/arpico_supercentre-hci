@@ -223,6 +223,7 @@ export default function Wishlist() {
           );
         }
 
+
       })}
 
 
