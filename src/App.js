@@ -22,6 +22,17 @@ import { AppContexts } from "./contexts/AppContextsProvider";
 
 function App() {
 
+    let data = require('./assets/products.json')
+
+    if(localStorage.getItem('data')){
+
+    }
+    else{
+        localStorage.setItem('data',JSON.stringify(data))
+    }
+
+   
+
     let [loaded, setload] = useState(false);
     let [login, setLogin] = useState(true);
     let [wishlistitems, setwishlistitems] = useState(
@@ -80,7 +91,7 @@ function App() {
                 // new router change
 
                 <Route exact path="/baby"   render={() => {
-                    setLocbar('Baby needs', '/baby');
+                   
                     return <Baby />;
                 }} />
 
