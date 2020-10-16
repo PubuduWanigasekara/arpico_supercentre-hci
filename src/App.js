@@ -36,8 +36,9 @@ function App() {
         localStorage.setItem("wishlistitems", JSON.stringify([]));
     }
 
-    let [loaded, setload] = useState(false);
-    let [login, setLogin] = useState(false);
+
+    
+    let [login, setLogin] = useState(true);
     let [wishlistitems, setwishlistitems] = useState([]);
 
     let [cartitems, setcartitems] = useState([]);
@@ -93,7 +94,15 @@ function App() {
         />
 
         <Switch>
-          <Route path={"/login"} exact component={Login} />
+        <Route
+            exact
+            path="/login"
+            render={() => {
+              return <Login  logSet={LoginSet}/>;
+            }}
+          />
+
+
           // new router change
                 <Route exact path="/baby" render={() => {
 

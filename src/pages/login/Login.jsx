@@ -4,7 +4,7 @@ import {ReactComponent as Mail} from '../../assets/mailico.svg'
 import {ReactComponent as Pass} from '../../assets/pass.svg'
 
 
-export default function Login() {
+export default function Login(props) {
     return (
         <>
 
@@ -19,7 +19,7 @@ export default function Login() {
                    <input type="email" name="email" id="email" placeholder="Enter your email"/>
                    {/* <Pass id="icons" className="pass"/> */}
                    <input type="password" name="password" id="password" />
-                   <button>Login</button>
+                   <button onClick={()=>props.logSet(false)}>Login</button>
                </div>
            </div>
         </div>
