@@ -30,21 +30,21 @@ function App() {
         localStorage.setItem('data',JSON.stringify(data))
     }
 
+
+    if(localStorage.getItem('wishlistitems')){
+
+    }else
+    {
+        localStorage.setItem('wishlistitems',JSON.stringify([]))
+    }
+
    
 
     let [loaded, setload] = useState(false);
-    let [login, setLogin] = useState(true);
-    let [wishlistitems, setwishlistitems] = useState(
-        [
-            { id: 1, name: "z", price: 1030, qty: 6, isAddedToCart: false },
-            { id: 2, name: "z", price: 2050, qty: 5, isAddedToCart: false }
-        ]);
+    let [login, setLogin] = useState(false);
+    let [wishlistitems, setwishlistitems] = useState([]);
 
-    let [cartitems, setcartitems] = useState(
-        [
-            { id: 1, name: "z", price: 1030, qty: 6, isAddedToCart: true },
-            { id: 2, name: "z", price: 2050, qty: 5, isAddedToCart: true }
-        ]);
+    let [cartitems, setcartitems] = useState();
     const location = useLocation();
 
     let history = useHistory()

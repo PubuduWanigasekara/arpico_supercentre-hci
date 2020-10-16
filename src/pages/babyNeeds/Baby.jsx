@@ -10,21 +10,22 @@ export default function Baby() {
 
     
     
+    
+  
+    
     let data = JSON.parse(localStorage.getItem('data'))
     let babyneeds = data.baby_needs
 
-
-    function getdata(){
-         data = JSON.parse(localStorage.getItem('data'))
-    }
+   
 
     useEffect(() => {
         
-        getdata();
+      
        
         console.log(babyneeds)
 
         
+    
          
     })
 
@@ -43,6 +44,9 @@ export default function Baby() {
 
    
 
+        const addTocart=()=>{
+            
+        }
     
 
 
