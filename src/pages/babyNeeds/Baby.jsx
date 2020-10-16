@@ -15,6 +15,7 @@ export default function Baby() {
     
     let data = JSON.parse(localStorage.getItem('data'))
     let babyneeds = data.baby_needs
+    let count = babyneeds.length
 
    
 
@@ -77,7 +78,7 @@ export default function Baby() {
            <div id="content_sort">
                <div id="item_count">
                     <div id="items_number">
-                        223 items 
+                    {count} items 
                     </div>
                </div>
                <div id="sort_controllers">
