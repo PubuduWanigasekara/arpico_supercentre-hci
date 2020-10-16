@@ -1,6 +1,22 @@
 import React, { useEffect, useState } from "react";
 
-export default ({ key, item, name, price, qty, removeItem }) => {
+export default ({ key, mykey, item, name, price, qty, removeItem, qtyRemover }) => {
+  let [qtys, Setqtys] = useState(qty);
+
+
+  useEffect(() => {
+    qtyRemover(mykey-1,qtys);
+  }, [qtys]);
+
+  const qtychanger = (type, index) => {
+    if (type) {
+      console.log(index);
+      Setqtys(++qtys);
+    } else {
+      Setqtys(--qtys);
+    }
+  }
+
   return (
     <div id="c_cardBase">
       <div id="c_card_container">
@@ -17,9 +33,9 @@ export default ({ key, item, name, price, qty, removeItem }) => {
         </div>
 
         <div id="c_card_product_details_container2">
-          <button id="card_round_btn">-</button>
-          <input type="text" name="" value={qty} id="card_number" />
-          <button id="card_round_btn">+</button>
+          <button id="card_round_btn" onClick={() => qtychanger(false, mykey)}>-</button>
+          <input type="text" name="" value={qtys} id="card_number" />
+          <button id="card_round_btn" onClick={() => qtychanger(true, mykey)}>+</button>
         </div>
 
         <div id="c_card_product_details_container3">

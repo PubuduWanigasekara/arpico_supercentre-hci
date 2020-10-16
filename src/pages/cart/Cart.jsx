@@ -9,7 +9,7 @@ export default function Cart() {
   let [total, Settotal] = useState(0);
   const { cartitems, setcartitems } = useContext(AppContexts);
   let [addresshow, Setaddresshow] = useState("cart_d_none");
-  var show= false;
+  var show = false;
   var t = 0;
   useEffect(() => {
     for (var i = 0; i < cartitems.length; i++) {
@@ -19,6 +19,15 @@ export default function Cart() {
       console.log(total);
     }
   }, []);
+
+  useEffect(() => {
+    for (var i = 0; i < cartitems.length; i++) {
+      t = t + cartitems[i].qty * cartitems[i].price;
+      console.log(t);
+      Settotal(t);
+      console.log(total);
+    }
+  }, [cartitems]);
 
   let sdata = {
     id: 4,
@@ -34,11 +43,11 @@ export default function Cart() {
   };
 
   const togal = () => {
-   
-    if(show){
+
+    if (show) {
       Setaddresshow("cart_d_none");
-      
-    }else{
+
+    } else {
       Setaddresshow("");
     }
     show = !show;
@@ -63,6 +72,12 @@ export default function Cart() {
     });
   };
 
+  const qtyRemover=(index,newQty)=>{
+    console.log("index " + index +"newQty "+newQty)
+  cartitems[index].qty = newQty;
+    setcartitems([...cartitems]);
+  }
+
   return (
     <>
       <div id="container">
@@ -72,9 +87,9 @@ export default function Cart() {
           <div id="card_rigit_main_div">
             <div id="cart_right_div">
               <div onClick={togal} title="click to see addres">
-              <h5 id="cart_subtitle" >Shipping Address</h5>
+                <h5 id="cart_subtitle" >Shipping Address</h5>
               </div>
-              
+
 
               <div id="cart_form" className={addresshow}>
                 <label id="cart_label">First Name : </label>
@@ -144,15 +159,19 @@ export default function Cart() {
           <div id="cart_left_div">
             <h5 id="cart_subtitle">My Cart</h5>
             <div id="c_items_div">
-              {cartitems.map((it, index) => {
+              {
+              cartitems.map((it,index) => {
+                console.log(index);
                 return (
                   <CartProductCard
                     key={index}
+                    mykey={index+1}
                     item={it.id}
                     name={it.name}
                     price={it.price}
                     qty={it.qty}
                     removeItem={(itm) => remove(itm)}
+                    qtyRemover={(index,newQty)=>qtyRemover(index,newQty)}
                   />
                 );
               })}
