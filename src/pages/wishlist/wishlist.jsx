@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import WishlistProductCard from "../../components/WishlistProductCard";
 import Lottie from 'react-lottie';
-import {ToastContainer,toast} from 'react-toastify'
+import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import carrot from './carrot.json';
 import wrong from './warning.json';
@@ -16,8 +16,8 @@ export default function Wishlist() {
   let [playerror, Setplayerror] = useState(true);
   let [addbuttestyle, Setaddbuttestyle] = useState("d_hide");
   const notify = () => toast("Wow so easy !");
-  const {wishlistitems, setwishlistitems} = useContext(AppContexts);
-  const {cartitems, setcartitems} = useContext(AppContexts);
+  const { wishlistitems, setwishlistitems } = useContext(AppContexts);
+  const { cartitems, setcartitems } = useContext(AppContexts);
 
 
 
@@ -43,11 +43,16 @@ export default function Wishlist() {
     if (JSON.parse(localStorage.getItem("wishlistItems"))) {
       console.log("1");
       console.log(wishlistitems);
+      setwishlistitems(JSON.parse(localStorage.getItem('wishlistItems')))
+      setcartitems(JSON.parse(localStorage.getItem('cartItems')))
+      window.addEventListener('storage', storageadd);
+
     } else {
       console.log("0");
     }
   }, []);
 
+  const storageadd = () => { setwishlistitems(JSON.parse(localStorage.getItem('wishlistItems'))) }
 
 
 
@@ -64,20 +69,21 @@ export default function Wishlist() {
         if (wishlistitems[i].isAddedToCart) {
           con++;
         }
+
       }
 
       if (con == leng) {
-          sucssespaln(true);
-          errorpaln(false);
-          addbuttenstylechanger(false);
-        
-      }else{
+        sucssespaln(true);
+        errorpaln(false);
+        addbuttenstylechanger(false);
+
+      } else {
         sucssespaln(false);
         errorpaln(false);
         addbuttenstylechanger(true);
       }
     }
-
+    localStorage.setItem('cartItems', JSON.stringify(cartitems))
   }, [wishlistitems]);
 
   let sdata = {
@@ -94,7 +100,7 @@ export default function Wishlist() {
     console.log(wishlistitems);
   };
 
-  const add = () => {
+  const addtocatrt = () => {
     setwishlistitems([...wishlistitems, sdata]);
     console.log(wishlistitems);
   };
@@ -113,35 +119,36 @@ export default function Wishlist() {
     for (var i = 0; i < wishlistitems.length; i++) {
       if (wishlistitems[i].id == index) {
         wishlistitems[i].isAddedToCart = true
-        setcartitems([...cartitems,wishlistitems[i]]);
+        setcartitems([...cartitems, wishlistitems[i]]);
+        console.log(cartitems);
         message = wishlistitems[i].name;
       }
     }
-    toast.success("You added "+message+" to your shopping cart.",{position: toast.POSITION.BOTTOM_RIGHT});
+    toast.success("You added " + message + " to your shopping cart.", { position: toast.POSITION.BOTTOM_RIGHT });
     adddamy();
   }
   const remove = (id) => {
     var message = '';
     setwishlistitems(wishlistitems.filter(item => {
-      if(item.id != id){
+      if (item.id != id) {
         return item;
-      }else{
+      } else {
         message = item.name;
       }
     }));
-    toast.error("You removed "+message+" from wish list",{position: toast.POSITION.BOTTOM_RIGHT});
+    toast.error("You removed " + message + " from wish list", { position: toast.POSITION.BOTTOM_RIGHT });
   };
 
   const removeall = () => {
     for (var i = 0; i < wishlistitems.length; i++) {
-      if(!wishlistitems[i].isAddedToCart){
+      if (!wishlistitems[i].isAddedToCart) {
         wishlistitems[i].isAddedToCart = true
-        setcartitems([...cartitems,wishlistitems[i]]);
+        setcartitems([...cartitems, wishlistitems[i]]);
+        console.log(cartitems);
       }
     }
     adddamy();
     sucssespaln(true);
-    
   };
 
   const sucssespaln = (sty) => {
@@ -165,9 +172,9 @@ export default function Wishlist() {
   }
 
   const addbuttenstylechanger = (sty) => {
-    if(sty){
+    if (sty) {
       Setaddbuttestyle("button_addToCart")
-    }else{
+    } else {
       Setaddbuttestyle("d_hide")
     }
   }
@@ -178,52 +185,53 @@ export default function Wishlist() {
   }
 
   return (
-      <div>
+    <div>
 
-<div className={stylersucsses}>
-  <div class="success-msg">
-    All items are sented to cart<br />
-    <Lottie options={defaultOptions_carrot}
-      height={95}
-      width={117}
-      isStopped={playsucsses} />
-  </div>
-</div>
+      <div className={stylersucsses}>
+        <div class="success-msg">
+          All items are sented to cart<br />
+          <Lottie options={defaultOptions_carrot}
+            height={95}
+            width={117}
+            isStopped={playsucsses} />
+        </div>
+      </div>
 
-<div className={stylererror}>
-  <div class="error-msg">
-  You have no items in your wish list.<br />
-    <Lottie options={defaultOptions_wrong}
-      height={95}
-      width={117}
-      isStopped={playerror} />
-  </div>
-</div>
+      <div className={stylererror}>
+        <div class="error-msg">
+          You have no items in your wish list.<br />
+          <Lottie options={defaultOptions_wrong}
+            height={95}
+            width={117}
+            isStopped={playerror} />
+        </div>
+      </div>
 
-{wishlistitems.map((it, index) => {
+      {wishlistitems.map((it, index) => {
 
-  if (!it.isAddedToCart) {
-    return (
+        if (!it.isAddedToCart) {
+          return (
 
-      <WishlistProductCard
-        name="Pubudu Arosha"
-        key={index}
-        qty={it.qty}
-        price={it.price}
-        item={it.id}
-        remove={(id) => remove(id)}
-        addToCartOneByOne={(index) => addToCartOneByOne(index)} />
-    );
-  }
-
-})}
+            <WishlistProductCard
+              name={it.name}
+              key={index}
+              qty={it.qty}
+              price={it.price}
+              item={it.id}
+              remove={(id) => remove(id)}
+              addToCartOneByOne={(index) => addToCartOneByOne(index)} />
+          );
+        }
 
 
-<button class={addbuttestyle} onClick={removeall}><span>Add all to cart </span></button>
-{/* <button onClick={add}>test</button>
+      })}
+
+
+      <button class={addbuttestyle} onClick={removeall}><span>Add all to cart </span></button>
+      {/* <button onClick={add}>test</button>
 <button onClick={acd}>test</button>
 <button onClick={notify}>Notify !</button> */}
-  <ToastContainer />
-</div>
+      <ToastContainer />
+    </div>
   );
 }

@@ -13,6 +13,17 @@ export default function Cart() {
   var show = false;
   var t = 0;
   useEffect(() => {
+    // localStorage.setItem('cartItems',JSON.stringify(cartitems))
+    if (JSON.parse(localStorage.getItem("cartItems"))) {
+      console.log("1");
+      console.log(cartitems);
+      setcartitems(JSON.parse(localStorage.getItem('cartItems')))
+      window.addEventListener('storage', storageadd);
+
+    } else {
+      console.log("0");
+    }
+
     for (var i = 0; i < cartitems.length; i++) {
       t = t + cartitems[i].qty * cartitems[i].price;
       console.log(t);
@@ -20,6 +31,8 @@ export default function Cart() {
       console.log(total);
     }
   }, []);
+
+  const storageadd = () => { setcartitems(JSON.parse(localStorage.getItem('cartItems'))) }
 
   useEffect(() => {
     for (var i = 0; i < cartitems.length; i++) {
