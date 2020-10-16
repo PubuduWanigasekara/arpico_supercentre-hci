@@ -11,7 +11,7 @@ import Categories from '../../components/Categories'
 
 
 
-export default function Home() {
+export default function Home(props) {
 
         let data = require('../../assets/products.json')
 
@@ -44,6 +44,9 @@ export default function Home() {
         }
     }
 
+    const addWishlist =(data)=>{
+        props.additemToWishlist(data)
+    }
 
 
 
@@ -96,6 +99,7 @@ export default function Home() {
                </div>
         <section id="recent_container">
         <ProductCard
+         addw={addWishlist}
             index={"electronics"}
             id={electro[5].id}
             title={electro[5].tital}
@@ -105,6 +109,9 @@ export default function Home() {
             stock={true}
           />
           <ProductCard
+           addw={addWishlist}
+           index={"house_hold"}
+           id={house[3].id}
             title={house[3].tital}
             des={house[3].description}
             price={house[3].price}
@@ -112,6 +119,9 @@ export default function Home() {
             stock={true}
           />
           <ProductCard
+           addw={addWishlist}
+           index={"baby_needs"}
+           id={baby[3].id}
             title={baby[3].tital}
             des={baby[3].description}
             price={baby[3].price}
@@ -119,6 +129,9 @@ export default function Home() {
             stock={true}
           />
           <ProductCard
+           addw={addWishlist}
+            index={"grocery"}
+            id={grosary[2].id}
             title={grosary[2].tital}
             des={grosary[2].description}
             price={grosary[2].price}

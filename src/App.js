@@ -23,39 +23,39 @@ import { useLocation } from "react-router-dom";
 import { AppContexts } from "./contexts/AppContextsProvider";
 
 function App() {
-  let data = require("./assets/products.json");
+    let data = require("./assets/products.json");
 
-  if (localStorage.getItem("data")) {
-  } else {
-    localStorage.setItem("data", JSON.stringify(data));
-  }
+    if (localStorage.getItem("data")) {
+    } else {
+        localStorage.setItem("data", JSON.stringify(data));
+    }
 
-  if (localStorage.getItem("wishlistitems")) {
-  } else {
-    localStorage.setItem("wishlistitems", JSON.stringify([]));
-  }
+    if (localStorage.getItem("wishlistitems")) {
+    } else {
+        localStorage.setItem("wishlistitems", JSON.stringify([]));
+    }
 
-  let [loaded, setload] = useState(false);
-  let [login, setLogin] = useState(false);
-  let [wishlistitems, setwishlistitems] = useState([]);
+    let [loaded, setload] = useState(false);
+    let [login, setLogin] = useState(false);
+    let [wishlistitems, setwishlistitems] = useState([]);
 
-  let [cartitems, setcartitems] = useState([]);
-  const location = useLocation();
+    let [cartitems, setcartitems] = useState([]);
+    const location = useLocation();
 
-  let history = useHistory();
+    let history = useHistory();
 
-  useEffect(() => {
-    const currentPath = location.pathname;
+    useEffect(() => {
+        const currentPath = location.pathname;
 
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [location]);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, [location]);
 
-  const LoginSet = (type) => {
-    setLogin((login = type));
-  };
+    const LoginSet = (type) => {
+        setLogin((login = type));
+    };
 
-  let [nName, setLoc] = useState();
-  let [nLink, setLink] = useState();
+    let [nName, setLoc] = useState();
+    let [nLink, setLink] = useState();
 
     const setLocbar = (name, nlink) => {
 
@@ -64,102 +64,114 @@ function App() {
 
     }
 
-    let additemToWishlist = (obj)=>{
+    let additemToWishlist = (obj) => {
 
         setwishlistitems([...wishlistitems, obj]);
     }
 
-  return (
-    <div className="App">
-      <AppContexts.Provider
-        value={{ wishlistitems, setwishlistitems, cartitems, setcartitems }}
-      >
-        <Header
-          isLogged={login}
-          logSet={LoginSet}
-          home={"Home"}
-          name={nName}
-          link={nLink}
-        />
-        <Switch>
-          <Route path={"/login"} exact component={Login} />
+    return (
+        <div className="App">
+            <AppContexts.Provider
+                value={{ wishlistitems, setwishlistitems, cartitems, setcartitems }}
+            >
+                <Header
+                    isLogged={login}
+                    logSet={LoginSet}
+                    home={"Home"}
+                    name={nName}
+                    link={nLink}
+                />
+                <Switch>
+                    <Route path={"/login"} exact component={Login} />
           // new router change
-                <Route exact path="/baby"   render={() => {
+                <Route exact path="/baby" render={() => {
 
-                    return <Baby additemToWishlist={additemToWishlist}/>;
-                }} />
-          <Route
-            exact
-            path="/grocery"
-            render={() => {
-              return <Grocery />;
-            }}
-          />
-          <Route
-            exact
-            path="/wishlist"
-            render={() => {
-              setLocbar("Wishlist", "/wishlist");
-              return <Wishlist />;
-            }}
-          />
-          <Route
-            exact
-            path="/cart"
-            render={() => {
-              setLocbar("Cart", "/cart");
-              return <Cart />;
-            }}
-          />
-          <Route
-            exact
-            path="/store_locations"
-            render={() => {
-              setLocbar("Store Locations", "/store_locations");
-              return <Store_locations />;
-            }}
-          />
-          <Route
-            exact
-            path="/contact-us"
-            render={() => {
-              setLocbar("Contact Us", "/contact-us");
-              return <ContactUs />;
-            }}
-          />
-          <Route
-            exact
-            path="/payment"
-            render={() => {
-              setLocbar("Payments", "/payment");
-              return <Payment />;
-            }}
-          />
-          <Route
-            exact
-            path="/productVariety"
-            render={() => {
-              setLocbar("product Variety", "/productVariety");
-              return <ProductVariety />;
-            }}
-          />
-          <Route
-            exact
-            path="/faq"
-            render={() => {
-              setLocbar("Frequently asked questions", "/faq");
-              return <Faq />;
-            }}
-          />
-          <Route exact path="/view/:index/:product" component={Viewproduct} />
+                        return <Baby additemToWishlist={additemToWishlist} />;
+                    }} />
+                    <Route
+                        exact
+                        path="/grocery"
+                        render={() => {
+                            return <Grocery />;
+                        }}
+                    />
+                    <Route
+                        exact
+                        path="/wishlist"
+                        render={() => {
+                            setLocbar("Wishlist", "/wishlist");
+                            return <Wishlist />;
+                        }}
+                    />
+                    <Route
+                        exact
+                        path="/cart"
+                        render={() => {
+                            setLocbar("Cart", "/cart");
+                            return <Cart />;
+                        }}
+                    />
+                    <Route
+                        exact
+                        path="/store_locations"
+                        render={() => {
+                            setLocbar("Store Locations", "/store_locations");
+                            return <Store_locations />;
+                        }}
+                    />
+                    <Route
+                        exact
+                        path="/contact-us"
+                        render={() => {
+                            setLocbar("Contact Us", "/contact-us");
+                            return <ContactUs />;
+                        }}
+                    />
+                    <Route
+                        exact
+                        path="/payment"
+                        render={() => {
+                            setLocbar("Payments", "/payment");
+                            return <Payment />;
+                        }}
+                    />
+                    <Route
+                        exact
+                        path="/productVariety"
+                        render={() => {
+                            setLocbar("product Variety", "/productVariety");
+                            return <ProductVariety />;
+                        }}
+                    />
+                    <Route
+                        exact
+                        path="/faq"
+                        render={() => {
+                            setLocbar("Frequently asked questions", "/faq");
+                            return <Faq />;
+                        }}
+                    />
+
+                    <Route
+                        exact
+                        path="/"
+                        render={() => {
+                            setLocbar("Frequently asked questions", "/faq");
+                            return <Home additemToWishlist={additemToWishlist}/>;
+                        }}
+                    />
+                    <Route exact path="/view/:index/:product" component={Viewproduct} />
           // not found page
           {/* this one should place always bottom */}
-          <Route path={"*"} exact component={Home} />
-        </Switch>
-        <Footer />
-      </AppContexts.Provider>
-    </div>
-  );
+                    <Route path={"*"} exact component={Home} />
+
+
+                    {/* additemToWishlist={additemToWishlist} */}
+                </Switch>
+                <Footer />
+            </AppContexts.Provider>
+        </div>
+    );
 }
 
 export default App;
