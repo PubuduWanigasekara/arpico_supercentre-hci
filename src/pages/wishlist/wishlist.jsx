@@ -229,10 +229,7 @@ export default function Wishlist() {
 
 
       <button class={addbuttestyle} onClick={removeall}><span>Add all to cart </span></button>
-      {/* <button onClick={add}>test</button>
-<button onClick={acd}>test</button>
-<button onClick={notify}>Notify !</button> */}
-<Link to="/cart"><button class="button primary" id="wish_go_button" style={{cursor:"pointer"}} ><span>Go to cart  <i class="ar-deliver w_go_button_cart_icon"></i> </span></button></Link>
+    
       <ToastContainer />
     </div>
   );

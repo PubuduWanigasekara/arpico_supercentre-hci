@@ -23,6 +23,7 @@ import { useLocation } from "react-router-dom";
 import { AppContexts } from "./contexts/AppContextsProvider";
 
 function App() {
+
   let data = require("./assets/products.json");
 
   if (localStorage.getItem("data")) {
@@ -162,6 +163,7 @@ function App() {
         </Switch>
         <Footer />
       </AppContexts.Provider>
+
     </div>
   );
 }
