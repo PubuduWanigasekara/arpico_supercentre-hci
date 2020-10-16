@@ -26,7 +26,6 @@ export default function Baby(props) {
 
   let cardCount = 8;
 
-  const addTocart = () => {};
 
   return (
     <>

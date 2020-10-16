@@ -108,7 +108,8 @@ export default function Home() {
       <section id="recentProducts">
         <div id="recent_title">Recent Products</div>
         <section id="recent_container">
-          <ProductCard
+
+        <ProductCard
             index={"electronics"}
             id={electro[5].id}
             title={electro[5].tital}
@@ -138,6 +139,7 @@ export default function Home() {
             img={grosary[2].image}
             stock={true}
           />
+
         </section>
       </section>
 
