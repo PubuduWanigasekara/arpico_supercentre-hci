@@ -15,6 +15,7 @@ import Grocery from "./pages/grocery/Grocery";
 import Electronics from "./pages/electronics/Electronics";
 import FruitsAndVegetables from "./pages/fruitsAndVegetables/FruitsAndVegetables";
 import Signup from "./pages/signup/Signup";
+import Household from "./pages/houseHold/HouseHold"
 import Faq from "./pages/faq/Faq";
 import Viewproduct from "./components/Viewproduct";
 import Notfound from "./pages/notfound/Notfound";
@@ -57,110 +58,136 @@ function App() {
     let [nName, setLoc] = useState();
     let [nLink, setLink] = useState();
 
-    const setLocbar = (name, nlink) => {
+  const setLocbar = (name, nlink) => {
 
-        setLoc(name);
-        setLink(nlink)
+    setLoc(name);
+    setLink(nlink)
 
-    }
+  }
 
-    let additemToWishlist = (obj) => {
 
-        setwishlistitems([...wishlistitems, obj]);
-    }
+  let additemToWishlist = (obj) => {
 
-    return (
-        <div className="App">
-            <AppContexts.Provider
-                value={{ wishlistitems, setwishlistitems, cartitems, setcartitems }}
-            >
-                <Header
-                    isLogged={login}
-                    logSet={LoginSet}
-                    home={"Home"}
-                    name={nName}
-                    link={nLink}
-                />
-                <Switch>
-                    <Route path={"/login"} exact component={Login} />
+    setwishlistitems([...wishlistitems, obj]);
+  }
+
+  return (
+    <div className="App">
+      <AppContexts.Provider
+        value={{ wishlistitems, setwishlistitems, cartitems, setcartitems }}
+      >
+        <Header
+          isLogged={login}
+          logSet={LoginSet}
+          home={"Home"}
+          name={nName}
+          link={nLink}
+        />
+
+        <Route
+          exact
+          path="/signup"
+          render={() => {
+            return <Signup additemToWishlist={additemToWishlist} />;
+          }}
+        />
+
+        <Switch>
+          <Route path={"/login"} exact component={Login} />
           // new router change
                 <Route exact path="/baby" render={() => {
 
-                        return <Baby additemToWishlist={additemToWishlist} />;
-                    }} />
-                    <Route
-                        exact
-                        path="/grocery"
-                        render={() => {
-                            return <Grocery />;
-                        }}
-                    />
-                    <Route
-                        exact
-                        path="/wishlist"
-                        render={() => {
-                            setLocbar("Wishlist", "/wishlist");
-                            return <Wishlist />;
-                        }}
-                    />
-                    <Route
-                        exact
-                        path="/cart"
-                        render={() => {
-                            setLocbar("Cart", "/cart");
-                            return <Cart />;
-                        }}
-                    />
-                    <Route
-                        exact
-                        path="/store_locations"
-                        render={() => {
-                            setLocbar("Store Locations", "/store_locations");
-                            return <Store_locations />;
-                        }}
-                    />
-                    <Route
-                        exact
-                        path="/contact-us"
-                        render={() => {
-                            setLocbar("Contact Us", "/contact-us");
-                            return <ContactUs />;
-                        }}
-                    />
-                    <Route
-                        exact
-                        path="/payment"
-                        render={() => {
-                            setLocbar("Payments", "/payment");
-                            return <Payment />;
-                        }}
-                    />
-                    <Route
-                        exact
-                        path="/productVariety"
-                        render={() => {
-                            setLocbar("product Variety", "/productVariety");
-                            return <ProductVariety />;
-                        }}
-                    />
-                    <Route
-                        exact
-                        path="/faq"
-                        render={() => {
-                            setLocbar("Frequently asked questions", "/faq");
-                            return <Faq />;
-                        }}
-                    />
+            return <Baby additemToWishlist={additemToWishlist} />;
+          }} />
+          <Route
+            exact
+            path="/grocery"
+            render={() => {
+              return <Grocery additemToWishlist={additemToWishlist} />;
+            }}
+          />
 
-                    <Route
-                        exact
-                        path="/"
-                        render={() => {
-                            setLocbar("Frequently asked questions", "/faq");
-                            return <Home additemToWishlist={additemToWishlist}/>;
-                        }}
-                    />
-                    <Route exact path="/view/:index/:product" component={Viewproduct} />
+          <Route
+            exact
+            path="/household"
+            render={() => {
+              return <Household additemToWishlist={additemToWishlist} />;
+            }}
+          />
+
+          <Route
+            exact
+            path="/electronics"
+            render={() => {
+              return <Electronics additemToWishlist={additemToWishlist} />;
+            }}
+          />
+
+          <Route
+            exact
+            path="/fruitsAndVegetables"
+            render={() => {
+              return <FruitsAndVegetables additemToWishlist={additemToWishlist} />;
+            }}
+          />
+
+          <Route
+            exact
+            path="/wishlist"
+            render={() => {
+              setLocbar("Wishlist", "/wishlist");
+              return <Wishlist />;
+            }}
+          />
+          <Route
+            exact
+            path="/cart"
+            render={() => {
+              setLocbar("Cart", "/cart");
+              return <Cart />;
+            }}
+          />
+          <Route
+            exact
+            path="/store_locations"
+            render={() => {
+              setLocbar("Store Locations", "/store_locations");
+              return <Store_locations />;
+            }}
+          />
+          <Route
+            exact
+            path="/contact-us"
+            render={() => {
+              setLocbar("Contact Us", "/contact-us");
+              return <ContactUs />;
+            }}
+          />
+          <Route
+            exact
+            path="/payment"
+            render={() => {
+              setLocbar("Payments", "/payment");
+              return <Payment />;
+            }}
+          />
+          <Route
+            exact
+            path="/productVariety"
+            render={() => {
+              setLocbar("product Variety", "/productVariety");
+              return <ProductVariety />;
+            }}
+          />
+          <Route
+            exact
+            path="/faq"
+            render={() => {
+              setLocbar("Frequently asked questions", "/faq");
+              return <Faq />;
+            }}
+          />
+          <Route exact path="/view/:index/:product" component={Viewproduct} />
           // not found page
           {/* this one should place always bottom */}
                     <Route path={"*"} exact component={Home} />
