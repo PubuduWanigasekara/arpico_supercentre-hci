@@ -1,15 +1,13 @@
-import React, { useState } from 'react'
-import { ReactComponent as Cat_btn } from '../../assets/category_btn.svg'
-import { ReactComponent as Search_btn } from '../../assets/search_btn.svg'
-import { ReactComponent as Down } from '../../assets/down.svg'
-import Hero_right from '../../assets/hero_right.svg'
-import Location from '../../components/Location'
-import { motion, AnimatePresence } from "framer-motion"
-import ProductCard from '../../components/ProductCard'
-import HomeIcons from '../../components/HomeIcons'
-import Categories from '../../components/Categories'
-
-
+import React, { useState } from "react";
+import { ReactComponent as Cat_btn } from "../../assets/category_btn.svg";
+import { ReactComponent as Search_btn } from "../../assets/search_btn.svg";
+import { ReactComponent as Down } from "../../assets/down.svg";
+import Hero_right from "../../assets/hero_right.svg";
+import Location from "../../components/Location";
+import { motion, AnimatePresence } from "framer-motion";
+import ProductCard from "../../components/ProductCard";
+import HomeIcons from "../../components/HomeIcons";
+import Categories from "../../components/Categories";
 
 export default function Home(props) {
 
@@ -86,18 +84,19 @@ export default function Home(props) {
             {catopen && 
             <motion.section id="cat_section" initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }} transition={0.3}>
-                 < Categories openCat={catToggle}/>
-          
-            </motion.section> }
-            </AnimatePresence>
+            exit={{ opacity: 0 }}
+            transition={0.3}
+          >
+            <Categories openCat={catToggle} />
+          </motion.section>
+        )}
+      </AnimatePresence>
 
-            {/* recent products */}
-            <section id="recentProducts">
-               <div id="recent_title">
-               Recent Products
-               </div>
+      {/* recent products */}
+      <section id="recentProducts">
+        <div id="recent_title">Recent Products</div>
         <section id="recent_container">
+
         <ProductCard
          addw={addWishlist}
             index={"electronics"}
@@ -138,14 +137,13 @@ export default function Home(props) {
             img={grosary[2].image}
             stock={true}
           />
-        
+
         </section>
-</section>
+      </section>
 
-
-<section id="home_icons">
-    <HomeIcons/>
-</section>
-        </div>
-    )
+      <section id="home_icons">
+        <HomeIcons />
+      </section>
+    </div>
+  );
 }
