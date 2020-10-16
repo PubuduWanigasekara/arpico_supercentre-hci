@@ -631,14 +631,14 @@ Location toggle button animation */
 }
 
 #w_card_des {
-  font-size: 30px;
+  font-size: 20px;
   padding: 17px 0px 0px 10px;
   display: flex;
 }
 
 #w_card_price {
   padding: 8px 0px 0px 10px;
-  font-size: 37px;
+  font-size: 28px;
   font-weight: bold;
 }
 
@@ -668,7 +668,7 @@ Location toggle button animation */
 }
 
 #w_card_number {
-  width: 55px;
+  width: 100px;
   height: 29px;
   font-size: 20px;
   margin-left: 10px;
@@ -678,6 +678,7 @@ Location toggle button animation */
   outline: none;
   border: none;
   text-align: center;
+  color:#fff;
 }
 
 .w_add_to_card_button {
@@ -999,7 +1000,7 @@ a {
   text-decoration: none;
   flex-grow: 1;
   /* background: blue; */
-  width: 200px;
+  width: 110px;
   /* margin: auto; */
 }
 

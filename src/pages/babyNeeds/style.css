@@ -35,6 +35,8 @@
 
 
 #whistlist_holder{
+    overflow-y:scroll;
+    height: 500px;
   
 }
 

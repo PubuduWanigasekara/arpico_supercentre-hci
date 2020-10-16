@@ -24,39 +24,39 @@ import { useLocation } from "react-router-dom";
 import { AppContexts } from "./contexts/AppContextsProvider";
 
 function App() {
-  let data = require("./assets/products.json");
+    let data = require("./assets/products.json");
 
-  if (localStorage.getItem("data")) {
-  } else {
-    localStorage.setItem("data", JSON.stringify(data));
-  }
+    if (localStorage.getItem("data")) {
+    } else {
+        localStorage.setItem("data", JSON.stringify(data));
+    }
 
-  if (localStorage.getItem("wishlistitems")) {
-  } else {
-    localStorage.setItem("wishlistitems", JSON.stringify([]));
-  }
+    if (localStorage.getItem("wishlistitems")) {
+    } else {
+        localStorage.setItem("wishlistitems", JSON.stringify([]));
+    }
 
-  let [loaded, setload] = useState(false);
-  let [login, setLogin] = useState(false);
-  let [wishlistitems, setwishlistitems] = useState([]);
+    let [loaded, setload] = useState(false);
+    let [login, setLogin] = useState(false);
+    let [wishlistitems, setwishlistitems] = useState([]);
 
-  let [cartitems, setcartitems] = useState([]);
-  const location = useLocation();
+    let [cartitems, setcartitems] = useState([]);
+    const location = useLocation();
 
-  let history = useHistory();
+    let history = useHistory();
 
-  useEffect(() => {
-    const currentPath = location.pathname;
+    useEffect(() => {
+        const currentPath = location.pathname;
 
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [location]);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, [location]);
 
-  const LoginSet = (type) => {
-    setLogin((login = type));
-  };
+    const LoginSet = (type) => {
+        setLogin((login = type));
+    };
 
-  let [nName, setLoc] = useState();
-  let [nLink, setLink] = useState();
+    let [nName, setLoc] = useState();
+    let [nLink, setLink] = useState();
 
   const setLocbar = (name, nlink) => {
 
@@ -64,6 +64,7 @@ function App() {
     setLink(nlink)
 
   }
+
 
   let additemToWishlist = (obj) => {
 
@@ -189,12 +190,15 @@ function App() {
           <Route exact path="/view/:index/:product" component={Viewproduct} />
           // not found page
           {/* this one should place always bottom */}
-          <Route path={"*"} exact component={Home} />
-        </Switch>
-        <Footer />
-      </AppContexts.Provider>
-    </div>
-  );
+                    <Route path={"*"} exact component={Home} />
+
+
+                    {/* additemToWishlist={additemToWishlist} */}
+                </Switch>
+                <Footer />
+            </AppContexts.Provider>
+        </div>
+    );
 }
 
 export default App;

@@ -13,9 +13,9 @@ export default function Baby(props) {
     console.log(babyneeds);
   });
 
-    const addWishlist =(data)=>{
-        props.additemToWishlist(data)
-    }
+  const addWishlist = (data) => {
+    props.additemToWishlist(data);
+  };
 
   const options = [{ value: "price", label: "price" }];
 
@@ -29,9 +29,10 @@ export default function Baby(props) {
 
   return (
     <>
+      <h3 id="cart_ttitle">Baby Needs</h3>
       <div id="content_top">
         <div id="price_range">
-          <div id="price_range_title">choose price range</div>
+          <div id="price_range_title">Choose Price Range</div>
           <div id="price_range_container">
             {minmax.min} - {minmax.max} LKR
             <div id="price_range_selector">
@@ -91,7 +92,7 @@ export default function Baby(props) {
           {babyneeds.map((data, index) => {
             return (
               <ProductCard
-              addw={addWishlist}
+                addw={addWishlist}
                 key={index}
                 index={"baby_needs"}
                 id={data.id}

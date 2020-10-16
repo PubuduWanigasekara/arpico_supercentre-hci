@@ -1,17 +1,15 @@
-import React, { useState } from 'react'
-import { ReactComponent as Cat_btn } from '../../assets/category_btn.svg'
-import { ReactComponent as Search_btn } from '../../assets/search_btn.svg'
-import { ReactComponent as Down } from '../../assets/down.svg'
-import Hero_right from '../../assets/hero_right.svg'
-import Location from '../../components/Location'
-import { motion, AnimatePresence } from "framer-motion"
-import ProductCard from '../../components/ProductCard'
-import HomeIcons from '../../components/HomeIcons'
-import Categories from '../../components/Categories'
+import React, { useState } from "react";
+import { ReactComponent as Cat_btn } from "../../assets/category_btn.svg";
+import { ReactComponent as Search_btn } from "../../assets/search_btn.svg";
+import { ReactComponent as Down } from "../../assets/down.svg";
+import Hero_right from "../../assets/hero_right.svg";
+import Location from "../../components/Location";
+import { motion, AnimatePresence } from "framer-motion";
+import ProductCard from "../../components/ProductCard";
+import HomeIcons from "../../components/HomeIcons";
+import Categories from "../../components/Categories";
 
-
-
-export default function Home() {
+export default function Home(props) {
 
         let data = require('../../assets/products.json')
 
@@ -44,6 +42,9 @@ export default function Home() {
         }
     }
 
+    const addWishlist =(data)=>{
+        props.additemToWishlist(data)
+    }
 
 
 
@@ -83,19 +84,21 @@ export default function Home() {
             {catopen && 
             <motion.section id="cat_section" initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }} transition={0.3}>
-                 < Categories openCat={catToggle}/>
-          
-            </motion.section> }
-            </AnimatePresence>
+            exit={{ opacity: 0 }}
+            transition={0.3}
+          >
+            <Categories openCat={catToggle} />
+          </motion.section>
+        )}
+      </AnimatePresence>
 
-            {/* recent products */}
-            <section id="recentProducts">
-               <div id="recent_title">
-               Recent Products
-               </div>
+      {/* recent products */}
+      <section id="recentProducts">
+        <div id="recent_title">Recent Products</div>
         <section id="recent_container">
+
         <ProductCard
+         addw={addWishlist}
             index={"electronics"}
             id={electro[5].id}
             title={electro[5].tital}
@@ -105,6 +108,9 @@ export default function Home() {
             stock={true}
           />
           <ProductCard
+           addw={addWishlist}
+           index={"house_hold"}
+           id={house[3].id}
             title={house[3].tital}
             des={house[3].description}
             price={house[3].price}
@@ -112,6 +118,9 @@ export default function Home() {
             stock={true}
           />
           <ProductCard
+           addw={addWishlist}
+           index={"baby_needs"}
+           id={baby[3].id}
             title={baby[3].tital}
             des={baby[3].description}
             price={baby[3].price}
@@ -119,20 +128,22 @@ export default function Home() {
             stock={true}
           />
           <ProductCard
+           addw={addWishlist}
+            index={"grocery"}
+            id={grosary[2].id}
             title={grosary[2].tital}
             des={grosary[2].description}
             price={grosary[2].price}
             img={grosary[2].image}
             stock={true}
           />
-        
+
         </section>
-</section>
+      </section>
 
-
-<section id="home_icons">
-    <HomeIcons/>
-</section>
-        </div>
-    )
+      <section id="home_icons">
+        <HomeIcons />
+      </section>
+    </div>
+  );
 }
