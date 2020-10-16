@@ -14,7 +14,7 @@ export default function Signup() {
                <div id="inputs">
              {/* Main Title Section */}
                    <span id="title">
-                   <h2>CREATE NEW ACCOUNT</h2>
+                   <h3 id="cart_ttitle">Create An Account </h3>
                    <p id="title_para">Creating an account is easy. Just fill in the form below.</p>
                    </span>
             {/*End  Main Title Section */}
