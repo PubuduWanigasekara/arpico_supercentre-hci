@@ -24,6 +24,7 @@ import { AppContexts } from "./contexts/AppContextsProvider";
 
 function App() {
 
+
     let data = require('./assets/products.json')
 
     if(localStorage.getItem('data')){
@@ -151,6 +152,7 @@ function App() {
             <Footer />
 
         </AppContexts.Provider>
+
     </div>
   );
 }

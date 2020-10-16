@@ -1,12 +1,11 @@
-import React , {useState , useEffect} from 'react'
-import './style.css'
-import Select from 'react-select'
-import ProductCard from '../../components/ProductCard'
-import Whislist from '../wishlist/wishlist'
-
-
+import React, { useState, useEffect } from "react";
+import "./style.css";
+import Select from "react-select";
+import ProductCard from "../../components/ProductCard";
+import Whislist from "../wishlist/wishlist";
 
 export default function Baby() {
+
 
     
     
@@ -67,57 +66,62 @@ export default function Baby() {
                </div>
                 </div>
  
+
             </div>
-            <div id="whistlist_holder">
-        <Whislist id="whishlist_comp"/>
+          </div>
+        </div>
+        <div id="whistlist_holder">
+          <Whislist id="whishlist_comp" />
+        </div>
+      </div>
+
+      <div id="content_sort">
+        <div id="item_count">
+          <div id="items_number">223 items</div>
+        </div>
+        <div id="sort_controllers">
+          <div className="first_controllers">
+            <div>
+              sort by <Select options={options} id="sorter" />
             </div>
-           </div>
 
-
-           <div id="content_sort">
-               <div id="item_count">
-                    <div id="items_number">
-                        223 items 
-                    </div>
-               </div>
-               <div id="sort_controllers">
-                <div className="first_controllers">
-                    <div>
-                     sort by  <Select options={options} id="sorter" />
-                    </div>
-                   
-                    <button>
-                    <i class="ar-down"></i>
-                        </button>
-                    <button>
-                    <i class="ar-up"></i>
-                    </button>
-                    </div>
-                <div id="search_controller">
-                <i class="ar-search"></i>
-                    <input type="text" name="" id="search_box_c"/>
-                </div>
-                <div id="wishlist_btn_holder">
-                <div id="wishlist_round">
-                    <i class="ar-heart"></i>
-                    </div>
-                </div>
-               </div>
-
-           </div>
-
-      
-           <section id="product_container">
-            <div id="product_list_cards">
-            {babyneeds.map((data, index) => {
-          return (
-            <ProductCard key={index} index={'baby_needs'} id={data.id} img={data.image} title={data.tital} price={data.price} des={data.description} stock={data.inStock}></ProductCard>
-          );
-        })}
-                
-                
+            <button>
+              <i class="ar-down"></i>
+            </button>
+            <button>
+              <i class="ar-up"></i>
+            </button>
+          </div>
+          <div id="search_controller">
+            <i class="ar-search"></i>
+            <input type="text" name="" id="search_box_c" />
+          </div>
+          <div id="wishlist_btn_holder">
+            <div id="wishlist_round">
+              <i class="ar-heart"></i>
             </div>
-               </section>
-        </>
-    )
+          </div>
+        </div>
+      </div>
+
+      <section id="product_container">
+        <div id="product_list_cards">
+          {babyneeds.map((data, index) => {
+            return (
+              <ProductCard
+                key={index}
+                index={"baby_needs"}
+                id={data.id}
+                img={data.image}
+                title={data.tital}
+                price={data.price}
+                des={data.description}
+                stock={data.inStock}
+              ></ProductCard>
+            );
+          })}
+        </div>
+      </section>
+    </>
+  );
 }
