@@ -23,6 +23,13 @@ import { useLocation } from "react-router-dom";
 import { AppContexts } from "./contexts/AppContextsProvider";
 
 function App() {
+  let data = require("./assets/products.json");
+
+  if (localStorage.getItem("data")) {
+  } else {
+    localStorage.setItem("data", JSON.stringify(data));
+  }
+
   let [loaded, setload] = useState(false);
   let [login, setLogin] = useState(true);
   let [wishlistitems, setwishlistitems] = useState([
@@ -80,29 +87,9 @@ function App() {
           />
           <Route
             exact
-            path="/grocery"
-            render={() => {
-              return <Grocery />;
-            }}
-          />
-          <Route
-            exact
-            path="/electronics"
-            render={() => {
-              return <Electronics />;
-            }}
-          />
-          <Route
-            exact
-            path="/fruits-and-vegetables"
-            render={() => {
-              return <FruitsAndVegetables />;
-            }}
-          />
-          <Route
-            exact
             path="/wishlist"
             render={() => {
+              setLocbar("Wishlist", "/wishlist");
               return <Wishlist />;
             }}
           />
@@ -110,6 +97,7 @@ function App() {
             exact
             path="/cart"
             render={() => {
+              setLocbar("Cart", "/cart");
               return <Cart />;
             }}
           />
@@ -117,6 +105,7 @@ function App() {
             exact
             path="/store_locations"
             render={() => {
+              setLocbar("Store Locations", "/store_locations");
               return <Store_locations />;
             }}
           />
@@ -124,6 +113,7 @@ function App() {
             exact
             path="/contact-us"
             render={() => {
+              setLocbar("Contact Us", "/contact-us");
               return <ContactUs />;
             }}
           />
@@ -131,6 +121,7 @@ function App() {
             exact
             path="/payment"
             render={() => {
+              setLocbar("Payments", "/payment");
               return <Payment />;
             }}
           />
@@ -138,6 +129,7 @@ function App() {
             exact
             path="/productVariety"
             render={() => {
+              setLocbar("product Variety", "/productVariety");
               return <ProductVariety />;
             }}
           />
@@ -145,6 +137,7 @@ function App() {
             exact
             path="/faq"
             render={() => {
+              setLocbar("Frequently asked questions", "/faq");
               return <Faq />;
             }}
           />

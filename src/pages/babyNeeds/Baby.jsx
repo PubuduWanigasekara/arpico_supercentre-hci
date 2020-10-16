@@ -8,12 +8,25 @@ import Whislist from '../wishlist/wishlist'
 
 export default function Baby() {
 
-    let data = require('../../assets/products.json')
     
+    
+    let data = JSON.parse(localStorage.getItem('data'))
     let babyneeds = data.baby_needs
-  
-    console.log(`baby ${babyneeds}`)
-   
+
+
+    function getdata(){
+         data = JSON.parse(localStorage.getItem('data'))
+    }
+
+    useEffect(() => {
+        
+        getdata();
+       
+        console.log(babyneeds)
+
+        
+         
+    })
 
 
     const options = [
@@ -28,9 +41,7 @@ export default function Baby() {
 
     let cardCount = 8;
 
-    const toTop = ()=>{
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+   
 
     
 
