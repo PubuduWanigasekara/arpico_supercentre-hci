@@ -15,6 +15,7 @@ import Grocery from "./pages/grocery/Grocery";
 import Electronics from "./pages/electronics/Electronics";
 import FruitsAndVegetables from "./pages/fruitsAndVegetables/FruitsAndVegetables";
 import Signup from "./pages/signup/Signup";
+import Household from "./pages/houseHold/HouseHold"
 import Faq from "./pages/faq/Faq";
 import Viewproduct from "./components/Viewproduct";
 import Notfound from "./pages/notfound/Notfound";
@@ -57,17 +58,17 @@ function App() {
   let [nName, setLoc] = useState();
   let [nLink, setLink] = useState();
 
-    const setLocbar = (name, nlink) => {
+  const setLocbar = (name, nlink) => {
 
-        setLoc(name);
-        setLink(nlink)
+    setLoc(name);
+    setLink(nlink)
 
-    }
+  }
 
-    let additemToWishlist = (obj)=>{
+  let additemToWishlist = (obj) => {
 
-        setwishlistitems([...wishlistitems, obj]);
-    }
+    setwishlistitems([...wishlistitems, obj]);
+  }
 
   return (
     <div className="App">
@@ -81,20 +82,54 @@ function App() {
           name={nName}
           link={nLink}
         />
+
+        <Route
+          exact
+          path="/signup"
+          render={() => {
+            return <Signup additemToWishlist={additemToWishlist} />;
+          }}
+        />
+
         <Switch>
           <Route path={"/login"} exact component={Login} />
           // new router change
-                <Route exact path="/baby"   render={() => {
+                <Route exact path="/baby" render={() => {
 
-                    return <Baby additemToWishlist={additemToWishlist}/>;
-                }} />
+            return <Baby additemToWishlist={additemToWishlist} />;
+          }} />
           <Route
             exact
             path="/grocery"
             render={() => {
-              return <Grocery />;
+              return <Grocery additemToWishlist={additemToWishlist} />;
             }}
           />
+
+          <Route
+            exact
+            path="/household"
+            render={() => {
+              return <Household additemToWishlist={additemToWishlist} />;
+            }}
+          />
+
+          <Route
+            exact
+            path="/electronics"
+            render={() => {
+              return <Electronics additemToWishlist={additemToWishlist} />;
+            }}
+          />
+
+          <Route
+            exact
+            path="/fruitsAndVegetables"
+            render={() => {
+              return <FruitsAndVegetables additemToWishlist={additemToWishlist} />;
+            }}
+          />
+
           <Route
             exact
             path="/wishlist"

@@ -3,12 +3,12 @@ import Select from 'react-select'
 import ProductCard from '../../components/ProductCard'
 import Whislist from '../wishlist/wishlist'
 
-export default function FruitsAndVegetables() {
+export default function FruitsAndVegetables(props) {
   let data = JSON.parse(localStorage.getItem('data'))
   let babyneeds = data.vegetables_fruits
 
 
-  function getdata(){
+  function getdata(props){
        data = JSON.parse(localStorage.getItem('data'))
   }
 
@@ -20,6 +20,9 @@ export default function FruitsAndVegetables() {
 
   })
 
+  const addWishlist =(data)=>{
+    props.additemToWishlist(data)
+}
 
   const options = [
       { value: 'price', label: 'price' },
@@ -99,7 +102,7 @@ export default function FruitsAndVegetables() {
           <div id="product_list_cards">
           {babyneeds.map((data, index) => {
         return (
-          <ProductCard key={index} index={'vegetables_fruits'} id={data.id} img={data.image} title={data.tital} price={data.price} des={data.description} stock={data.inStock}></ProductCard>
+          <ProductCard addw={addWishlist} key={index} index={'vegetables_fruits'} id={data.id} img={data.image} title={data.tital} price={data.price} des={data.description} stock={data.inStock}></ProductCard>
         );
       })}
               
