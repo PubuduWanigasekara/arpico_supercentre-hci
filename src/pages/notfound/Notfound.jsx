@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Grocery() {
+export default function Notfound() {
     return (
         <div>
-            Grocery 
+            notfound
         </div>
     )
 }

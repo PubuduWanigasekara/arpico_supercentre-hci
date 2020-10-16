@@ -3,18 +3,30 @@ import './style.css'
 import Select from 'react-select'
 import ProductCard from '../../components/ProductCard'
 import Whislist from '../wishlist/wishlist'
-import Viewproduct from '../../components/Viewproduct'
 
-// let selectedProduct = productobj.find(productk => productk.id === `${props.params.product}`);
-        // console.log(selectedProduct)
+
+
 export default function Baby() {
 
-    let data = require('../../assets/products.json')
     
+    
+    let data = JSON.parse(localStorage.getItem('data'))
     let babyneeds = data.baby_needs
-  
-    console.log(`baby ${babyneeds}`)
-   
+
+
+    function getdata(){
+         data = JSON.parse(localStorage.getItem('data'))
+    }
+
+    useEffect(() => {
+        
+        getdata();
+       
+        console.log(babyneeds)
+
+        
+         
+    })
 
 
     const options = [
@@ -29,9 +41,9 @@ export default function Baby() {
 
     let cardCount = 8;
 
-    useEffect(()=>{
-        console.log(data)
-    })
+   
+
+    
 
 
     return (
@@ -95,7 +107,7 @@ export default function Baby() {
             <div id="product_list_cards">
             {babyneeds.map((data, index) => {
           return (
-            <ProductCard key={index} index={index} id={data.id} img={data.image} title={data.tital} price={data.price} des={data.description} stock={data.inStock}></ProductCard>
+            <ProductCard key={index} index={'baby_needs'} id={data.id} img={data.image} title={data.tital} price={data.price} des={data.description} stock={data.inStock}></ProductCard>
           );
         })}
                 

@@ -8,21 +8,32 @@ import Store_locations from "./pages/store_locations/store_locations";
 import ProductVariety from "./pages/productVariety/productVariety";
 import Cart from "./pages/cart/Cart";
 import ContactUs from "./pages/contactUs/contactUs";
-import Grocery from "./pages/categories/grocery/Grocery";
 import Login from "./pages/login/Login";
 import Payment from "./pages/payment options/Payment";
 import Baby from "./pages/babyNeeds/Baby";
 import Signup from "./pages/signup/Signup";
-import Faq from './pages/faq/Faq'
-import Viewproduct from './components/Viewproduct'
-import { Switch, Route, Link } from "react-router-dom";
+import Faq from "./pages/faq/Faq";
+import Viewproduct from "./components/Viewproduct";
+import Notfound from "./pages/notfound/Notfound";
+import { Switch, Route, useHistory } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { AppContexts } from "./contexts/AppContextsProvider";
 
 function App() {
 
+    let data = require('./assets/products.json')
+
+    if(localStorage.getItem('data')){
+
+    }
+    else{
+        localStorage.setItem('data',JSON.stringify(data))
+    }
+
+   
+
     let [loaded, setload] = useState(false);
-    let [login, setLogin] = useState(false);
+    let [login, setLogin] = useState(true);
     let [wishlistitems, setwishlistitems] = useState(
         [
             { id: 1, name: "z", price: 1030, qty: 6, isAddedToCart: false },
@@ -36,7 +47,7 @@ function App() {
         ]);
     const location = useLocation();
 
-
+    let history = useHistory()
 
     useEffect(() => {
         const currentPath = location.pathname;
@@ -78,8 +89,8 @@ function App() {
 
                 // new router change
 
-                <Route exact path="/baby" render={() => {
-                    setLocbar('Baby needs', '/baby');
+                <Route exact path="/baby"   render={() => {
+                   
                     return <Baby />;
                 }} />
 
@@ -97,10 +108,7 @@ function App() {
                     return <Cart />;
                 }} />
 
-                <Route exact path="/categories-grocery" render={() => {
-                    setLocbar('Grocery', '/categories-grocery');
-                    return <Grocery />;
-                }} />
+                
             
                 <Route exact path="/store_locations" render={() => {
                     setLocbar('Store Locations', '/store_locations');
@@ -127,21 +135,21 @@ function App() {
                     return <Faq />;
                 }} />
 
-                <Route exact path="/view/:product" render={() => {
-                    setLocbar('view product ', '/faq');
-                    return <Viewproduct />;
-                }} />
+                <Route exact path="/view/:index/:product" component={Viewproduct} />
 
-
+                // not found page
                 {/* this one should place always bottom */}
-                <Route path={"/*"} exact component={Home} />
+                <Route path={"*"} exact component={Home} />
+
+                
+               
 
             </Switch>
             <Footer />
 
         </AppContexts.Provider>
     </div>
-    );
+  );
 }
 
 export default App;

@@ -23,6 +23,9 @@ code {
 
 /* dont change these styles  */
 
+a{
+  text-decoration: none;
+}
 a:hover{
   color: #000 !important;
   font-weight: 500;

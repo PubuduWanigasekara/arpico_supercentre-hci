@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './categories.css'
 import { motion, AnimatePresence } from 'framer-motion'
-
+import{useHistory , Link} from 'react-router-dom'
 import child from '../assets/child.png'
 import crab from '../assets/crab.png'
 import electronics from '../assets/electronics.png'
@@ -17,6 +17,7 @@ import vege from '../assets/vege.png'
 export default function Categories(props) {
 
     let [title, set] = useState('')
+    let history = useHistory()
 
     const container = {
         hidden: { opacity: 0, y: 50 },
@@ -34,6 +35,11 @@ export default function Categories(props) {
         show: { opacity: 1 , scale:1 }
     }
 
+    const setNav = (loc)=>{
+        document.body.style.overflow = '';
+        history.push(`/${loc}`)
+    }
+
 
     return (
         <>
@@ -44,17 +50,17 @@ export default function Categories(props) {
                 </button>
 
                 <motion.div id="cat_base" variants={container} initial="hidden" animate="show">
-                    <motion.div variants={item} > <div id="catbase_item" onMouseOver={() => set('Groceries')} onMouseLeave={() => set('')}>         <img id="cat_img_list" src={gros} alt="" />  </div> </motion.div>
-                    <motion.div variants={item} > <div id="catbase_item" onMouseOver={() => set('Household')} onMouseLeave={() => set('')}      >    <img id="cat_img_list" src={house} alt="" />  </div> </motion.div>
-                    <motion.div variants={item} > <div id="catbase_item" onMouseOver={() => set('Vegetables')} onMouseLeave={() => set('')}     >    <img id="cat_img_list" src={vege} alt="" />  </div> </motion.div>
-                    <motion.div variants={item} > <div id="catbase_item" onMouseOver={() => set('Fruits')} onMouseLeave={() => set('')}         >    <img id="cat_img_list" src={fruits} alt="" />  </div> </motion.div>
-                    <motion.div variants={item} > <div id="catbase_item" onMouseOver={() => set('Fresh Meats')} onMouseLeave={() => set('')}    >        <img id="cat_img_list" src={meat} alt="" />  </div> </motion.div>
-                    <motion.div variants={item} > <div id="catbase_item" onMouseOver={() => set('Fresh Sea Foods')} onMouseLeave={() => set('')}>        <img id="cat_img_list" src={crab} alt="" />  </div> </motion.div>
-                    <motion.div variants={item} > <div id="catbase_item" onMouseOver={() => set('Frozen items')} onMouseLeave={() => set('')}   >            <img id="cat_img_list" src={frozen} alt="" />  </div> </motion.div>
-                    <motion.div variants={item} > <div id="catbase_item" onMouseOver={() => set('Child items')} onMouseLeave={() => set('')}    >            <img id="cat_img_list" src={child} alt="" />  </div> </motion.div>
-                    <motion.div variants={item} > <div id="catbase_item" onMouseOver={() => set('Electronics')} onMouseLeave={() => set('')}    >            <img id="cat_img_list" src={electronics} alt="" />  </div> </motion.div>
-                    <motion.div variants={item} > <div id="catbase_item" onMouseOver={() => set('Furniture')} onMouseLeave={() => set('')}      >        <img id="cat_img_list" src={furniture} alt="" />  </div> </motion.div>
-                </motion.div>
+                    <motion.div variants={item} > <div id="catbase_item"   onClick={()=> history.push('')}  onMouseOver={() => set('Groceries')} onMouseLeave={() => set('')}>         <img id="cat_img_list" src={gros} alt="" />  </div> </motion.div>
+                    <motion.div variants={item} > <div id="catbase_item"   onClick={()=> history.push('')}  onMouseOver={() => set('Household')} onMouseLeave={() => set('')}      >    <img id="cat_img_list" src={house} alt="" />  </div> </motion.div>
+                    <motion.div variants={item} > <div id="catbase_item"   onClick={()=> history.push('')}  onMouseOver={() => set('Vegetables')} onMouseLeave={() => set('')}     >    <img id="cat_img_list" src={vege} alt="" />  </div> </motion.div>
+                    <motion.div variants={item} > <div id="catbase_item"   onClick={()=> history.push('')}  onMouseOver={() => set('Fruits')} onMouseLeave={() => set('')}         >    <img id="cat_img_list" src={fruits} alt="" />  </div> </motion.div>
+                    <motion.div variants={item} > <div id="catbase_item"   onClick={()=> history.push('')}  onMouseOver={() => set('Fresh Meats')} onMouseLeave={() => set('')}    >        <img id="cat_img_list" src={meat} alt="" />  </div> </motion.div>
+                    <motion.div variants={item} > <div id="catbase_item"   onClick={()=> history.push('')}  onMouseOver={() => set('Fresh Sea Foods')} onMouseLeave={() => set('')}>        <img id="cat_img_list" src={crab} alt="" />  </div> </motion.div>
+                    <motion.div variants={item} > <div id="catbase_item"   onClick={()=> history.push('')}  onMouseOver={() => set('Frozen items')} onMouseLeave={() => set('')}   >            <img id="cat_img_list" src={frozen} alt="" />  </div> </motion.div>
+                    <motion.div variants={item} > <div id="catbase_item"   onClick={()=> setNav('baby')}  onMouseOver={() => set('Child items')} onMouseLeave={() => set('')}    >            <img id="cat_img_list" src={child} alt="" />  </div> </motion.div>
+                    <motion.div variants={item} > <div id="catbase_item"   onClick={()=> history.push('')}  onMouseOver={() => set('Electronics')} onMouseLeave={() => set('')}    >            <img id="cat_img_list" src={electronics} alt="" />  </div> </motion.div>
+                    <motion.div variants={item} > <div id="catbase_item"   onClick={()=> history.push('')}  onMouseOver={() => set('Furniture')} onMouseLeave={() => set('')}      >        <img id="cat_img_list" src={furniture} alt="" />  </div> </motion.div>
+                </motion.div>  
 
                 <AnimatePresence initial={{ opacity: 0 }} exit={{ opacity: 0 }} transition={{ delay: 1 }} >
                     <div id="cat_detail">

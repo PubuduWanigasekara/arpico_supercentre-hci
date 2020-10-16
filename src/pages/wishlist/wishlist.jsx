@@ -224,6 +224,7 @@ export default function Wishlist() {
           );
         }
 
+
       })}
 
 

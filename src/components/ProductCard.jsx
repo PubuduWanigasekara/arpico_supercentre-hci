@@ -1,5 +1,5 @@
-import React from 'react'
-import {useHistory} from 'react-router-dom'
+import React , {useState} from 'react'
+import {useHistory , Link} from 'react-router-dom'
 
 export default function ProductCard(props) {
 
@@ -14,6 +14,25 @@ export default function ProductCard(props) {
         id:props.id,
         index:props.index
     }
+
+   
+    let [quentity,setQ] = useState(0)
+
+   
+
+    const increment = ()=>{
+        
+        setQ(quentity++)
+    }
+
+    const decrement = ()=>{
+        if(quentity <= 0){
+
+        }else{
+            setQ(quentity--)
+        }
+    }
+    
     return (
         <div id="cardBase">
             <div id="card_container">
@@ -31,20 +50,23 @@ export default function ProductCard(props) {
                 </div>
                 <div id="card_quantity">
                     <button id="card_round_btn">
-                        -
+                    <i class="ar-minus" onClick={decrement}></i>
                     </button>
-                    <input type="text" name="" value="1" id="card_number"/>
-                        <button id="card_round_btn">
-                            +
+                    <input type="text" name="" value={quentity} id="card_number"/>
+                        <button id="card_round_btn" onClick={increment}>
+                            <i class="ar-plus"></i>
                         </button>
                 </div>
 
                 <div id="card_controllers">
-                <button id="card_r_view" onClick={()=> history.push(`view/${product.index}/${product.id}`)}>
+                    <Link to={`/view/${product.index}/${product.id}`}>
+                    <button id="card_r_view">
                     view
                 </button>
-                    <button id="card_r_wishlist">
-+
+                    </Link>
+               
+                    <button id="card_r_wishlist" onClick={()=>  console.log(product)}>
+                    <i class="ar-plus"></i>
                     </button>
                 </div>
             </div>
