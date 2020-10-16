@@ -92,7 +92,7 @@ export default function Home() {
             {/* recent products */}
             <section id="recentProducts">
                <div id="recent_title">
-               Recent products
+               Recent Products
                </div>
         <section id="recent_container">
         <ProductCard index={'electronics'} id={electro[2].id} title={electro[3].tital}des={electro[3].description} price={electro[3].price} img={electro[3].image} stock={true}/>

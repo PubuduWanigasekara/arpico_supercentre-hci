@@ -23,134 +23,137 @@ import { useLocation } from "react-router-dom";
 import { AppContexts } from "./contexts/AppContextsProvider";
 
 function App() {
+  let data = require("./assets/products.json");
 
-    let data = require('./assets/products.json')
+  if (localStorage.getItem("data")) {
+  } else {
+    localStorage.setItem("data", JSON.stringify(data));
+  }
 
-    if(localStorage.getItem('data')){
+  if (localStorage.getItem("wishlistitems")) {
+  } else {
+    localStorage.setItem("wishlistitems", JSON.stringify([]));
+  }
 
-    }
-    else{
-        localStorage.setItem('data',JSON.stringify(data))
-    }
+  let [loaded, setload] = useState(false);
+  let [login, setLogin] = useState(false);
+  let [wishlistitems, setwishlistitems] = useState([]);
 
+  let [cartitems, setcartitems] = useState();
+  const location = useLocation();
 
-    if(localStorage.getItem('wishlistitems')){
+  let history = useHistory();
 
-    }else
-    {
-        localStorage.setItem('wishlistitems',JSON.stringify([]))
-    }
+  useEffect(() => {
+    const currentPath = location.pathname;
 
-   
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location]);
 
-    let [loaded, setload] = useState(false);
-    let [login, setLogin] = useState(false);
-    let [wishlistitems, setwishlistitems] = useState([]);
+  const LoginSet = (type) => {
+    setLogin((login = type));
+  };
 
-    let [cartitems, setcartitems] = useState();
-    const location = useLocation();
+  let [nName, setLoc] = useState();
+  let [nLink, setLink] = useState();
 
-    let history = useHistory()
+  const setLocbar = (name, nlink) => {
+    setLoc(name);
+    setLink(nlink);
+  };
 
-    useEffect(() => {
-        const currentPath = location.pathname;
-
-
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    }, [location]);
-
-    const LoginSet = (type) => {
-        setLogin((login = type));
-    };
-
-
-
-
-
-    let [nName, setLoc] = useState()
-    let [nLink, setLink] = useState()
-
-    const setLocbar = (name, nlink) => {
-
-        setLoc(name);
-        setLink(nlink)
-
-    }
-
-
-
-
-    return (<
-        div className="App" >
-        <AppContexts.Provider value={{ wishlistitems, setwishlistitems, cartitems, setcartitems }}>
-            <Header isLogged={login} logSet={LoginSet} home={'Home'} name={nName} link={nLink} />
-            <Switch >
-
-                <Route path={"/login"} exact component={Login} />
-
-
-                // new router change
-
-                <Route exact path="/baby"   render={() => {
-                   
-                    return <Baby />;
-                }} />
-
-                
-
-               
-
-                <Route exact path="/wishlist" render={() => {
-                    setLocbar('Wishlist', '/wishlist');
-                    return <Wishlist />;
-                }} />
-
-                <Route exact path="/cart" render={() => {
-                    setLocbar('Cart', '/cart');
-                    return <Cart />;
-                }} />
-
-                
-            
-                <Route exact path="/store_locations" render={() => {
-                    setLocbar('Store Locations', '/store_locations');
-                    return <Store_locations />;
-                }} />
-
-                <Route exact path="/contact-us" render={() => {
-                    setLocbar('Contact Us', '/contact-us');
-                    return <ContactUs />;
-                }} />
-
-                <Route exact path="/payment" render={() => {
-                    setLocbar('Payments', '/payment');
-                    return <Payment />;
-                }} />
-
-                <Route exact path="/productVariety" render={() => {
-                    setLocbar('product Variety', '/productVariety');
-                    return <ProductVariety />;
-                }} />
-
-                <Route exact path="/faq" render={() => {
-                    setLocbar('Frequently asked questions', '/faq');
-                    return <Faq />;
-                }} />
-
-                <Route exact path="/view/:index/:product" component={Viewproduct} />
-
-                // not found page
-                {/* this one should place always bottom */}
-                <Route path={"*"} exact component={Home} />
-
-                
-               
-
-            </Switch>
-            <Footer />
-
-        </AppContexts.Provider>
+  return (
+    <div className="App">
+      <AppContexts.Provider
+        value={{ wishlistitems, setwishlistitems, cartitems, setcartitems }}
+      >
+        <Header
+          isLogged={login}
+          logSet={LoginSet}
+          home={"Home"}
+          name={nName}
+          link={nLink}
+        />
+        <Switch>
+          <Route path={"/login"} exact component={Login} />
+          // new router change
+          <Route
+            exact
+            path="/baby"
+            render={() => {
+              return <Baby />;
+            }}
+          />
+          <Route
+            exact
+            path="/grocery"
+            render={() => {
+              return <Grocery />;
+            }}
+          />
+          <Route
+            exact
+            path="/wishlist"
+            render={() => {
+              setLocbar("Wishlist", "/wishlist");
+              return <Wishlist />;
+            }}
+          />
+          <Route
+            exact
+            path="/cart"
+            render={() => {
+              setLocbar("Cart", "/cart");
+              return <Cart />;
+            }}
+          />
+          <Route
+            exact
+            path="/store_locations"
+            render={() => {
+              setLocbar("Store Locations", "/store_locations");
+              return <Store_locations />;
+            }}
+          />
+          <Route
+            exact
+            path="/contact-us"
+            render={() => {
+              setLocbar("Contact Us", "/contact-us");
+              return <ContactUs />;
+            }}
+          />
+          <Route
+            exact
+            path="/payment"
+            render={() => {
+              setLocbar("Payments", "/payment");
+              return <Payment />;
+            }}
+          />
+          <Route
+            exact
+            path="/productVariety"
+            render={() => {
+              setLocbar("product Variety", "/productVariety");
+              return <ProductVariety />;
+            }}
+          />
+          <Route
+            exact
+            path="/faq"
+            render={() => {
+              setLocbar("Frequently asked questions", "/faq");
+              return <Faq />;
+            }}
+          />
+          <Route exact path="/view/:index/:product" component={Viewproduct} />
+          // not found page
+          {/* this one should place always bottom */}
+          <Route path={"*"} exact component={Home} />
+        </Switch>
+        <Footer />
+      </AppContexts.Provider>
     </div>
   );
 }
