@@ -108,10 +108,7 @@ function App() {
                     return <Cart />;
                 }} />
 
-                <Route exact path="/categories-grocery" render={() => {
-                    setLocbar('Grocery', '/categories-grocery');
-                    return <Grocery />;
-                }} />
+                
             
                 <Route exact path="/store_locations" render={() => {
                     setLocbar('Store Locations', '/store_locations');
