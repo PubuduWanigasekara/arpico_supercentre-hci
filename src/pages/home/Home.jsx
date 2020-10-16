@@ -89,7 +89,7 @@ export default function Home(props) {
           >
             <Categories openCat={catToggle} />
           </motion.section>
-        )}
+        }
       </AnimatePresence>
 
       {/* recent products */}
