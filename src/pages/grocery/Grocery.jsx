@@ -4,7 +4,7 @@ import Select from "react-select";
 import ProductCard from "../../components/ProductCard";
 import Whislist from "../wishlist/wishlist";
 
-export default function Grocery() {
+export default function Grocery(props) {
   let data = JSON.parse(localStorage.getItem("data"));
   let grocery = data.grocery;
 
@@ -17,6 +17,10 @@ export default function Grocery() {
 
     // console.log(groceryy);
   });
+
+  const addWishlist =(data)=>{
+    props.additemToWishlist(data)
+}
 
   const options = [{ value: "price", label: "price" }];
 
@@ -94,6 +98,7 @@ export default function Grocery() {
           {grocery.map((data, index) => {
             return (
               <ProductCard
+              addw={addWishlist}
                 key={index}
                 index={"grocery"}
                 id={data.id}
