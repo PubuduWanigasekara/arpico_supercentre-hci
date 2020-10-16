@@ -6,7 +6,9 @@ import {useHistory , useLocation} from 'react-router-dom'
 
 export default function Header(props) {
 
-
+    let data = JSON.parse(localStorage.getItem("cartItems"));
+  let cart = data;
+  let count = cart.length;
 
     let [mobmenu, setmobmenu] = useState(false);
     let [propmenu, setpropMenu] = useState(false);
@@ -91,7 +93,7 @@ export default function Header(props) {
                          </li>
                          <li id="cart_li" onClick={()=> history.push('/cart')}>
                              <i class="ar-bag" id="bag"></i>
-                             <div id="cart_total">20</div>
+                             <div id="cart_total">{count}</div>
                              </li>
                         </> :  <li><Link style={linkstyle} to="/login" ><button className="button primary outline login">login</button></Link></li>}
                        
