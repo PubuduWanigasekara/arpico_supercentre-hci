@@ -87,7 +87,7 @@ export default function ProductCard(props) {
                     </Link>
                
                     <button id="card_r_wishlist" onClick={add}>
-                    <i class="ar-plus"></i>
+                    <i class="ar-plus white"></i>
                     </button>
                 </div>
             </div>
