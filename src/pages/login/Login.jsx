@@ -13,7 +13,7 @@ export default function Login() {
                <div id="inputs">
                    <span id="title">
                    
-                   <h3 id="cart_ttitle">Sn</h3>
+                   <h3 id="cart_ttitle">Sign In</h3>
                    </span>
                     {/* <Mail id="icons" className="mail"/> */}
                    <input type="email" name="email" id="email" placeholder="Enter your email"/>

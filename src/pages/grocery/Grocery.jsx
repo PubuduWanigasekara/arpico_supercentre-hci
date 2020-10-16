@@ -34,7 +34,7 @@ export default function Grocery() {
       </div>
       <div id="content_top">
         <div id="price_range">
-          <div id="price_range_title">choose price range</div>
+          <div id="price_range_title">Choose Price Range</div>
           <div id="price_range_container">
             {minmax.min} - {minmax.max} LKR
             <div id="price_range_selector">
@@ -62,12 +62,12 @@ export default function Grocery() {
 
       <div id="content_sort">
         <div id="item_count">
-          <div id="items_number">223 items</div>
+          <div id="items_number">223 Items</div>
         </div>
         <div id="sort_controllers">
           <div className="first_controllers">
             <div>
-              sort by <Select options={options} id="sorter" />
+              Sort by <Select options={options} id="sorter" />
             </div>
 
             <button>

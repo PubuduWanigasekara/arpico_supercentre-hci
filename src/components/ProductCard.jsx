@@ -35,11 +35,12 @@ export default function ProductCard(props) {
 
     let wishlist = JSON.parse(localStorage.getItem('wishlistitems'))
     console.log(wishlist)
+   
+
 
     const addtoWishlist=()=>{
-       
-        wishlist.push(product);
         let wishdata = JSON.stringify(wishlist)
+        wishlist.push(product);
         localStorage.setItem('wishlistitems',wishdata)
     }
    
@@ -61,11 +62,11 @@ export default function ProductCard(props) {
                 </div>
                 <div id="card_quantity">
                     <button id="card_round_btn">
-                    <i class="ar-minus" onClick={decrement}></i>
+                    <i class="ar-minus " onClick={decrement}></i>
                     </button>
                     <input type="text" name="" value={quentity} id="card_number"/>
                         <button id="card_round_btn" onClick={increment}>
-                            <i class="ar-plus"></i>
+                            <i class="ar-plus "></i>
                         </button>
                 </div>
 
@@ -77,7 +78,7 @@ export default function ProductCard(props) {
                     </Link>
                
                     <button id="card_r_wishlist" onClick={addtoWishlist}>
-                    <i class="ar-plus"></i>
+                    <i class="ar-plus white"></i>
                     </button>
                 </div>
             </div>

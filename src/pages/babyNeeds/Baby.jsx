@@ -5,68 +5,47 @@ import ProductCard from "../../components/ProductCard";
 import Whislist from "../wishlist/wishlist";
 
 export default function Baby() {
+  let data = JSON.parse(localStorage.getItem("data"));
+  let babyneeds = data.baby_needs;
+  let count = babyneeds.length;
 
+  useEffect(() => {
+    console.log(babyneeds);
+  });
 
-    
-    
-    
-  
-    
-    let data = JSON.parse(localStorage.getItem('data'))
-    let babyneeds = data.baby_needs
+  const options = [{ value: "price", label: "price" }];
 
-   
+  let [minmax, setMinmax] = useState({
+    min: "0",
+    max: "20",
+  });
 
-    useEffect(() => {
-        
-      
-       
-        console.log(babyneeds)
+  let cardCount = 8;
 
-        
-    
-         
-    })
+  const addTocart = () => {};
 
-
-    const options = [
-        { value: 'price', label: 'price' },
-       
-      ]
-
-    let [minmax,setMinmax] =  useState({
-        min:'0',
-        max:'20'
-    })
-
-    let cardCount = 8;
-
-   
-
-        const addTocart=()=>{
-            
-        }
-    
-
-
-    return (
-        <>
-           <div id="content_top">
-             
-            <div id="price_range">
-                <div id="price_range_title">
-                choose price range
-                </div>
-                <div id="price_range_container">
-                {minmax.min} - {minmax.max} LKR
-               <div id="price_range_selector">
-         
-                   <input type="range" name=""  className="range"  id="range_low" onChange={e => setMinmax({...minmax , min : e.target.value})}/>
-                   <input type="range" name=""  className="range"  id="range_hi" onChange={e => setMinmax({...minmax , max : e.target.value})}/>
-               </div>
-                </div>
- 
-
+  return (
+    <>
+      <div id="content_top">
+        <div id="price_range">
+          <div id="price_range_title">choose price range</div>
+          <div id="price_range_container">
+            {minmax.min} - {minmax.max} LKR
+            <div id="price_range_selector">
+              <input
+                type="range"
+                name=""
+                className="range"
+                id="range_low"
+                onChange={(e) => setMinmax({ ...minmax, min: e.target.value })}
+              />
+              <input
+                type="range"
+                name=""
+                className="range"
+                id="range_hi"
+                onChange={(e) => setMinmax({ ...minmax, max: e.target.value })}
+              />
             </div>
           </div>
         </div>
@@ -77,7 +56,7 @@ export default function Baby() {
 
       <div id="content_sort">
         <div id="item_count">
-          <div id="items_number">223 items</div>
+          <div id="items_number">{count} items</div>
         </div>
         <div id="sort_controllers">
           <div className="first_controllers">
