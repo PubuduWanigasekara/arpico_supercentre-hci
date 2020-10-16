@@ -4,7 +4,7 @@ import Select from "react-select";
 import ProductCard from "../../components/ProductCard";
 import Whislist from "../wishlist/wishlist";
 
-export default function Baby() {
+export default function Baby(props) {
   let data = JSON.parse(localStorage.getItem("data"));
   let babyneeds = data.baby_needs;
   let count = babyneeds.length;

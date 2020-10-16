@@ -190,7 +190,7 @@ export default function Wishlist() {
 
       <div className={stylersucsses}>
         <div class="success-msg">
-          All items are sented to cart<br />
+          All items are added to cart<br />
           <Lottie options={defaultOptions_carrot}
             height={95}
             width={117}
